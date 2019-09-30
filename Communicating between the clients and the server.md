@@ -49,20 +49,25 @@ In multiplayer we will need to communicate between entirely different computers.
 Server To Client, or S2C packets for short, allow the server to tell the clients to execute predefined code with some data. 
 The clients will first need to know what to execute, so we will tell them just that during [**client** mod initialization]($$$ LINK TO CLIENT INIT DOC
 
+(Note that the identifier we will put in the class of the common initializer so it can be accessed from both sides:)
+```java
+public class ExampleMod implements ModInitializer {
+    // Save the id of the packet so we can reference it later
+    public static final Identifier PLAY_PARTICLE_PACKET_ID = new Identifier("example", "particle");
+}
+
+```
+
 ```java
 public class ExampleClientInit implements ClientModInitializer {
-    // Save the id of the packet so we can reference it later
-    public static final Identifier PLAY_PARTICLE_PACKET_ID = new Identifier("example","particle");
-    
     @Override
     public void onInitializeClient() {
         // We associate PLAY_PARTICLE_PACKET_ID with this callback, so the server can then use that id to execute the callback.
-        ClientSidePacketRegistry.INSTANCE.register(PLAY_PARTICLE_PACKET_ID,
+        ClientSidePacketRegistry.INSTANCE.register(ExampleMod.PLAY_PARTICLE_PACKET_ID,
                 (packetContext, attachedData) -> {
                     // Client sided code
                     // Caution: don't execute code here just yet
                 });
-       
     }
 }
 
@@ -74,7 +79,7 @@ must be done in the main thread.
 The `packetContext` that is passed to the callback contains an easy way to do that by calling `getTaskQueue().execute`:
 ```java
 // [...]
-ClientSidePacketRegistry.INSTANCE.register(PLAY_PARTICLE_PACKET_ID,
+ClientSidePacketRegistry.INSTANCE.register(ExampleMod.PLAY_PARTICLE_PACKET_ID,
         (packetContext, attachedData) -> packetContext.getTaskQueue().execute(() -> {
             // For now we will use the player's position since we don't know (yet) how to use the BlockPos
             // in the onBlockRemoved callback. This is explained in "passing information to packets".
@@ -103,7 +108,7 @@ public class MyBlock extends Block {
         
         // Then we'll send the packet to all the players
         watchingPlayers.forEach(player ->
-                ServerSidePacketRegistry.INSTANCE.sendToPlayer(player,ExampleClientInit.PLAY_PARTICLE_PACKET_ID,passedData));
+                ServerSidePacketRegistry.INSTANCE.sendToPlayer(player,ExampleMod.PLAY_PARTICLE_PACKET_ID,passedData));
         // This will work in both multiplayer and singleplayer!
     }
 
@@ -130,7 +135,7 @@ watchingPlayers.forEach(player -> /*...*/);
 
 And then retrieve it in the packet callback, **but make sure you do it in the network thread**.
 ```java
-ClientSidePacketRegistry.INSTANCE.register(PLAY_PARTICLE_PACKET_ID,
+ClientSidePacketRegistry.INSTANCE.register(ExampleMod.PLAY_PARTICLE_PACKET_ID,
         (packetContext, attachedData) -> {
             // Get the BlockPos we put earlier, in the networking thread
             BlockPos pos = attachedData.readBlockPos();
@@ -172,6 +177,67 @@ passedData.writeString("hello");
  ```
 
 ## Client To Server (C2S) Packets
-Client to server packets follow the same principles. Some things can only be done from the server, such as changing the world in a way that affects other players, but you want them to be triggered by a client-only action, such as holding a keybinding. One key difference is that **you must validate what you receive in the `PacketByteBuf`**.
+Client to server packets follow the same principles. 
+Some things can only be done from the server, such as changing the world in a way that affects other players, 
+but you want them to be triggered by a client-only action, such as holding a keybinding. 
+One key difference is that **you must validate what you receive in the `PacketByteBuf`**.
 
-In this example we will replace a block with diamond when it is right clicked when a keybinding is held, using a C2S packet. If you want to know how to use hotkeys specifically, refer to the [hotkeys tutorial]($$$ LINK TO KEYBINDINGS TUTORIAL
+In this example we will replace a block with diamond when it is right clicked when a keybinding is held, 
+using a C2S packet. 
+If you want to know how to use hotkeys specifically, refer to the [hotkeys tutorial]($$$ LINK TO KEYBINDINGS TUTORIAL
+
+As before we'll define an identifier for our packet:
+```java
+public class ExampleMod implements ModInitializer {
+    public static final Identifier TURN_TO_DIAMOND_PACKET_ID = new Identifier("example", "diamond");
+}
+```
+Now we will send the packet when the block is right-clicked and the keybinding is held. 
+We can only check the keybinding on the client, so we must only execute the code here on the client:
+```java
+public class MyBlock extends Block {
+    @Override
+    public boolean activate(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult result) {
+        if (world.isClient()) {
+            // We are in the client now, can't do anything server-sided
+
+            // See the keybindings tutorial for information about this if statement (the keybindings tutorial calls this variable "keyBinding")
+            if(ExampleClientInit.EXAMPLE_KEYBINDING.isPressed()){
+                // Pass the `BlockPos` information
+                PacketByteBuf passedData = new PacketByteBuf(Unpooled.buffer());
+                passedData.writeBlockPos(pos);
+                // Send packet to server to change the block for us
+                ClientSidePacketRegistry.INSTANCE.sendToServer(ExampleMod.TURN_TO_DIAMOND_PACKET_ID, passedData);
+            }
+
+        }
+        return true;
+    }
+}
+```
+
+And then we receive the packet on the server side by registering it in the common mod initializer.
+Make sure to **take data in the IO thread and used it in the main thread**, and to **validate the recieved data**:
+```java
+public class ExampleMod implements ModInitializer {
+    public static final Identifier TURN_TO_DIAMOND_PACKET_ID = new Identifier("example", "diamond");
+
+    @Override
+    public void onInitialize() {
+        ServerSidePacketRegistry.INSTANCE.register(TURN_TO_DIAMOND_PACKET_ID, (packetContext, attachedData) -> {
+            // Get the BlockPos we put earlier in the IO thread
+            BlockPos pos = attachedData.readBlockPos();
+            packetContext.getTaskQueue().execute(() -> {
+                // Execute on the main thread
+
+                // ALWAYS validate that the information received is valid in a C2S packet!
+                if(packetContext.getPlayer().world.isHeightValidAndBlockLoaded(pos)){
+                    // Turn to diamond
+                    packetContext.getPlayer().world.setBlockState(pos, Blocks.DIAMOND_BLOCK.getDefaultState());
+                }
+
+            });
+        });
+    }
+}
+```
