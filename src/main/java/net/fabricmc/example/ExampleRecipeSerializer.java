@@ -32,7 +32,6 @@ public class ExampleRecipeSerializer implements RecipeSerializer<ExampleRecipe> 
     @Override
     public ExampleRecipe read(Identifier recipeId, JsonObject json) {
         ExampleRecipeJsonFormat recipeJson = new Gson().fromJson(json, ExampleRecipeJsonFormat.class);
-        //TODO: add validation only after
         if (recipeJson.inputA == null || recipeJson.inputB == null || recipeJson.outputItem == null) {
             throw new JsonSyntaxException("A required attribute is missing!");
         }
