@@ -1,2 +1,0 @@
-# Listening to keyboard input
-
