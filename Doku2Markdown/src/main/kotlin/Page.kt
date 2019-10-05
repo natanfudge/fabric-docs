@@ -8,17 +8,19 @@ import kotlinx.serialization.json.JsonConfiguration
 import kotlinx.serialization.list
 import java.io.File
 
+const val Resources = "Doku2Markdown/src/main/resources"
+
 @Serializable
 data class Page(val tag: String?, val name: String) {
     val editUrl get() = "$url?do=edit"
     val url get() = "https://fabricmc.net/wiki/${if (tag == null) "" else "$tag:"}$name"
-    val localDokuWikiDirectory: String get() = "src/main/resources/pages_dokuwiki/$relativeDirectoryPath"
+    val localDokuWikiDirectory: String get() = "$Resources/pages_dokuwiki/$relativeDirectoryPath"
 
     private val relativeDirectoryPath get() = tag?.split(":")?.joinToString("/")?.plus("/") ?: ""
 
     val localDokuWikiPath get() = "$localDokuWikiDirectory$name.txt"
 
-    val localMarkdownDirectory get() = "src/main/resources/pages_markdown/$relativeDirectoryPath"
+    val localMarkdownDirectory get() = "docs/$relativeDirectoryPath"
 
     val localMarkdownPath get() = "$localMarkdownDirectory$name.md"
 }
@@ -27,12 +29,12 @@ data class Page(val tag: String?, val name: String) {
 fun notNamespaced(name: String) = Page(null, name)
 fun frenchTutorial(name: String) = Page("fr:tutoriel", name)
 
-const val Pages = "src/main/resources/pages.json"
+const val Pages = "$Resources/pages.json"
+val BannedPages = listOf("dokuwiki","syntax","welcome")
 
 fun writePageList() {
     val tags = skrape {
         url = "https://fabricmc.net/wiki/start?do=index"
-
 
         extract {
             elements(".idx_dir").map { it.text() }
@@ -66,7 +68,7 @@ fun writePageList() {
     File(Pages).writeText(
         Json(JsonConfiguration.Stable.copy(prettyPrint = true)).stringify(
             Page.serializer().list,
-            pages
+            pages.filter { it.name !in BannedPages }
         )
     )
 }

@@ -23,7 +23,7 @@ const val LoginCookieKey = "DWd6fcb57a725757b22fe830cccebe05e6"
 // Feel
 const val LoginCookieValue = "DOKUWIKI_PASSWORD_HASH"
 
-const val ImageListPath = "src/main/resources/images.json"
+const val ImageListPath = "$Resources/images.json"
 
 fun scrapeAndWriteDokuWikiPages() {
     for (page in Json(JsonConfiguration.Stable).parse(
@@ -74,7 +74,7 @@ fun downloadAndWriteImages(){
 
     for(image in images){
         val relativePath = image.removePrefix("/wiki/_media").split("?")[0].replace(":","/")
-        val localPath = "src/main/resources/pages_markdown/images/$relativePath"
+        val localPath = "$Resources/pages_markdown/images/$relativePath"
         File(localPath).parentFile.mkdirs()
         val httpsPath = URL("https://fabricmc.net$image")
         httpsPath.openStream().use {

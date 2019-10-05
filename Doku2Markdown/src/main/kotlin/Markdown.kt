@@ -17,13 +17,15 @@ import java.io.File
 import java.io.InputStreamReader
 import java.util.*
 
+const val Pandoc = "Doku2Markdown/converter/pandoc.exe"
+
 fun convertToMarkdown() {
     for (page in Json(JsonConfiguration.Stable).parse(
         Page.serializer().list,
         File(Pages).readText()
-    )) {
+    ).filter { it.name == "start" }) {
         val markdown = runCommandForOutput(
-            "converter/pandoc.exe --from dokuwiki --to gfm ${page.localDokuWikiPath}".split(" ")
+            "$Pandoc --from dokuwiki --to gfm ${page.localDokuWikiPath}".split(" ")
         )
 
         val parsed = Parser.builder().build().parse(markdown)
@@ -31,10 +33,13 @@ fun convertToMarkdown() {
             page.tag == null -> 0
             else -> page.tag.count { it == ':' } + 1
         })
-        val fixed = Formatter.builder().build().render(parsed)
+        val linksFixed = Formatter.builder().build().render(parsed)
+        val lineBreakRegex = Regex("(\\[.*)\\r\\n (.*\\])")
+        val lineBreaksFixed = lineBreakRegex.replace(linksFixed,"$1$2")
+
 
         File(page.localMarkdownDirectory).mkdirs()
-        File(page.localMarkdownPath).writeText(fixed)
+        File(page.localMarkdownPath).writeText(lineBreaksFixed)
 
     }
 }
@@ -77,10 +82,12 @@ fun Node.fixLinks(nestingLevel: Int) {
 
 private fun visit(node: LinkNodeBase, nestingLevel: Int, image: Boolean = false) {
     if (!node.pageRef.startsWith("http")) {
+        val linkBase = node.pageRef.toString()
         node.pageRef = SegmentedSequence.of(
-            if (image) "../".repeat(nestingLevel) + "images" + node.pageRef.toString()
-            else "../".repeat(nestingLevel) + node.pageRef.toString().removePrefix("/") + ".md"
+            if (image) "../".repeat(nestingLevel) + "images" + linkBase
+            else "../".repeat(nestingLevel) + linkBase.removePrefix("/") + ".md"
         )
     }
+
 }
 
