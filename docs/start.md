@@ -30,14 +30,11 @@ modpack developers, these articles are for you:
 ### Tutorials
 
 - [Installing Fabric](install.md)
-- [Installing Fabric using the Minecraft
-  Launcher](tutorial/install_with_minecraft_launcher.md)
+- [Installing Fabric using the Minecraft Launcher](tutorial/install_with_minecraft_launcher.md)
 - [Installing Fabric using MultiMC](tutorial/install_with_multimc.md)
-- [Installing a Minecraft/Fabric
-  Server](tutorial/installing_minecraft_fabric_server.md)
+- [Installing a Minecraft/Fabric Server](tutorial/installing_minecraft_fabric_server.md)
 - [Adding mods](tutorial/adding_mods.md)
-- [Updating an existing MultiMC
-  Instance](tutorial/updating_fabric_using_multimc_launcher.md)
+- [Updating an existing MultiMC Instance](tutorial/updating_fabric_using_multimc_launcher.md)
 - [Install/Verify Java](tutorial/install_java.md)
 
 -----
@@ -53,13 +50,11 @@ trying to support other solutions\!
 - [Using MCUpdater for Fabric modpacks](tutorial/mcupdater_modpacks.md)
   (covers usage and creation)
 - [Publishing Fabric modpacks on Technic](tutorial/technic_modpacks.md)
-- [Publishing Fabric modpacks on
-  ATLauncher](tutorial/atlauncher_modpacks.md)
+- [Publishing Fabric modpacks on ATLauncher](tutorial/atlauncher_modpacks.md)
 
 ### Documentation
 
-- [Modpack-related
-  endpoints](documentation/modpack_related_endpoints.md)
+- [Modpack-related endpoints](documentation/modpack_related_endpoints.md)
 
 -----
 
@@ -83,8 +78,7 @@ which might interest you.
   - [Server and client side terminology](tutorial/side.md)
 - Development Tools
   - [Third-party library mods](documentation/libraries.md)
-  - [Applying changes without restarting
-    Minecraft](tutorial/applychanges.md)
+  - [Applying changes without restarting   Minecraft](tutorial/applychanges.md)
 - [Creating a lang file](tutorial/lang.md)
 - [Using mappings](tutorial/mappings.md)
 - [Adding a crafting recipe](tutorial/recipes.md)
@@ -101,11 +95,9 @@ which might interest you.
 - [Giving a block state](tutorial/blockstate.md)
 - [Adding a BlockEntity](tutorial/blockentity.md)
 - [Storing items in a block as an inventory](tutorial/inventory.md)
-- [Make a block change color depending on
-  biome](tutorial/biomecoloring.md)
+- [Make a block change color depending on biome](tutorial/biomecoloring.md)
 - [Manipulating a Block's appearance](tutorial/blockappearance.md)
-- [Rendering blocks and items dynamically using block entity
-  renderers](tutorial/blockentityrenderers.md)
+- [Rendering blocks and items dynamically using block entity renderers](tutorial/blockentityrenderers.md)
 
 #### Fluids
 
@@ -129,8 +121,7 @@ which might interest you.
 - [Adding custom enchantments](tutorial/enchantments.md)
 - [Custom Keybindings](tutorial/keybinds.md)
 - [Creating custom events](tutorial/events.md)
-- [Adding items to existing loot
-  tables](tutorial/adding_to_loot_tables.md)
+- [Adding items to existing loot tables](tutorial/adding_to_loot_tables.md)
 - [Creating Commands](tutorial/commands.md)
 - [Playing Sounds](tutorial/sounds.md)
 - [List of useful tutorials](tutorial/list_of_useful_gists.md)
@@ -139,8 +130,7 @@ which might interest you.
 
 - [Modding Tips](tutorial/modding_tips.md)
 - [Updating from Loader 0.3.x to 0.4.x](tutorial/loader04x.md)
-- [Updating Yarn mappings in a Java
-  codebase](tutorial/migratemappings.md)
+- [Updating Yarn mappings in a Java codebase](tutorial/migratemappings.md)
 
 #### Documentation
 
@@ -153,10 +143,8 @@ which might interest you.
 
 ### Examples
 
-- [Mod environment
-  template](https://github.com/FabricMC/fabric-example-mod)
-- [Fabric API test
-  mods](https://github.com/FabricMC/fabric/tree/master/fabric-testmods/java/net/fabricmc/fabric)
+- [Mod environment template](https://github.com/FabricMC/fabric-example-mod)
+- [Fabric API test mods](https://github.com/FabricMC/fabric/tree/master/fabric-testmods/java/net/fabricmc/fabric)
   - not a direct tutorial, but may come in handy
 
 -----
@@ -169,8 +157,7 @@ links:
 - [The Fabric Feature Procedure](tutorial/feature_procedure.md) - or how
   to get your feature accepted (or not\!)
 - [Fabric on GitHub](https://github.com/FabricMC)
-- [Game mappings repository + contribution
-  documentation](https://github.com/FabricMC/yarn)
+- [Game mappings repository + contribution documentation](https://github.com/FabricMC/yarn)
 
 -----
 
