@@ -25,6 +25,8 @@ const val LoginCookieValue = "DOKUWIKI_PASSWORD_HASH"
 
 const val ImageListPath = "$Resources/images.json"
 
+
+
 fun scrapeAndWriteDokuWikiPages() {
     for (page in Json(JsonConfiguration.Stable).parse(
         Page.serializer().list,
@@ -86,6 +88,10 @@ fun downloadAndWriteImages(){
 
 fun main() {
     convertToMarkdown()
+
+//    ConfigFactory.parseFile()
+
+//    Hocon
 
 
 }

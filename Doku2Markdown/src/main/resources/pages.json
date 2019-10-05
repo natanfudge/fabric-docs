@@ -56,10 +56,6 @@
     "name":"known_issues"
   },
   {
-    "tag":"playground",
-    "name":"playground"
-  },
-  {
     "tag":"tools",
     "name":"matcher"
   },
@@ -294,10 +290,6 @@
   {
     "tag":null,
     "name":"rules"
-  },
-  {
-    "tag":null,
-    "name":"sidebar_do_edit"
   },
   {
     "tag":null,

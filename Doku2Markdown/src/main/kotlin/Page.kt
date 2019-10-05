@@ -3,6 +3,7 @@ import it.skrape.selects.element
 import it.skrape.selects.elements
 import it.skrape.skrape
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.Transient
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 import kotlinx.serialization.list
@@ -10,19 +11,25 @@ import java.io.File
 
 const val Resources = "Doku2Markdown/src/main/resources"
 
+private const val MarkdownDirectory = "docs/"
+
 @Serializable
 data class Page(val tag: String?, val name: String) {
-    val editUrl get() = "$url?do=edit"
-    val url get() = "https://fabricmc.net/wiki/${if (tag == null) "" else "$tag:"}$name"
-    val localDokuWikiDirectory: String get() = "$Resources/pages_dokuwiki/$relativeDirectoryPath"
+    @Transient val url = "https://fabricmc.net/wiki/${if (tag == null) "" else "$tag:"}$name"
 
-    private val relativeDirectoryPath get() = tag?.split(":")?.joinToString("/")?.plus("/") ?: ""
+    @Transient val editUrl  = "$url?do=edit"
 
-    val localDokuWikiPath get() = "$localDokuWikiDirectory$name.txt"
+    @Transient private val relativeDirectoryPath  = tag?.split(":")?.joinToString("/")?.plus("/") ?: ""
+    @Transient val localDokuWikiDirectory = "$Resources/pages_dokuwiki/$relativeDirectoryPath"
+    @Transient val localDokuWikiPath  = "$localDokuWikiDirectory$name.txt"
 
-    val localMarkdownDirectory get() = "docs/$relativeDirectoryPath"
 
-    val localMarkdownPath get() = "$localMarkdownDirectory$name.md"
+
+    @Transient private val relativePath get() = migratePath("$relativeDirectoryPath$name.md")
+
+
+
+    @Transient val localMarkdownPath  get() = "$MarkdownDirectory$relativePath"
 }
 
 
@@ -30,7 +37,7 @@ fun notNamespaced(name: String) = Page(null, name)
 fun frenchTutorial(name: String) = Page("fr:tutoriel", name)
 
 const val Pages = "$Resources/pages.json"
-val BannedPages = listOf("dokuwiki","syntax","welcome")
+val BannedPages = listOf("dokuwiki","syntax","welcome","agenda","wiki_meta")
 
 fun writePageList() {
     val tags = skrape {

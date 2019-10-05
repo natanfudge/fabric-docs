@@ -21,11 +21,11 @@ const val Pandoc = "Doku2Markdown/converter/pandoc.exe"
 
 fun convertToMarkdown() {
     for (page in Json(JsonConfiguration.Stable).parse(
-        Page.serializer().list,
-        File(Pages).readText()
-    ).filter { it.name == "start" }) {
+            Page.serializer().list,
+            File(Pages).readText()
+    )) {
         val markdown = runCommandForOutput(
-            "$Pandoc --from dokuwiki --to gfm ${page.localDokuWikiPath}".split(" ")
+                "$Pandoc --from dokuwiki --to gfm ${page.localDokuWikiPath}".split(" ")
         )
 
         val parsed = Parser.builder().build().parse(markdown)
@@ -35,11 +35,12 @@ fun convertToMarkdown() {
         })
         val linksFixed = Formatter.builder().build().render(parsed)
         val lineBreakRegex = Regex("(\\[.*)\\r\\n (.*\\])")
-        val lineBreaksFixed = lineBreakRegex.replace(linksFixed,"$1$2")
+        val lineBreaksFixed = lineBreakRegex.replace(linksFixed, "$1$2")
 
-
-        File(page.localMarkdownDirectory).mkdirs()
-        File(page.localMarkdownPath).writeText(lineBreaksFixed)
+        File(page.localMarkdownPath).apply {
+            parentFile.mkdirs()
+            writeText(lineBreaksFixed)
+        }
 
     }
 }
@@ -67,15 +68,15 @@ fun runCommandForOutput(params: List<String>): String {
 
 fun Node.fixLinks(nestingLevel: Int) {
     NodeVisitor(
-        VisitHandler<Link>(Link::class.java,
-            Visitor<Link> { visit(it, nestingLevel) }),
-        VisitHandler<Reference>(
-            Reference::class.java,
-            Visitor<Reference> { visit(it, nestingLevel) }),
-        VisitHandler<Image>(
-            Image::class.java,
-            Visitor<Image> { visit(it, nestingLevel, image = true) }
-        )
+            VisitHandler<Link>(Link::class.java,
+                    Visitor<Link> { visit(it, nestingLevel) }),
+            VisitHandler<Reference>(
+                    Reference::class.java,
+                    Visitor<Reference> { visit(it, nestingLevel) }),
+            VisitHandler<Image>(
+                    Image::class.java,
+                    Visitor<Image> { visit(it, nestingLevel, image = true) }
+            )
     ).visit(this)
 }
 
@@ -84,8 +85,10 @@ private fun visit(node: LinkNodeBase, nestingLevel: Int, image: Boolean = false)
     if (!node.pageRef.startsWith("http")) {
         val linkBase = node.pageRef.toString()
         node.pageRef = SegmentedSequence.of(
-            if (image) "../".repeat(nestingLevel) + "images" + linkBase
-            else "../".repeat(nestingLevel) + linkBase.removePrefix("/") + ".md"
+                migratePath(
+                        if (image) "../".repeat(nestingLevel) + "images" + linkBase
+                        else "../".repeat(nestingLevel) + linkBase.removePrefix("/") + ".md"
+                )
         )
     }
 

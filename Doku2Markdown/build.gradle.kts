@@ -17,9 +17,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     compile("it.skrape:skrapeit-core:0.5.1")
     compile("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.13.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.2")
-    compile ("com.vladsch.flexmark:flexmark-all:0.50.40")
-
+    compile("com.vladsch.flexmark:flexmark-all:0.50.40")
 }
 
 tasks.withType<KotlinCompile> {
