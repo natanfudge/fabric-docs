@@ -74,7 +74,7 @@ which might interest you.
 #### Basics
 
 - Conventions and Terminology
-  - [Basic conventions and terminology](Tutorials/Conventions_And_Terminology/terms.md)
+  - [Basic conventions and terminology](Tutorials/Conventions And Terminology/terms.md)
   - [Server and client side terminology](Tutorials/side.md)
 - Development Tools
   - [Third-party library mods](Documentation/libraries.md)
