@@ -23,3 +23,6 @@ bin/
 # fabric
 
 run/
+
+Doku2Markdown/src/main/resources/pages_dokuwiki
+Doku2Markdown/src/main/resources/pages_markdown
