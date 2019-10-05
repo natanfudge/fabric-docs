@@ -19,7 +19,7 @@ public class MyBlock extends Block {
 }
 ```
 
-If you go into try to break your block, you will see your particle works perfectly fine. Job's done, right? Well, try to \[run it on a dedicated server\]\($$${LINK TO SETTING UP DEDICATED SERVER DOC}. You break your block, and...
+If you go into try to break your block, you will see your particle works perfectly fine. Job's done, right? Well, try to [run it on a dedicated server](testing-on-a-dedicated-server.md). You break your block, and...
 
 ```text
 [Server thread/FATAL]: Error executing task on Server
