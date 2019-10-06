@@ -16,7 +16,7 @@ In the command window type `java -version` and press `Enter`
 
 If a Java version number is reported similar to this:
 
-![](../.gitbook/assets/install_server_08.jpg)
+![](../.gitbook/assets/install_server_08%20%281%29.jpg)
 
 You may skip **STEP 3** if you don't want to update or replace the Java version installed.
 
@@ -36,7 +36,7 @@ To download the Java installer, go [here](https://adoptopenjdk.net/releases.html
 
 Pick Version 8 of the JRE, and the HotSpot JVM, download the installer for your operating system and install JAVA.
 
-![](../.gitbook/assets/install_server_10a%20%281%29.jpg)
+![](../.gitbook/assets/install_server_10a%20%282%29.jpg)
 
 ## STEP 4: Install Fabric in the Server Folder
 
