@@ -3,7 +3,7 @@
 1. Ouvrez la [page des téléchargements de  Fabric](https://fabricmc.net/use/).
 2. Utilisez le bouton pour télécharger `version.json` et mettez-le dans
 
-   un répertoire `bin` dans le ZIP de votre modpack.  
+   un répertoire `bin` dans le ZIP de votre modpack.
 
    **NOTE** Le fichier `version.json` sera le _seul_ fichier dans bin/.
 

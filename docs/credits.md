@@ -572,7 +572,7 @@ Authors:
 
   Original Page: [https://fabricmc.net/wiki/install](https://fabricmc.net/wiki/install)  
 
-Page: [rules.md](rules.md)  
+Page: [rules.md]()  
 Authors:
 
 * [falseresync](https://github.com/falseresync)  

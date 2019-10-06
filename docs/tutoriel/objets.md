@@ -35,7 +35,7 @@ public class ExampleMod implements ModInitializer
 
 Votre nouvel objet a désormais été ajouté à Minecraft. Exécutez la tâche Gradle `runClient` pour le voir en jeu.
 
-![](../../.gitbook/assets/2019-02-17_16.50.44%20%282%29.png)
+![](https://github.com/natanfudge/fabric-docs/tree/c2a1c5862d49d3639d604e8f8639a396d8e72171/.gitbook/assets/2019-02-17_16.50.44%20%282%29.png)
 
 ## Ajouter une texture d'objet
 
@@ -71,7 +71,7 @@ Le parent de votre objet change la façon dont il est rendu dans la main et est 
 
 Résultat final avec la texture :
 
-![](../../.gitbook/assets/item_texture%20%281%29.png)
+![](https://github.com/natanfudge/fabric-docs/tree/c2a1c5862d49d3639d604e8f8639a396d8e72171/.gitbook/assets/item_texture%20%281%29.png)
 
 ## Créer une classe d'objet
 

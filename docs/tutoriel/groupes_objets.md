@@ -60,7 +60,7 @@ public class ExampleMod implements ModInitializer
 }
 ```
 
-![](../../.gitbook/assets/item_group_append_items%20%281%29.png)
+![](https://github.com/natanfudge/fabric-docs/tree/c2a1c5862d49d3639d604e8f8639a396d8e72171/.gitbook/assets/item_group_append_items%20%281%29.png)
 
 1. Rappelez-vous que les arguments insérés dans le constructeur `Identifier` peuvent contenir seulement certains caractères. Chacun des arguments \(le `namespace` et le `path`\) peut contenir des _lettres minuscules_, des _nombres_, des _tirets bas_, des _points_ ou des _tirets_. `[a-z0-9_.-]` Le second argument \(le `path`\) peut également contenir des _barres obliques_. `[a-z0-9/._-]` Évitez d'utiliser d'autres symboles, sinon une erreur `InvalidIdentifierException` sera envoyée !
 2. La clé de traduction complète pour le premier exemple d`'ItemGroup` serait `itemGroup.mod_id.general`
