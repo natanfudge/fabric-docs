@@ -45,7 +45,7 @@ fun notNamespaced(name: String) = Page(null, name)
 fun frenchTutorial(name: String) = Page("fr:tutoriel", name)
 
 const val Pages = "$Resources/pages.json"
-val BannedPages = listOf("dokuwiki", "syntax", "welcome", "agenda", "wiki_meta")
+val BannedPages = listOf("dokuwiki", "syntax", "welcome", "agenda", "wiki_meta","sidebar","start")
 
 fun writePageList() {
     val tags = skrape {

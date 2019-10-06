@@ -111,7 +111,7 @@ l'autorise seulement sur les outils de la main principale.
 
 Vous aurez également besoin d'ajouter une traduction pour votre
 enchantement. Ouvrez le [fichier .lang de votre mod](../../French/tutoriel/lang.md)
-[(en)](../../Tutorials/lang.md) et ajoutez une nouvelle entrée :
+[(en)](../../Modding Tutorials/Miscellaneous/lang.md) et ajoutez une nouvelle entrée :
 
 ```json
 {

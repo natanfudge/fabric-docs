@@ -166,4 +166,4 @@ This means that if you have 14 boolean properties, the block has 2^14 =
 16384 different states and 2^14 states are registered. For this reason
 blocks should not contain too many blockstate properties. Rather,
 blockstates should be mostly reserved for visuals, and [Block
-Entities](../Tutorials/blockentity.md) should be used for more advanced state.
+Entities](../Modding Tutorials/Blocks and Block Entities/blockentity.md) should be used for more advanced state.

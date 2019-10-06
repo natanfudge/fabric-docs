@@ -2,7 +2,7 @@
 
 Dans votre classe d'[objet](../../French/tutoriel/objets.md), remplacez la méthode
 `appendTooltip` comme ceci (voir les fichiers [.lang](../../French/tutoriel/lang.md)
-[(en)](../../Tutorials/lang.md) pour savoir comment traduire l'infobulle) :
+[(en)](../../Modding Tutorials/Miscellaneous/lang.md) pour savoir comment traduire l'infobulle) :
 
 ```java
 @Override
@@ -13,4 +13,4 @@ public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, 
 
 Pour un bloc, faites la même chose mais remplacez la méthode
 `buildTooltip` dans votre classe de [bloc](../../French/tutoriel/blocs.md)
-[(en)](../../Tutorials/blocks.md).
+[(en)](../../Modding Tutorials/Blocks and Block Entities/block.md).

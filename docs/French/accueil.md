@@ -19,7 +19,7 @@ Ce wiki est également disponible dans les langues suivantes :
 
 |                                      |
 | ------------------------------------ |
-| ![](../images/usa_flag.png) [English](../README.md) |
+| ![](../images/usa_flag.png) [English](../start.md) |
 
 -----
 
@@ -75,67 +75,67 @@ articles qui pourraient vous intéresser.
 - [Mettre en place un environnement de développement](../French/tutoriel/mise_en_place.md)
 - [Activer les messages de débogage Log4j](https://wiki.vg/Debugging)
   (en)
-- [Publier des mods avec CurseGradle](../French/tutoriel/cursegradle.md) [(en)](../Tutorials/cursegradle.md)
+- [Publier des mods avec CurseGradle](../French/tutoriel/cursegradle.md) [(en)](../Modding Tutorials/Gradle/cursegradle.md)
 
 #### Notions de base
 
 - Conventions et terminologie
   - [Apprendre les conventions et la   terminologie](../French/tutoriel/termes.md)
-  - [Terminologie côté serveur et côté client](../French/tutoriel/cotes.md)   [(en)](../Tutorials/side.md)
+  - [Terminologie côté serveur et côté client](../French/tutoriel/cotes.md)   [(en)](../Modding Tutorials/Conventions And Terminology/side.md)
 - Outils de développement
   - [Mods de librairie tiers](../fr/documentation/librairies.md)   [(en)](../Documentation/libraries.md)
   - [Appliquer des modifications sans redémarrer   Minecraft](../French/tutoriel/appliquer_modifications.md)
-- [Créer un fichier .lang](../French/tutoriel/lang.md) [(en)](../Tutorials/lang.md)
-- [Utiliser les mappings](../French/tutoriel/mappings.md) [(en)](../Tutorials/mappings.md)
+- [Créer un fichier .lang](../French/tutoriel/lang.md) [(en)](../Modding Tutorials/Miscellaneous/lang.md)
+- [Utiliser les mappings](../French/tutoriel/mappings.md) [(en)](../Documentation/mappings.md)
 - [Ajouter une recette de fabrication](../French/tutoriel/recettes.md)
 
 #### Objets et Groupes d'objets
 
 - [Ajouter un objet](../French/tutoriel/objets.md)
-- [Ajouter un groupe d'objets](../French/tutoriel/groupes_objets.md) [(en)](../Tutorials/itemgroup.md)
+- [Ajouter un groupe d'objets](../French/tutoriel/groupes_objets.md) [(en)](../Modding Tutorials/Items/itemgroup.md)
 - [Ajouter une infobulle](../French/tutoriel/infobulles.md)
 
 #### Blocs et Entités de bloc
 
 - [Ajouter un bloc](../French/tutoriel/blocs.md)
-- [Donner un état de bloc](../French/tutoriel/etats_de_bloc.md) [(en)](../Tutorials/blockstate.md)
-- [Ajouter une entité de bloc](../French/tutoriel/entites_de_bloc.md) [(en)](../Tutorials/blockentity.md)
-- [Stocker des objets dans un bloc en tant qu'inventaire](../French/tutoriel/inventaires.md) [(en)](../Tutorials/inventory.md)
+- [Donner un état de bloc](../French/tutoriel/etats_de_bloc.md) [(en)](../Modding Tutorials/Blocks and Block Entities/blockstate.md)
+- [Ajouter une entité de bloc](../French/tutoriel/entites_de_bloc.md) [(en)](../Modding Tutorials/Blocks and Block Entities/blockentity.md)
+- [Stocker des objets dans un bloc en tant qu'inventaire](../French/tutoriel/inventaires.md) [(en)](../Modding Tutorials/Blocks and Block Entities/inventory.md)
 - [Changer la couleur d'un bloc en fonction du biome](../French/tutoriel/coloration_biome.md)
-  [(en)](../Tutorials/biomecoloring.md)
-- [Manipuler l'apparence d'un bloc](../French/tutoriel/apparence_bloc.md) [(en)](../Tutorials/blockappearance.md)
+  [(en)](../Modding Tutorials/Blocks and Block Entities/biomecoloring.md)
+- [Manipuler l'apparence d'un bloc](../French/tutoriel/apparence_bloc.md) [(en)](../Modding Tutorials/Blocks and Block Entities/blockappearance.md)
 - [Rendu dynamique de blocs et d'objets à l'aide de rendus d'entités de bloc](../French/tutoriel/rendus_entites_de_bloc.md)
-  [(en)](../Tutorials/blockentityrenderers.md)
+  [(en)](../Modding Tutorials/Blocks and Block Entities/blockentityrenderer.md)
 
 #### Entités
 
-- [Ajouter une entité](../French/tutoriel/entites.md) [(en)](../Tutorials/entity.md)
+- [Ajouter une entité](../French/tutoriel/entites.md) [(en)](../Modding Tutorials/Entities/entity.md)
 
 #### Génération du monde
 
-- [Générer des minerais personnalisés dans le monde](../French/tutoriel/minerais.md) [(en)](../Tutorials/ores.md)
-- [Générer des structures](../French/tutoriel/structures.md) [(en)](../Tutorials/structures.md)
-- [Ajouter un biome](../French/tutoriel/biomes.md) [(en)](../Tutorials/biome.md)
-- [Concepts de dimension](../French/tutoriel/concepts_dimension.md) [(en)](../Tutorials/dimensionconcepts.md)
-- [Créer une dimension de base](../French/tutoriel/dimensions.md) [(en)](../Tutorials/dimension.md)
+- [Générer des minerais personnalisés dans le monde](../French/tutoriel/minerais.md) [(en)](../Modding Tutorials/World Generation/ores.md)
+- [Générer des structures](../French/tutoriel/structures.md) [(en)](../Modding Tutorials/World Generation/structures.md)
+- [Ajouter un biome](../French/tutoriel/biomes.md) [(en)](../Modding Tutorials/World Generation/biome.md)
+- [Concepts de dimension](../French/tutoriel/concepts_dimension.md) [(en)](../Modding Tutorials/World Generation/dimensionconcepts.md)
+- [Créer une dimension de base](../French/tutoriel/dimensions.md) [(en)](../Modding Tutorials/World Generation/dimension.md)
 
 #### Divers
 
-- [Ajouter une armure](../French/tutoriel/armures.md) [(en)](../Tutorials/armor.md)
+- [Ajouter une armure](../French/tutoriel/armures.md) [(en)](../Modding Tutorials/Miscellaneous/armor.md)
 - [Ajouter des enchantements personnalisés](../French/tutoriel/enchantements.md)
-- [Raccourcis clavier personnalisés](../French/tutoriel/raccourcis_clavier.md) [(en)](../Tutorials/keybinds.md)
-- [Créer des évènements personnalisés](../French/tutoriel/evenements.md) [(en)](../Tutorials/events.md)
+- [Raccourcis clavier personnalisés](../French/tutoriel/raccourcis_clavier.md) [(en)](../Modding Tutorials/Miscellaneous/keybinds.md)
+- [Créer des évènements personnalisés](../French/tutoriel/evenements.md) [(en)](../Modding Tutorials/Miscellaneous/events.md)
 - [Ajouter des objets aux tables de butin existantes](../French/tutoriel/ajouts_dans_tables_de_butin.md)
-  [(en)](../Tutorials/adding_to_loot_tables.md)
-- [Créer des commandes](../French/tutoriel/commandes.md) [(en)](../Tutorials/commands.md)
-- [Jouer des sons](../French/tutoriel/sons.md) [(en)](../Tutorials/sounds.md)
+  [(en)](../Modding Tutorials/Miscellaneous/adding_to_loot_tables.md)
+- [Créer des commandes](../French/tutoriel/commandes.md) [(en)](../Modding Tutorials/Miscellaneous/commands.md)
+- [Jouer des sons](../French/tutoriel/sons.md) [(en)](../Modding Tutorials/Miscellaneous/sounds.md)
 
 #### Avancé
 
-- [Astuces de modding](../French/tutoriel/astuces_modding.md) [(en)](../Tutorials/modding_tips.md)
-- [Mise à jour à partir du Loader 0.3.x vers 0.4.x](../French/tutoriel/loader_0.4) [(en)](../Tutorials/loader04x.md)
+- [Astuces de modding](../French/tutoriel/astuces_modding.md) [(en)](../Modding Tutorials/Advanced/modding_tips.md)
+- [Mise à jour à partir du Loader 0.3.x vers 0.4.x](../French/tutoriel/loader_0.4) [(en)](../Modding Tutorials/Advanced/loader04x.md)
 - [Mise à jour des mappings Yarn dans une base de code Java](../French/tutoriel/migratemappings.md)
-  [(en)](../Tutorials/migratemappings.md)
+  [(en)](../Modding Tutorials/Advanced/migratemappings.md)
 
 #### Documentation
 
@@ -160,7 +160,7 @@ Si vous souhaitez contribuer à Fabric, vous pourriez être intéressés par
 ces liens.
 
 - [La procédure de fonctionnalité Fabric](../French/tutoriel/procedure_fonctionnalite.md)
-  [(en)](../Tutorials/feature_procedure.md) - ou comment faire accepter (ou
+  [(en)](../Modding Tutorials/Fabric Contributors/feature_procedure.md) - ou comment faire accepter (ou
   pas \!) votre fonctionnalité
 - [Fabric sur GitHub](https://github.com/FabricMC)
 - [Répertoire des mappings du jeu + documentation des contributions](https://github.com/FabricMC/yarn)
@@ -170,7 +170,7 @@ ces liens.
 ## Personnes extrêmement étranges
 
 - [Mettre à jour Yarn vers une nouvelle version de Minecraft](../French/tutoriel/mettre_a_jour_yarn.md)
-  [(en)](../Tutorials/updating_yarn.md) - pour les éventuels développeurs de
+  [(en)](../Modding Tutorials/Fabric Contributors/updating_yarn.md) - pour les éventuels développeurs de
   Yarn, **pas** pour les utilisateurs réguliers ou les moddeurs \!
 
 -----

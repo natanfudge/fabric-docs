@@ -161,4 +161,4 @@ public class ExampleMod implements ModInitializer
 
 ### Next Steps
 
-[Add your item to your own ItemGroup](../Tutorials/itemgroup.md).
+[Add your item to your own ItemGroup](../Modding Tutorials/Items/itemgroup.md).

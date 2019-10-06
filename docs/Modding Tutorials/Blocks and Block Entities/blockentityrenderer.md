@@ -1,6 +1,6 @@
 # Rendering blocks and items dynamically using block entity renderers
 
-Make sure you [added a block entity](../Tutorials/blockentity.md) before
+Make sure you [added a block entity](../Modding Tutorials/Blocks and Block Entities/blockentity.md) before
 reading this tutorial\!
 
 ## Introduction

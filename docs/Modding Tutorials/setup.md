@@ -26,9 +26,9 @@
 
 ## Getting started
 
-Try [adding an item](../Tutorials/items.md) or [a block](../Tutorials/blocks.md).
+Try [adding an item](../Modding Tutorials/Items/item.md) or [a block](../Modding Tutorials/Blocks and Block Entities/block.md).
 It’s also a good idea to visit [Applying changes without restarting
-Minecraft](../Tutorials/applychanges.md).
+Minecraft](../Modding Tutorials/Development Tools/applychanges.md).
 
 ## Advice
 

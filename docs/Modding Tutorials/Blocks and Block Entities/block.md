@@ -196,8 +196,8 @@ Your custom block should now be transparent\!
 ### Next Steps
 
 [Adding simple state to a block, like ints and
-booleans](../Tutorials/blockstate.md).
+booleans](../Modding Tutorials/Blocks and Block Entities/blockstate.md).
 
 [Giving blocks a block entity so they can have advanced state like
-inventories and classes](../Tutorials/blockentity.md). Also needed for many
+inventories and classes](../Modding Tutorials/Blocks and Block Entities/blockentity.md). Also needed for many
 things like GUI and custom block rendering.

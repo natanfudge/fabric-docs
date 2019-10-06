@@ -105,7 +105,7 @@ tools.
 ### Adding Translations & Testing
 
 You'll need to add a translation to your enchantment as well. Head over
-to your [mod lang file](../Tutorials/lang.md) and add a new entry:
+to your [mod lang file](../Modding Tutorials/Miscellaneous/lang.md) and add a new entry:
 
 ```json
 {

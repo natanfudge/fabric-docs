@@ -18,7 +18,7 @@ kit](https://github.com/FabricMC/fabric-example-mod) from Github. Then
 unpack it wherever you want and import it to your IDE.
 
 That’s it\! You’re ready for modding\! If you have troubles following
-this guide you can read more about installation [here](../Tutorials/setup.md).
+this guide you can read more about installation [here](../Modding Tutorials/setup.md).
 If you’re still struggling don’t be afraid to ask for help on our
 [Discord server](https://discord.gg/v6v4pMv)\!
 

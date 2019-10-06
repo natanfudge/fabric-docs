@@ -93,7 +93,8 @@ fun generateDocs(){
 }
 
 
-
+//TODO: write new README, point to tutorials at the start, add all of the non-wiki links
+//TODO: add new tutorials
 fun main() {
     convertToMarkdown()
 //    writeCreditsFile()

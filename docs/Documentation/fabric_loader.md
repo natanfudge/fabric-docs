@@ -66,7 +66,7 @@ issues with loading classes that may not be present when the mod is not
 installed.
 
 Fabric Loader has three built-in entrypoint types for mod initialization
-in relation to physical sides (see [side](../Tutorials/side.md)). These
+in relation to physical sides (see [side](../Modding Tutorials/Conventions And Terminology/side.md)). These
 entrypoints are executed about as early as possible during the game's
 initialization, which means not all things are initialized or ready for
 modification. These entrypoints are typically used to bootstrap mods by
@@ -123,7 +123,7 @@ LegacyLauncher/LaunchWrapper.
 ### Deobfuscation
 
 When launched in a non-development environment, Fabric Loader will
-[remap](../Tutorials/mappings.md) the Minecraft jar and realms client jar to
+[remap](../Documentation/mappings.md) the Minecraft jar and realms client jar to
 intermediary names. Mods are expected to be mapped to intermediary,
 which will be compatible with this environment. The remapped jars are
 cached and saved in
