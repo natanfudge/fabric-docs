@@ -79,7 +79,7 @@ fun writeCreditsFile() {
 
     val authors = JsonConfig.parse(PageAuthors.serializer().list, File(AuthorsPath).readText()).joinToString("\n\n") { pageAuthors ->
         """
-Page: ${pageAuthors.page.relativeMarkdownPath}  
+Page: [${pageAuthors.page.relativeMarkdownPath}](${pageAuthors.page.relativeMarkdownPath})
 Authors:
 ${pageAuthors.authors.joinToString("\n") {
             val str = if (authorLinks.containsKey(it)) "[$it](${authorLinks.getProperty(it)})"

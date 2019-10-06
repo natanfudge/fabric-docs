@@ -2,7 +2,6 @@ import it.skrape.extract
 import it.skrape.selects.element
 import it.skrape.selects.elements
 import it.skrape.skrape
-import kotlinx.serialization.Serializable
 import kotlinx.serialization.internal.StringSerializer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
@@ -11,12 +10,10 @@ import kotlinx.serialization.set
 import org.jsoup.Connection
 import org.jsoup.Jsoup
 import java.io.File
-import java.io.FileWriter
 import java.net.URL
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.nio.file.StandardCopyOption
-import java.util.*
 
 
 //pandoc --from dokuwiki --to gfm
@@ -26,8 +23,6 @@ const val LoginCookieKey = "DWd6fcb57a725757b22fe830cccebe05e6"
 const val LoginCookieValue = "DOKUWIKI_PASSWORD_HASH"
 
 const val ImageListPath = "$Resources/images.json"
-
-
 
 
 val JsonConfig = Json(JsonConfiguration.Stable.copy(prettyPrint = true))
@@ -93,10 +88,8 @@ fun downloadAndWriteImages() {
 }
 
 
-//TODO: credits
 
 fun main() {
+//    convertToMarkdown()
     writeCreditsFile()
-//    writeAllAuthors()
-//    scrapeAndWriteAuthors()
 }
