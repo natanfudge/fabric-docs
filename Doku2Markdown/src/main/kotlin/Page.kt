@@ -36,7 +36,7 @@ data class Page(val tag: String?, val name: String) {
     val localMarkdownPath = "$MarkdownDirectory$relativeMarkdownPath"
 
     companion object {
-        fun getPages() = JsonConfig.parse(serializer().list, File(Pages).readText())
+        fun getPages() = JsonConfig.parse(serializer().list, File(Pages).readText()).filter { it.name !in BannedPages }
     }
 }
 

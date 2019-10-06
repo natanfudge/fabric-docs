@@ -90,6 +90,6 @@ fun downloadAndWriteImages() {
 
 
 fun main() {
-//    convertToMarkdown()
+    convertToMarkdown()
     writeCreditsFile()
 }
