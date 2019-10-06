@@ -13,5 +13,6 @@ Make sure to check out [our community spaces](http://fabricmc.net/discuss), and 
 
 This wiki is also available in the following languages:
 
-| ![](images/fr/Français.png)        | 
-| ------------- |
+|                                               |
+| --------------------------------------------- |
+| ![](images/france_flag.png) [Français](French/accueil.md) |
