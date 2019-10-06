@@ -1,20 +1,12 @@
 # Adding an Item
 
-### Introduction
+## Introduction
 
-Adding a basic item is one of the first steps in modding. You're going
-to need to create an `Item` object, register it, and give it a texture.
-To add additional behavior to the item you will need a custom Item
-class. In this tutorial and all future ones, the “tutorial” namespace is
-used as a placeholder. If you have a separate modid, feel free to use it
-instead.
+Adding a basic item is one of the first steps in modding. You're going to need to create an `Item` object, register it, and give it a texture. To add additional behavior to the item you will need a custom Item class. In this tutorial and all future ones, the “tutorial” namespace is used as a placeholder. If you have a separate modid, feel free to use it instead.
 
-### Registering an Item
+## Registering an Item
 
-First, create an instance of Item. We'll store it at the top of our
-initializer class. The constructor takes in an Item.Settings object,
-which is used to set item properties such as the inventory category,
-durability, and stack count.
+First, create an instance of Item. We'll store it at the top of our initializer class. The constructor takes in an Item.Settings object, which is used to set item properties such as the inventory category, durability, and stack count.
 
 ```java
 public class ExampleMod implements ModInitializer
@@ -25,19 +17,14 @@ public class ExampleMod implements ModInitializer
 }
 ```
 
-You'll use the vanilla registry system for registering new content. The
-basic syntax is `Registry#register(Registry Type, Identifier, Content)`.
-Registry types are stored as static fields in the `Registry` object, and
-the identifier is what labels your content. Content is an instance of
-whatever you're adding. This can be called anywhere as long as it occurs
-during initialization.
+You'll use the vanilla registry system for registering new content. The basic syntax is `Registry#register(Registry Type, Identifier, Content)`. Registry types are stored as static fields in the `Registry` object, and the identifier is what labels your content. Content is an instance of whatever you're adding. This can be called anywhere as long as it occurs during initialization.
 
 ```java
 public class ExampleMod implements ModInitializer
 {
     // an instance of our new item
     public static final Item FABRIC_ITEM = new Item(new Item.Settings().group(ItemGroup.MISC));
-      
+
     @Override
     public void onInitialize()
     {
@@ -46,38 +33,32 @@ public class ExampleMod implements ModInitializer
 }
 ```
 
-Your new item has now been added to Minecraft. Run the \`runClient\`
-gradle task to see it in action.
+Your new item has now been added to Minecraft. Run the \`runClient\` gradle task to see it in action.
 
-![](../images/tutorial/2019-02-17_16.50.44.png)
+![](https://github.com/natanfudge/fabric-docs/tree/fb92e6ab23f58adab5aea8a405e821d5669beb39/docs/Modding%20Tutorials/images/tutorial/2019-02-17_16.50.44.png)
 
-### Adding Item textures
+## Adding Item textures
 
-Registering a texture for an item requires an item model .json file and
-a texture image. You're going to need to add these to your resource
-directory. The direct path of each is:
+Registering a texture for an item requires an item model .json file and a texture image. You're going to need to add these to your resource directory. The direct path of each is:
 
-```
+```text
 Item model: .../resources/assets/tutorial/models/item/fabric_item.json
 Item texture: .../resources/assets/tutorial/textures/item/fabric_item.png
 ```
 
-Our example texture can be found
-[here](https://i.imgur.com/CqLSMEQ.png).
+Our example texture can be found [here](https://i.imgur.com/CqLSMEQ.png).
 
-If you registered your item properly in the first step, your game will
-complain about a missing texture file in a fashion similar to this:
+If you registered your item properly in the first step, your game will complain about a missing texture file in a fashion similar to this:
 
-```
+```text
 [Server-Worker-1/WARN]: Unable to load model: 'tutorial:fabric_item#inventory' referenced from: tutorial:fabric_item#inventory: java.io.FileNotFoundException: tutorial:models/item/fabric_item.json
 ```
 
-It conveniently tells you exactly where it expects your asset\[s\] to be
-found-- when in doubt, check the log.
+It conveniently tells you exactly where it expects your asset\[s\] to be found-- when in doubt, check the log.
 
 A basic item model template is:
 
-```JavaScript
+```javascript
 {
   "parent": "item/generated",
   "textures": {
@@ -86,19 +67,15 @@ A basic item model template is:
 }
 ```
 
-The parent of your item changes how it's rendered in the hand and comes
-in useful for things like block items in the inventory. "item/handheld"
-is used for tools that are held from the bottom left of the texture.
-textures/layer0 is the location of your image file.
+The parent of your item changes how it's rendered in the hand and comes in useful for things like block items in the inventory. "item/handheld" is used for tools that are held from the bottom left of the texture. textures/layer0 is the location of your image file.
 
 Final textured result:
 
-![](../images/tutorial/item_texture.png)
+![](https://github.com/natanfudge/fabric-docs/tree/fb92e6ab23f58adab5aea8a405e821d5669beb39/docs/Modding%20Tutorials/images/tutorial/item_texture.png)
 
-### Creating an Item class
+## Creating an Item class
 
-To add additional behavior to the item you will need to create an Item
-class. The default constructor requires an Item.Settings object.
+To add additional behavior to the item you will need to create an Item class. The default constructor requires an Item.Settings object.
 
 ```java
 public class FabricItem extends Item
@@ -110,8 +87,7 @@ public class FabricItem extends Item
 }
 ```
 
-A practical use-case for a custom item class would be making the item
-play a sound when you click with it:
+A practical use-case for a custom item class would be making the item play a sound when you click with it:
 
 ```java
 public class FabricItem extends Item
@@ -120,7 +96,7 @@ public class FabricItem extends Item
     {
         super(settings);
     }
-      
+
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand)
     {
@@ -143,12 +119,9 @@ public class ExampleMod implements ModInitializer
 
 If you did everything correctly, using the item should now play a sound.
 
-### What if I want to change the stack size of my item?
+## What if I want to change the stack size of my item?
 
-For this you would use `maxCount(int size)` inside ItemSettings to
-specify the max stack size. Note that if your item is damageable you
-cannot specify a maximum stack size or the game will throw a
-RuntimeException.
+For this you would use `maxCount(int size)` inside ItemSettings to specify the max stack size. Note that if your item is damageable you cannot specify a maximum stack size or the game will throw a RuntimeException.
 
 ```java
 public class ExampleMod implements ModInitializer
@@ -159,6 +132,7 @@ public class ExampleMod implements ModInitializer
 }
 ```
 
-### Next Steps
+## Next Steps
 
-[Add your item to your own ItemGroup](../Modding-Tutorials/Items/itemgroup.md).
+[Add your item to your own ItemGroup](https://github.com/natanfudge/fabric-docs/tree/fb92e6ab23f58adab5aea8a405e821d5669beb39/docs/Modding%20Tutorials/Modding%20Tutorials/Items/itemgroup.md).
+

@@ -1,39 +1,29 @@
 # Adding a Biome
 
-### Introduction
+## Introduction
 
-This wiki tutorial is focused on registering and adding biomes to the
-world.
+This wiki tutorial is focused on registering and adding biomes to the world.
 
-To add a biome, we will first need to create and register the biome,
-then add it to the world using helper methods from Fabric API. This
-tutorial will go over:
+To add a biome, we will first need to create and register the biome, then add it to the world using helper methods from Fabric API. This tutorial will go over:
 
-- Creating a biome
-- Registering a biome
-- Adding a biome to a climate zone in the world
-- Allowing the player to spawn in the biome
+* Creating a biome
+* Registering a biome
+* Adding a biome to a climate zone in the world
+* Allowing the player to spawn in the biome
 
-We will also briefly go over other helpful biome-adding methods in the
-api.
+We will also briefly go over other helpful biome-adding methods in the api.
 
-### Creating a Biome
+## Creating a Biome
 
-To create a biome, create a class that extends Biome. This is the base
-class that holds biome information, and all vanilla biomes extend this.
-This class defines:
+To create a biome, create a class that extends Biome. This is the base class that holds biome information, and all vanilla biomes extend this. This class defines:
 
-- The basic properties of the biome
-- What features (trees, plants and structures) generate here
-- What entities spawn here
+* The basic properties of the biome
+* What features \(trees, plants and structures\) generate here
+* What entities spawn here
 
-We need to pass a `Biome.Settings` instance with **all** the basic
-properties of the biome to the super constructor. Missing one property
-will likely cause the game to crash. It is recommended to look at
-vanilla biomes such as `MountainsBiome` and `ForestBiome` as examples.
+We need to pass a `Biome.Settings` instance with **all** the basic properties of the biome to the super constructor. Missing one property will likely cause the game to crash. It is recommended to look at vanilla biomes such as `MountainsBiome` and `ForestBiome` as examples.
 
-Some important settings are depth (height), scale (hill size), and
-precipitation (weather)
+Some important settings are depth \(height\), scale \(hill size\), and precipitation \(weather\)
 
 ```java
 public class MyBiome extends Biome
@@ -45,11 +35,7 @@ public class MyBiome extends Biome
 }
 ```
 
-We then need to specify the features and entities that spawn in the
-biome. Aside from some structures, trees, rocks, plants and custom
-entities, these are mostly the same for each biome. Vanilla configured
-features for biomes are defined through methods in
-`DefaultBiomeFeatures`.
+We then need to specify the features and entities that spawn in the biome. Aside from some structures, trees, rocks, plants and custom entities, these are mostly the same for each biome. Vanilla configured features for biomes are defined through methods in `DefaultBiomeFeatures`.
 
 ```java
 public class MyBiome extends Biome
@@ -57,7 +43,7 @@ public class MyBiome extends Biome
     public MyBiome()
     {
         super(new Biome.Settings().configureSurfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_CONFIG).precipitation(Biome.Precipitation.RAIN).category(Biome.Category.PLAINS).depth(0.24F).scale(0.2F).temperature(0.6F).downfall(0.7F).waterColor(4159204).waterFogColor(329011).parent((String)null));
-        
+
         this.addStructureFeature(Feature.MINESHAFT, new MineshaftFeatureConfig(0.004D, MineshaftFeature.Type.NORMAL));
         this.addStructureFeature(Feature.STRONGHOLD, FeatureConfig.DEFAULT);
         this.addStructureFeature(Feature.VILLAGE, new VillageFeatureConfig("village/plains/town_centers", 6));
@@ -91,11 +77,9 @@ public class MyBiome extends Biome
 }
 ```
 
-### Registering Biomes
+## Registering Biomes
 
-To register your biome, we will create a field which holds a biome
-instance, and add our biome to `Registry.BIOME`. It is recommended to
-make a class to hold your biome objects.
+To register your biome, we will create a field which holds a biome instance, and add our biome to `Registry.BIOME`. It is recommended to make a class to hold your biome objects.
 
 ```java
 public class TutorialBiomes
@@ -104,32 +88,21 @@ public class TutorialBiomes
 }
 ```
 
-You should also give your biome a language entry in your `en_us.json`
-file:
+You should also give your biome a language entry in your `en_us.json` file:
 
-```JavaScript
+```javascript
 {
   "biome.tutorial.my_biome": "My Biome"
 }
 ```
 
-### Adding a biome to the world generator
+## Adding a biome to the world generator
 
-To make your biome spawn in the world, we will use the helper methods
-provided by the Fabric-Biomes API module. The code for this should
-ideally be run during mod initialization.
+To make your biome spawn in the world, we will use the helper methods provided by the Fabric-Biomes API module. The code for this should ideally be run during mod initialization.
 
-We need to specify the climate to which the biome is added, the biome
-which we are adding, and the weight of the biome (a double value). The
-weight is a measurement of the chance the biome has to spawn. A higher
-weight corresponds to a higher chance for the biome to spawn,
-proportional to the weights of other biomes. The Javadoc comments of
-each climate give the vanilla biome weights in each climate. You may
-want to give your biome a higher weight during testing so you can find
-the biome more easily.
+We need to specify the climate to which the biome is added, the biome which we are adding, and the weight of the biome \(a double value\). The weight is a measurement of the chance the biome has to spawn. A higher weight corresponds to a higher chance for the biome to spawn, proportional to the weights of other biomes. The Javadoc comments of each climate give the vanilla biome weights in each climate. You may want to give your biome a higher weight during testing so you can find the biome more easily.
 
-In this tutorial, we will add the custom biome to the `TEMPERATE` and
-`COOL` climates as an example:
+In this tutorial, we will add the custom biome to the `TEMPERATE` and `COOL` climates as an example:
 
 ```java
 public class ExampleMod implements ModInitializer
@@ -143,21 +116,19 @@ public class ExampleMod implements ModInitializer
 }
 ```
 
-To make the player able to spawn in the biome, we will use another
-method from the fabric-biomes api module:
+To make the player able to spawn in the biome, we will use another method from the fabric-biomes api module:
 
 ```java
 FabricBiomes.addSpawnBiome(TutorialBiomes.MY_BIOME);
 ```
 
-**Congratulations\!** Your biome should now be generating in the world\!
+**Congratulations!** Your biome should now be generating in the world!
 
-### Other useful biome methods
+## Other useful biome methods
 
-There are other useful methods in the fabric biomes api that you may
-want to use, that add extra functionality.
+There are other useful methods in the fabric biomes api that you may want to use, that add extra functionality.
 
-- **Setting the river biome**
+* **Setting the river biome**
 
 For example, setting your biome not to generate a river:
 
@@ -165,19 +136,17 @@ For example, setting your biome not to generate a river:
 OverworldBiomes.setRiverBiome(TutorialBiomes.MY_BIOME, null);
 ```
 
-- **Adding biome variants**
+* **Adding biome variants**
 
-The third number is the chance (out of 1) for the biome to replaced with
-the specified variant. For example, setting your biome to be a variant
-of plains, 33% of the time:
+The third number is the chance \(out of 1\) for the biome to replaced with the specified variant. For example, setting your biome to be a variant of plains, 33% of the time:
 
 ```java
 OverworldBiomes.addBiomeVariant(Biomes.PLAINS, TutorialBiomes.MY_BIOME, 0.33);
 ```
 
-#### The following methods take a weight value which specifies how common the biome is relative to other specified variants
+### The following methods take a weight value which specifies how common the biome is relative to other specified variants
 
-- **Adding hills biomes**
+* **Adding hills biomes**
 
 For example, setting mountains to be a "hills" variant of your biome:
 
@@ -185,7 +154,7 @@ For example, setting mountains to be a "hills" variant of your biome:
 OverworldBiomes.addHillsBiome(TutorialBiomes.MY_BIOME, Biomes.MOUNTAINS, 1);
 ```
 
-- **Adding biome edges**
+* **Adding biome edges**
 
 For example, making forest generate on the edge of your biome:
 
@@ -193,7 +162,7 @@ For example, making forest generate on the edge of your biome:
 OverworldBiomes.addEdgeBiome(TutorialBiomes.MY_BIOME, Biomes.FOREST, 1);
 ```
 
-- **Adding biome shores / beaches**
+* **Adding biome shores / beaches**
 
 For example, making stone beach generate on the shore of your biome:
 

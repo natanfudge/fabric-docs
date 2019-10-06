@@ -2,9 +2,7 @@
 
 ## Making a block transparent
 
-You may have noticed that even if your block's texture is transparent,
-it still looks opaque. To fix this, override `getRenderLayer` and return
-`BlockRenderLayer.TRANSLUCENT`:
+You may have noticed that even if your block's texture is transparent, it still looks opaque. To fix this, override `getRenderLayer` and return `BlockRenderLayer.TRANSLUCENT`:
 
 ```java
 class MyBlock extends Block {
@@ -15,11 +13,9 @@ class MyBlock extends Block {
 
     [...]
 }
-
 ```
 
-You probably also want to make your block transparent. To do that, use
-the `Material` constructor to set `blocksLight` to false.
+You probably also want to make your block transparent. To do that, use the `Material` constructor to set `blocksLight` to false.
 
 ```java
 class MyBlock extends Block {
@@ -41,14 +37,11 @@ class MyBlock extends Block {
 
     [...]
 }
-
 ```
 
 ## Making a block invisible
 
-First we need to make the block appear invisible. To do this we override
-`getRenderType` in our block class and return
-`BlockRenderType.INVISIBLE`:
+First we need to make the block appear invisible. To do this we override `getRenderType` in our block class and return `BlockRenderType.INVISIBLE`:
 
 ```java
 @Override
@@ -57,9 +50,7 @@ public BlockRenderType getRenderType(BlockState blockState) {
 }
 ```
 
-We then need to make our block unselectable by making its
-\`outlineShape\` be non-existent. So override ''getOutlineShape' and
-return an empty `VoxelShape`:
+We then need to make our block unselectable by making its \`outlineShape\` be non-existent. So override ''getOutlineShape' and return an empty `VoxelShape`:
 
 ```java
 @Override
