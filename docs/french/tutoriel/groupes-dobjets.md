@@ -1,2 +1,0 @@
-# Groupes d'objets
-

@@ -1,2 +1,0 @@
-# Recettes de fabrication
-
