@@ -1,14 +1,21 @@
 # Rendering blocks and items dynamically using block entity renderers
 
-Make sure you [added a block entity](https://github.com/natanfudge/fabric-docs/tree/fb92e6ab23f58adab5aea8a405e821d5669beb39/docs/Modding%20Tutorials/Modding%20Tutorials/Blocks%20and%20Block%20Entities/blockentity.md) before reading this tutorial!
+Make sure you [added a block entity](../Modding-Tutorials/Blocks-and-Block-Entities/blockentity.md) before
+reading this tutorial\!
 
 ## Introduction
 
-Blocks by themselves aren't that interesting, they just stay static at a certain location and a certain size until broken. We can use block entity renderers to render items and blocks associated with a block entity far more dynamically - render multiple different items, at differing locations and sizes, and more.
+Blocks by themselves aren't that interesting, they just stay static at a
+certain location and a certain size until broken. We can use block
+entity renderers to render items and blocks associated with a block
+entity far more dynamically - render multiple different items, at
+differing locations and sizes, and more.
 
 ## Example
 
-In this tutorial we'll build off the block entity we created by adding a `BlockEntityRenderer` to it. The renderer will display a jukebox floating above the block, going up and down and spinning.
+In this tutorial we'll build off the block entity we created by adding a
+`BlockEntityRenderer` to it. The renderer will display a jukebox
+floating above the block, going up and down and spinning.
 
 The first thing we need to do is create our `BlockEntityRenderer` class:
 
@@ -16,16 +23,23 @@ The first thing we need to do is create our `BlockEntityRenderer` class:
 public class MyBlockEntityRenderer extends BlockEntityRenderer<DemoBlockEntity> {
     // A jukebox itemstack
     private static ItemStack stack = new ItemStack(Items.JUKEBOX, 1);
-
+    
     @Override
     public void render(DemoBlockEntity blockEntity, double x, double y, double z, float partialTicks, int destroyStage) {
     }
 }
 ```
 
-We're going to need to register our `BlockEntityRenderer`, but only for the client. This wouldn't matter in a single-player setting, since the server runs in the same process as the client. However, in a multiplayer setting, where the server runs in a different process than the client, the server code has no concept of a "BlockEntityRenderer", and as a result would not accept registering one. To run initialization code only for the client, we need to setup a `client` entrypoint.
+We're going to need to register our `BlockEntityRenderer`, but only for
+the client. This wouldn't matter in a single-player setting, since the
+server runs in the same process as the client. However, in a multiplayer
+setting, where the server runs in a different process than the client,
+the server code has no concept of a "BlockEntityRenderer", and as a
+result would not accept registering one. To run initialization code only
+for the client, we need to setup a `client` entrypoint.
 
-Create a new class next to your main class that implements `ClientModInitializer`:
+Create a new class next to your main class that implements
+`ClientModInitializer`:
 
 ```java
 public class ExampleModClient implements ClientModInitializer {
@@ -36,7 +50,8 @@ public class ExampleModClient implements ClientModInitializer {
 }
 ```
 
-Set this class as the `client` entrypoint in your `fabric.mod.json` \(modify the path as needed\):
+Set this class as the `client` entrypoint in your `fabric.mod.json`
+(modify the path as needed):
 
 ```javascript
 "entrypoints": {
@@ -46,7 +61,7 @@ Set this class as the `client` entrypoint in your `fabric.mod.json` \(modify the
         "value": "tutorial.path.to.ExampleModClient"
       }
     ]
-}
+}    
 ```
 
 And register the `BlockEntityRenderer` in our ClientModInitializer:
@@ -58,7 +73,10 @@ public void onInitializeClient() {
 }
 ```
 
-We override the `render` method which gets called every frame\(!\), and in it we will do our rendering - for starters, call `GlStateManager.pushMatrix();` which is mandatory when doing GL calls \(we will doing those right after\):
+We override the `render` method which gets called every frame(\!), and
+in it we will do our rendering - for starters, call
+`GlStateManager.pushMatrix();` which is mandatory when doing GL calls
+(we will doing those right after):
 
 ```java
 public void render(DemoBlockEntity blockEntity, double x, double y, double z, float partialTicks, int destroyStage) {
@@ -66,27 +84,27 @@ public void render(DemoBlockEntity blockEntity, double x, double y, double z, fl
 }
 ```
 
-We then perform the movement of the jukebox \(GlStateManager.translatef\) and rotation \(GlStateManager.rotatef\). There are two parts to the translation: we translate it to x + 0.5, y + 1.25, and z + 0.5 which is above the center of our block. The second part is the part that changes: the offset in the y value. The offset is the height of the item for any given frame. We recalculate this each time because we want it to be animating bouncing up and down. We calculate this by:
+We then perform the movement of the jukebox (GlStateManager.translatef)
+and rotation (GlStateManager.rotatef). There are two parts to the
+translation: we translate it to x + 0.5, y + 1.25, and z + 0.5 which is
+above the center of our block. The second part is the part that changes:
+the offset in the y value. The offset is the height of the item for any
+given frame. We recalculate this each time because we want it to be
+animating bouncing up and down. We calculate this by:
 
-* Getting the current world time, which changes over time.
-* Adding the partial ticks. \(The partial ticks is a fractional value
-
+- Getting the current world time, which changes over time.
+- Adding the partial ticks. (The partial ticks is a fractional value
   representing the amount of time that’s passed between the last full
-
   tick and now. We use this because otherwise the animation would be
-
   jittery because there are fewer ticks per second than frames per
-
-  second.\)
-
-* Dividing that by 8 to slow the movement down.
-* Taking the sine of that to produce a value that ranges between -1
-
+  second.)
+- Dividing that by 8 to slow the movement down.
+- Taking the sine of that to produce a value that ranges between -1
   and 1, like a [sine wave](https://www.electronicshub.org/wp-content/uploads/2015/07/11.jpg).
-
-* Dividing that by 4 to compress the sine wave vertically so the item
-
+- Dividing that by 4 to compress the sine wave vertically so the item
   doesn’t move up and down as much.
+
+<!-- end list --->
 
 ```java
     public void render(DemoBlockEntity blockEntity, double x, double y, double z, float partialTicks, int destroyStage) {
@@ -101,7 +119,12 @@ We then perform the movement of the jukebox \(GlStateManager.translatef\) and ro
     }
 ```
 
-Finally, we will get the Minecraft 'ItemRenderer' and render the jukebox item by using `renderItem`. We also pass `ModelTransformation.Type.GROUND` to `renderItem` because we want a similiar effect to an item lying on the ground. Try experimenting with this value and see what happens \(it's an enum\). We also need to call `GlStateManager.popMatrix();` after these GL calls:
+Finally, we will get the Minecraft 'ItemRenderer' and render the jukebox
+item by using `renderItem`. We also pass
+`ModelTransformation.Type.GROUND` to `renderItem` because we want a
+similiar effect to an item lying on the ground. Try experimenting with
+this value and see what happens (it's an enum). We also need to call
+`GlStateManager.popMatrix();` after these GL calls:
 
 ```java
     public void render(DemoBlockEntity blockEntity, double x, double y, double z, float partialTicks, int destroyStage) {
@@ -113,9 +136,18 @@ Finally, we will get the Minecraft 'ItemRenderer' and render the jukebox item by
     }
 ```
 
-You can try your newly created block entity renderer right now. However, if you didn't make your block transparent, you will notice something is amiss - the floating block, the jukebox, is pitch black! This is because by default, _whatever you render in the block entity, will receive light as if it's in the same position as the block entity_. So the floating block receives light from _inside_ our opaque block, which means it receives no light! To fix this, we will tell Minecraft to receive light from _one block above_ the location of the block entity.
+You can try your newly created block entity renderer right now. However,
+if you didn't make your block transparent, you will notice something is
+amiss - the floating block, the jukebox, is pitch black\! This is
+because by default, *whatever you render in the block entity, will
+receive light as if it's in the same position as the block entity*. So
+the floating block receives light from *inside* our opaque block, which
+means it receives no light\! To fix this, we will tell Minecraft to
+receive light from *one block above* the location of the block entity.
 
-To get the light, we call `World#getLightmapIndex()` on the position above our tile entity, and to use the light we call `GLX.glMultiTexCoord2f`:
+To get the light, we call `World#getLightmapIndex()` on the position
+above our tile entity, and to use the light we call
+`GLX.glMultiTexCoord2f`:
 
 ```java
 @Override
@@ -129,4 +161,3 @@ public void render(DemoBlockEntity blockEntity, double x, double y, double z, fl
 ```
 
 The jukebox should now have the proper lighting.
-

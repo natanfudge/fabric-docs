@@ -1,10 +1,12 @@
 # fabric.mod.json
 
-The fabric.mod.json file is a mod metadata file used by Fabric Loader to load mods. In order to be loaded, a mod must have this file with the exact name placed in the root directory of the mod JAR.
+The fabric.mod.json file is a mod metadata file used by Fabric Loader to
+load mods. In order to be loaded, a mod must have this file with the
+exact name placed in the root directory of the mod JAR.
 
 ## Mandatory fields
 
-```text
+```
 * **schemaVersion** Needed for internal mechanisms. Must always be ''1''. 
 * **id** Defines the mod's identifier - a string of Latin letters, digits, underscores with length from 1 to 63.
 * **version** Defines the mod's version - a string value, optionally matching the [[https://semver.org/|Semantic Versioning 2.0.0]] specification.
@@ -14,7 +16,7 @@ The fabric.mod.json file is a mod metadata file used by Fabric Loader to load mo
 
 ### Mod loading
 
-```text
+```
 * **environment**: Defines where mod runs: only on the client side (client mod), only on the server side (plugin) or on both sides (regular mod). Contains the environment identifier:
    * **''*''** Runs everywhere. Default.
    * **client** Runs on the client side.
@@ -30,55 +32,55 @@ The fabric.mod.json file is a mod metadata file used by Fabric Loader to load mo
 
 "main": \[
 
-```text
+```
 "net.fabricmc.example.ExampleMod",
 "net.fabricmc.example.ExampleMod::handle"
 ```
 
-\] \&lt;/code&gt;
+\] \</code\>
 
-```text
+```
 * If you're using any other language, that is compatible with Java and has a Fabric adapter, then you should use following syntax: <code json>
 ```
 
 "main": \[
 
-```text
+```
 {
    "adapter": "kotlin",
    "value": "package.ClassName"
 }
 ```
 
-\] \&lt;/code&gt;
+\] \</code\>
 
-```text
+```
 * **jars** A list of nested JARs inside your mod's JAR to load. Before using the field, check out [[tutorial:loader04x#nested_jars|the guidelines on the usage of the nested JARs]]. Each entry is an object containing ''file'' key. That should be a path inside your mod's JAR to the nested JAR. For example: <code json>
 ```
 
 "jars": \[
 
-```text
+```
 {
    "file": "nested/vendor/dependency.jar"
 }
 ```
 
-\] \&lt;/code&gt;
+\] \</code\>
 
-```text
+```
 * **languageAdapters** A dictionary of adapters for used languages to  their adapter classes full names. For example: <code json>
 ```
 
 "languageAdapters": {
 
-```text
+```
 "kotlin": "net.fabricmc.language.kotlin.KotlinAdapter"
 ```
 
-} \&lt;/code&gt;
+} \</code\>
 
-```text
+```
 * **mixins** A list of mixin configuration files. Each entry is the path to the mixin configuration file inside your mod's JAR or an object containing following fields:
    * **config** The path to the mixin configuration file inside your mod's JAR.
    * **environment** The same as upper level **environment** field. See above. For example: <code json>
@@ -86,7 +88,7 @@ The fabric.mod.json file is a mod metadata file used by Fabric Loader to load mo
 
 "mixins": \[
 
-```text
+```
 "modid.mixins.json",
 {
    "config": "modid.client-mixins.json",
@@ -94,17 +96,23 @@ The fabric.mod.json file is a mod metadata file used by Fabric Loader to load mo
 }
 ```
 
-\] \&lt;/code&gt;
+\] \</code\>
 
 ### Dependency resolution
 
-The key of each entry of the objects below is a Mod ID of the dependency.
+The key of each entry of the objects below is a Mod ID of the
+dependency.
 
-The value of each key is a string or array of strings declaring supported version ranges. In the case of an array, an “OR” relationship is assumed - that is, only one range has to match for the collective range to be satisfied.
+The value of each key is a string or array of strings declaring
+supported version ranges. In the case of an array, an “OR” relationship
+is assumed - that is, only one range has to match for the collective
+range to be satisfied.
 
-In the case of all versions, \* is a special string declaring that any version is matched by the range. In addition, exact string matches must be possible regardless of the version type.
+In the case of all versions, \* is a special string declaring that any
+version is matched by the range. In addition, exact string matches must
+be possible regardless of the version type.
 
-```text
+```
 * **depends** For dependencies required to run. Without them a game will crash.
 * **recommends** For dependencies not required to run. Without them a game will log a warning.
 * **suggests** For dependencies not required to run. Use this as a kind of metadata.
@@ -114,7 +122,7 @@ In the case of all versions, \* is a special string declaring that any version i
 
 ### Metadata
 
-```text
+```
 * **name** Defines the user-friendly mod's name. If not present, assume it matches **id**.
 * **description** Defines the mod's description. If not present, assume empty string.
 * **contact** Defines the contact information for the project. It is an object of the following fields:
@@ -139,5 +147,7 @@ In the case of all versions, \* is a special string declaring that any version i
 
 ## Custom fields
 
-You can add any field you want to add inside `custom` field. Loader would ignore them. However _it's highly recommended to namespace your fields_ to avoid conflicts if your fields \(names\) would be added to the standard specification.
-
+You can add any field you want to add inside `custom` field. Loader
+would ignore them. However *it's highly recommended to namespace your
+fields* to avoid conflicts if your fields (names) would be added to the
+standard specification.

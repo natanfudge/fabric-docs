@@ -1,12 +1,22 @@
 # Storing items in a block as an Inventory
 
-Make sure you've [made a block entity](https://github.com/natanfudge/fabric-docs/tree/fb92e6ab23f58adab5aea8a405e821d5669beb39/docs/Modding%20Tutorials/Modding%20Tutorials/Blocks%20and%20Block%20Entities/blockentity.md) before reading this tutorial.
+Make sure you've [made a block entity](../Modding-Tutorials/Blocks-and-Block-Entities/blockentity.md) before
+reading this tutorial.
 
-The standard way to store items in a BlockEntity is to make it an `Inventory`. This allows hoppers \(or other mods\) to insert and extract items from your BlockEntity without any extra work.
+The standard way to store items in a BlockEntity is to make it an
+`Inventory`. This allows hoppers (or other mods) to insert and extract
+items from your BlockEntity without any extra work.
 
 ## Implementing Inventory
 
-`Inventory` is just an interface, which means the actual `ItemStack` state will need to be stored on your `BlockEntity`. A `DefaultedList<ItemStack>` can be used as an easy way to store these `ItemStacks`, as it can be set to default to `ItemStack.Empty`, which is the proper way of saying that there is no item in a slot. Implementing `Inventory` is fairly simple, but is tedious and prone to error, so we'll use a default implementation of it which only requires giving it a `DefaultList<ItemStack>` \(copy this as a new file\):
+`Inventory` is just an interface, which means the actual `ItemStack`
+state will need to be stored on your `BlockEntity`. A
+`DefaultedList<ItemStack>` can be used as an easy way to store these
+`ItemStacks`, as it can be set to default to `ItemStack.Empty`, which is
+the proper way of saying that there is no item in a slot. Implementing
+`Inventory` is fairly simple, but is tedious and prone to error, so
+we'll use a default implementation of it which only requires giving it a
+`DefaultList<ItemStack>` (copy this as a new file):
 
 ```java
 /**
@@ -111,7 +121,10 @@ public interface ImplementedInventory extends Inventory {
 }
 ```
 
-Now in your `BlockEntity` Implement `ImplementedInventory`, and provide it with an instance of `DefaultedList<ItemStack> items` that stores the items. For this example we'll store a maximum of 2 items in the inventory:
+Now in your `BlockEntity` Implement `ImplementedInventory`, and provide
+it with an instance of `DefaultedList<ItemStack> items` that stores the
+items. For this example we'll store a maximum of 2 items in the
+inventory:
 
 ```java
 public class DemoBlockEntity extends BlockEntity implements ImplementedInventory {
@@ -124,9 +137,11 @@ public class DemoBlockEntity extends BlockEntity implements ImplementedInventory
     [...]
 
 }
+
 ```
 
-We're also gonna need to save the inventories to tag and load it from there. `Inventories` has helper methods that makes this very easy:
+We're also gonna need to save the inventories to tag and load it from
+there. `Inventories` has helper methods that makes this very easy:
 
 ```java
 public class DemoBlockEntity extends BlockEntity implements ImplementedInventory {
@@ -145,9 +160,18 @@ public class DemoBlockEntity extends BlockEntity implements ImplementedInventory
 }
 ```
 
-## Extracting and inserting from your inventory \(or any inventory\)
+## Extracting and inserting from your inventory (or any inventory)
 
-In our block class, we'll override the \`activate\` behavior to insert and extract items from our inventory. Note that this can be done to any `Inventory` instance, not just our own \(so you could do the same thing to a chest block, for example\). First we'll handle inserting into the inventory. The player will insert the item he is holding if he is holding one. It'll go into the first slot if it is empty, or to the second slot if the first one is empty, or if the second is empty too we'll print some information about the inventory. Note that we call `copy()` when inserting the `ItemStack` into the inventory so it doesn't get destroyed alongside the player's `ItemStack`.
+In our block class, we'll override the \`activate\` behavior to insert
+and extract items from our inventory. Note that this can be done to any
+`Inventory` instance, not just our own (so you could do the same thing
+to a chest block, for example). First we'll handle inserting into the
+inventory. The player will insert the item he is holding if he is
+holding one. It'll go into the first slot if it is empty, or to the
+second slot if the first one is empty, or if the second is empty too
+we'll print some information about the inventory. Note that we call
+`copy()` when inserting the `ItemStack` into the inventory so it doesn't
+get destroyed alongside the player's `ItemStack`.
 
 ```java
 public class ExampleBlock extends Block implements BlockEntityProvider {
@@ -179,7 +203,9 @@ public class ExampleBlock extends Block implements BlockEntityProvider {
 }
 ```
 
-We'll have the opposite behavior when the player is not holding an item. We'll take the item from the second slot, and then the first one of the second is empty. If the first is empty as well we won't do anything.
+We'll have the opposite behavior when the player is not holding an item.
+We'll take the item from the second slot, and then the first one of the
+second is empty. If the first is empty as well we won't do anything.
 
 ```java
 public class ExampleBlock extends Block implements BlockEntityProvider {
@@ -203,7 +229,7 @@ public class ExampleBlock extends Block implements BlockEntityProvider {
                 blockEntity.removeInvStack(0);
             }
         }
-
+        
         return true;
     }
 }
@@ -211,7 +237,10 @@ public class ExampleBlock extends Block implements BlockEntityProvider {
 
 ## Implementing SidedInventory
 
-If you want to have different logic based on what side things \(hopper or other mods\) interact with your block you need to implement `SidedInventory`. If say you wanted to make it so you cannot insert from the upper side of the block, you would do this:
+If you want to have different logic based on what side things (hopper or
+other mods) interact with your block you need to implement
+`SidedInventory`. If say you wanted to make it so you cannot insert from
+the upper side of the block, you would do this:
 
 ```java
 public class DemoBlockEntity extends BlockEntity implements ImplementedInventory, SidedInventory {
@@ -237,5 +266,6 @@ public class DemoBlockEntity extends BlockEntity implements ImplementedInventory
         return true;
     }
 }
+
 ```
 

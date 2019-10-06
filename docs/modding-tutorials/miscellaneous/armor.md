@@ -1,48 +1,45 @@
 # Adding Armor
 
-## Introduction
+### Introduction
 
-While Armor is a bit more complicated to add then a normal block/item, once you can understand it, it becomes simple to make. To add Armor, we'll first make a custom material class, then register the items. We'll also take a look at how to texture them.
+While Armor is a bit more complicated to add then a normal block/item,
+once you can understand it, it becomes simple to make. To add Armor,
+we'll first make a custom material class, then register the items. We'll
+also take a look at how to texture them.
 
-## Creating an Armor Material class
+### Creating an Armor Material class
 
-Since new armor needs to be set with a new name \(as well as extra things like armor points and durability\), we'll have to create a new class for custom ArmorMaterial.
+Since new armor needs to be set with a new name (as well as extra things
+like armor points and durability), we'll have to create a new class for
+custom ArmorMaterial.
 
-This class will implement ArmorMaterial and will be an enum type. It'll need a lot of arguments, mainly the name, durability, etc., so for now we'll just leave it empty. Don't worry about any errors for now.
+This class will implement ArmorMaterial and will be an enum type. It'll
+need a lot of arguments, mainly the name, durability, etc., so for now
+we'll just leave it empty. Don't worry about any errors for now.
 
 ```java
 public enum CustomArmorMaterial implements ArmorMaterial {
     CustomArmorMaterial() {
-
+        
     }
 }
 ```
 
-Since there's a lot of arguments needed, here's a list explaining each one of them.
+Since there's a lot of arguments needed, here's a list explaining each
+one of them.
 
 1. A String name. This will be used as a sort of "armor tag" for later.
 2. A durability multiplier. This will be the number that will be used
-
    to determine the durability based on the base values.
-
 3. Armor values, or "Protection Amounts" in the vanilla code. This will
-
    be an int array.
-
 4. Enchantability. This will be how likely the armor can get high level
-
    or multiple enchantments in an enchantment book.
-
 5. A sound event. The standard used by vanilla armor is
-
    `SoundEvents.ITEM_ARMOR_EQUIP_X`, X being the type of armor.
-
 6. Toughness. This is a second protection value where the armor is more
-
    durable against high value attacks.
-
 7. A repair ingredient. This will be a `Supplier<Ingredient>` instance
-
    instead of an `Item`, which will go over in a bit.
 
 With those arguments, it should now look something like this:
@@ -50,12 +47,13 @@ With those arguments, it should now look something like this:
 ```java
 public enum CustomArmorMaterial implements ArmorMaterial {
     CustomArmorMaterial(String name, int durabilityMultiplier, int[] armorValueArr, int enchantability, SoundEvent soundEvent, float toughness, Supplier<Ingredient> repairIngredient) {
-
+        
     }
 }
 ```
 
-We'll also have to define those values and make it usable, so now it'll look like this:
+We'll also have to define those values and make it usable, so now it'll
+look like this:
 
 ```java
 public enum CustomArmorMaterial implements ArmorMaterial {
@@ -66,7 +64,7 @@ public enum CustomArmorMaterial implements ArmorMaterial {
     private final SoundEvent equipSound;
     private final float toughness;
     private final Lazy<Ingredient> repairIngredient;
-
+    
     CustomArmorMaterial(String name, int durabilityMultiplier, int[] armorValueArr, int enchantability, SoundEvent soundEvent, float toughness, Supplier<Ingredient> repairIngredient) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
@@ -79,9 +77,11 @@ public enum CustomArmorMaterial implements ArmorMaterial {
 }
 ```
 
-`ArmorMaterial` also needs several other methods, so we'll add them real quick here.
+`ArmorMaterial` also needs several other methods, so we'll add them real
+quick here.
 
-We'll also have to add our base durability values, so for now we'll use the vanilla values `[13, 15, 16, 11]`
+We'll also have to add our base durability values, so for now we'll use
+the vanilla values `[13, 15, 16, 11]`
 
 ```java
 public enum CustomArmorMaterial implements ArmorMaterial {
@@ -93,7 +93,7 @@ public enum CustomArmorMaterial implements ArmorMaterial {
     private final SoundEvent equipSound;
     private final float toughness;
     private final Lazy<Ingredient> repairIngredient;
-
+    
     CustomArmorMaterial(String name, int durabilityMultiplier, int[] armorValueArr, int enchantability, SoundEvent soundEvent, float toughness, Supplier<Ingredient> repairIngredient) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
@@ -103,7 +103,7 @@ public enum CustomArmorMaterial implements ArmorMaterial {
         this.toughness = toughness;
         this.repairIngredient = new Lazy(repairIngredient);
     }
-
+    
     public int getDurability(EquipmentSlot equipmentSlot_1) {
         return BASE_DURABILITY[equipmentSlot_1.getEntitySlotId()] * this.durabilityMultiplier;
     }
@@ -136,7 +136,9 @@ public enum CustomArmorMaterial implements ArmorMaterial {
 }
 ```
 
-Now that you have the basics of the armor material class, you can now make your own material for armor. This can be done at the top of the code like so:
+Now that you have the basics of the armor material class, you can now
+make your own material for armor. This can be done at the top of the
+code like so:
 
 ```java
 public enum CustomArmorMaterial implements ArmorMaterial {
@@ -149,7 +151,7 @@ public enum CustomArmorMaterial implements ArmorMaterial {
 
 Feel free to change any values.
 
-## Creating Armor Items
+### Creating Armor Items
 
 Back in the main class, you can now create it like so:
 
@@ -162,7 +164,7 @@ public class ExampleMod implements ModInitializer {
 }
 ```
 
-## Registering Armor Items
+### Registering Armor Items
 
 Register them the same way you'd register a normal item.
 
@@ -176,11 +178,15 @@ Registry.register(Registry.ITEM,new Identifier("tutorial","wool_boots"), WOOL_BO
 }
 ```
 
-## Texturing
+### Texturing
 
-Since you already know how to make item models and textures, we won't go over them here. \(They're done exactly the same as items.\) Armor textures are done a little differently since Minecraft thinks it's a vanilla armor item. For this, we'll make a `pack.mcmeta` file so our resources can act like a resource pack.
+Since you already know how to make item models and textures, we won't go
+over them here. (They're done exactly the same as items.) Armor textures
+are done a little differently since Minecraft thinks it's a vanilla
+armor item. For this, we'll make a `pack.mcmeta` file so our resources
+can act like a resource pack.
 
-```javascript
+```JavaScript
 {
     "pack":{
         "pack_format":4,
@@ -189,7 +195,10 @@ Since you already know how to make item models and textures, we won't go over th
 }
 ```
 
-Now you can finally place your textures here in `src/main/resources/assets/minecraft/textures/models/armor/`. Keep in mind that they're separated in 2 pictures. \(Use vanilla textures for reference.\)
+Now you can finally place your textures here in
+`src/main/resources/assets/minecraft/textures/models/armor/`. Keep in
+mind that they're separated in 2 pictures. (Use vanilla textures for
+reference.)
 
-If you followed everything, you should now be able to have a full armor set!
-
+If you followed everything, you should now be able to have a full armor
+set\!

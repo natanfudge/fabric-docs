@@ -1,12 +1,16 @@
 # Adding a Block
 
-## Introduction
+### Introduction
 
-To add a block to your mod, you will need to register a new instance of the Block class. For more control over your block, you can create a custom block class. We'll also look at adding a block model.
+To add a block to your mod, you will need to register a new instance of
+the Block class. For more control over your block, you can create a
+custom block class. We'll also look at adding a block model.
 
-## Creating a Block
+### Creating a Block
 
-To start, create an instance of Block in your main mod class. Block's constructor uses the FabricBlockSettings builder to set up basic properties of the block, such as hardness and resistance:
+To start, create an instance of Block in your main mod class. Block's
+constructor uses the FabricBlockSettings builder to set up basic
+properties of the block, such as hardness and resistance:
 
 ```java
 public class ExampleMod implements ModInitializer
@@ -17,16 +21,17 @@ public class ExampleMod implements ModInitializer
 }
 ```
 
-## Registering a Block
+### Registering a Block
 
-Registering blocks is the same as registering items. Call _Registry.register_ and pass in the appropriate arguments.
+Registering blocks is the same as registering items. Call
+*Registry.register* and pass in the appropriate arguments.
 
 ```java
 public class ExampleMod implements ModInitializer
 {
     // block creation
     […]
-
+    
     @Override
     public void onInitialize()
     {
@@ -35,43 +40,54 @@ public class ExampleMod implements ModInitializer
 }
 ```
 
-Your block will _not_ be accessible as an item, but it can be seen in-game by using /setblock ~ ~ ~ tutorial:example\_block.
+Your block will *not* be accessible as an item, but it can be seen
+in-game by using /setblock \~ \~ \~ tutorial:example\_block.
 
-## Registering a BlockItem
+### Registering a BlockItem
 
-In most cases, you want to be able to place your block using an item. To do this, you need to register a corresponding BlockItem in the item registry. You can do this by registering an instance of BlockItem under Registry.ITEM. The registry name of the item should usually be the same as the registry name of the block.
+In most cases, you want to be able to place your block using an item. To
+do this, you need to register a corresponding BlockItem in the item
+registry. You can do this by registering an instance of BlockItem under
+Registry.ITEM. The registry name of the item should usually be the same
+as the registry name of the block.
 
 ```java
 public class ExampleMod implements ModInitializer
 {
     // block creation
     […]
-
+    
     @Override
     public void onInitialize()
     {
         // block registration
         [...]
-
+        
         Registry.register(Registry.ITEM, new Identifier("tutorial", "example_block"), new BlockItem(EXAMPLE_BLOCK, new Item.Settings().group(ItemGroup.MISC)));
     }
 }
 ```
 
-## Giving your block a model
+### Giving your block a model
 
-As you probably have noticed, the block is simply a purple and black checkerboard pattern in-game. This is Minecraft's way of showing you that the block has no model. Modeling a block is a little bit more difficult than modeling an item. You will need three files: A blockstate file, a block model file, and an item model file if the block has a BlockItem. Textures are also required if you don't use vanilla ones. The files should be located here:
+As you probably have noticed, the block is simply a purple and black
+checkerboard pattern in-game. This is Minecraft's way of showing you
+that the block has no model. Modeling a block is a little bit more
+difficult than modeling an item. You will need three files: A blockstate
+file, a block model file, and an item model file if the block has a
+BlockItem. Textures are also required if you don't use vanilla ones. The
+files should be located here:
 
-```text
-Blockstate: src/main/resources/assets/tutorial/blockstates/example_block.json
-Block Model: src/main/resources/assets/tutorial/models/block/example_block.json
-Item Model: src/main/resources/assets/tutorial/models/item/example_block.json
-Block Texture: src/main/resources/assets/tutorial/textures/block/example_block.png
-```
+    Blockstate: src/main/resources/assets/tutorial/blockstates/example_block.json
+    Block Model: src/main/resources/assets/tutorial/models/block/example_block.json
+    Item Model: src/main/resources/assets/tutorial/models/item/example_block.json
+    Block Texture: src/main/resources/assets/tutorial/textures/block/example_block.png
 
-The blockstate file determines which model that the block should use depending on it's blockstate. As our block has only one state, the file is a simple as this:
+The blockstate file determines which model that the block should use
+depending on it's blockstate. As our block has only one state, the file
+is a simple as this:
 
-```javascript
+```JavaScript
 {
   "variants": {
     "": { "model": "tutorial:block/example_block" }
@@ -79,9 +95,11 @@ The blockstate file determines which model that the block should use depending o
 }
 ```
 
-The block model file defines the shape and texture of your block. We will use block/cube\_all, which will allow us to easily set the same texture on all sides of the block.
+The block model file defines the shape and texture of your block. We
+will use block/cube\_all, which will allow us to easily set the same
+texture on all sides of the block.
 
-```javascript
+```JavaScript
 {
   "parent": "block/cube_all",
   "textures": {
@@ -90,21 +108,26 @@ The block model file defines the shape and texture of your block. We will use bl
 }
 ```
 
-In most cases you want the block to look the same in hand. To do this, you can make an item file that inherits from the block model file:
+In most cases you want the block to look the same in hand. To do this,
+you can make an item file that inherits from the block model file:
 
-```javascript
+```JavaScript
 {
   "parent": "tutorial:block/example_block"
 }
 ```
 
-Load up Minecraft and your block should finally have a texture!
+Load up Minecraft and your block should finally have a texture\!
 
-## Adding a block loot table
+### Adding a block loot table
 
-The block must have a loot table for any items to drop when the block is broken. Assuming you have created an item for your block and registered it using the same name as the block, the following file will produce regular block drops `src/main/resources/data/wikitut/loot_tables/blocks/example_block.json`.
+The block must have a loot table for any items to drop when the block is
+broken. Assuming you have created an item for your block and registered
+it using the same name as the block, the following file will produce
+regular block drops
+`src/main/resources/data/wikitut/loot_tables/blocks/example_block.json`.
 
-```javascript
+```JavaScript
 {
   "type": "minecraft:block",
   "pools": [
@@ -128,9 +151,12 @@ The block must have a loot table for any items to drop when the block is broken.
 
 When broken in survival mode, the block will now drop an item.
 
-## Creating a Block class
+### Creating a Block class
 
-When creating a simple block the above approach works well, but sometimes you want a _special_ block with unique mechanics. We'll create a separate class that extends Block to do this. The class needs a constructor that takes in a BlockSettings argument.
+When creating a simple block the above approach works well, but
+sometimes you want a *special* block with unique mechanics. We'll create
+a separate class that extends Block to do this. The class needs a
+constructor that takes in a BlockSettings argument.
 
 ```java
 public class ExampleBlock extends Block
@@ -142,7 +168,9 @@ public class ExampleBlock extends Block
 }
 ```
 
-Just like we did in the item tutorial, you can override methods in the block class for custom functionality. Say you want your block to be transparent:
+Just like we did in the item tutorial, you can override methods in the
+block class for custom functionality. Say you want your block to be
+transparent:
 
 ```java
 @Environment(EnvType.CLIENT)
@@ -151,7 +179,8 @@ public BlockRenderLayer getRenderLayer() {
 }
 ```
 
-To add this block into the game, replace _new Block_ with _new ExampleBlock_ when you register it.
+To add this block into the game, replace *new Block* with *new
+ExampleBlock* when you register it.
 
 ```java
 public class ExampleMod implements ModInitializer
@@ -162,11 +191,13 @@ public class ExampleMod implements ModInitializer
 }
 ```
 
-Your custom block should now be transparent!
+Your custom block should now be transparent\!
 
-## Next Steps
+### Next Steps
 
-[Adding simple state to a block, like ints and booleans](https://github.com/natanfudge/fabric-docs/tree/fb92e6ab23f58adab5aea8a405e821d5669beb39/docs/Modding%20Tutorials/Modding%20Tutorials/Blocks%20and%20Block%20Entities/blockstate.md).
+[Adding simple state to a block, like ints and
+booleans](../Modding-Tutorials/Blocks-and-Block-Entities/blockstate.md).
 
-[Giving blocks a block entity so they can have advanced state like inventories and classes](https://github.com/natanfudge/fabric-docs/tree/fb92e6ab23f58adab5aea8a405e821d5669beb39/docs/Modding%20Tutorials/Modding%20Tutorials/Blocks%20and%20Block%20Entities/blockentity.md). Also needed for many things like GUI and custom block rendering.
-
+[Giving blocks a block entity so they can have advanced state like
+inventories and classes](../Modding-Tutorials/Blocks-and-Block-Entities/blockentity.md). Also needed for many
+things like GUI and custom block rendering.

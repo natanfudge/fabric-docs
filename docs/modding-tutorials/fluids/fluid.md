@@ -2,11 +2,15 @@
 
 ## Overview
 
-Here we'll cover creation of a custom fluid. If you plan to create several fluids, it is recommended to make an abstract basic fluid class where you'll set necessary defaults that will be shared in its subclasses. We'll also make it generate in the world like lakes.
+Here we'll cover creation of a custom fluid. If you plan to create
+several fluids, it is recommended to make an abstract basic fluid class
+where you'll set necessary defaults that will be shared in its
+subclasses. We'll also make it generate in the world like lakes.
 
 ## Making an abstract fluid
 
-Vanilla fluids extend **net.minecraft.fluid.BaseFluid** class, and so will our abstract fluid. It can be like this:
+Vanilla fluids extend **net.minecraft.fluid.BaseFluid** class, and so
+will our abstract fluid. It can be like this:
 
 ```java
 public abstract class BasicFluid extends BaseFluid
@@ -109,7 +113,8 @@ public abstract class BasicFluid extends BaseFluid
 
 ## Implementation
 
-Now let's make an actual fluid; it will have a _still_ and _flowing_ variants; will name it "Acid":
+Now let's make an actual fluid; it will have a *still* and *flowing*
+variants; will name it "Acid":
 
 ```java
 public abstract class Acid extends BasicFluid
@@ -192,29 +197,35 @@ public abstract class Acid extends BasicFluid
 }
 ```
 
-Next, we'll make static instances of still and flowing acid variants, and an acid bucket. In your **ModInitializer**:
+Next, we'll make static instances of still and flowing acid variants,
+and an acid bucket. In your **ModInitializer**:
 
 ```java
+
+    
     public static Acid stillAcid;
     public static Acid flowingAcid;
-
+    
     public static BucketItem acidBucket;
 
     @Override
     public void onInitialize()
     {
-
+    
         stillAcid = Registry.register(Registry.FLUID, new Identifier(MODID,"acid_still"), new Acid.Still());
         flowingAcid = Registry.register(Registry.FLUID, new Identifier(MODID,"acid_flowing"), new Acid.Flowing());
-
+        
         acidBucket = new BucketItem(stillAcid, new Item.Settings().maxCount(1));
         Registry.register(Registry.ITEM, new Identifier(MODID,"acid_bucket"), acidBucket);
-    }
+    }    
 ```
 
-To make the custom fluid behave like water or lava, you must add it to a corresponding fluid tag: make a file "data/minecraft/tags/fluids/water.json" and write identifiers of your fluids in there:
+To make the custom fluid behave like water or lava, you must add it to a
+corresponding fluid tag: make a file
+"data/minecraft/tags/fluids/water.json" and write identifiers of your
+fluids in there:
 
-```javascript
+```json
 {
   "replace": false,
   "values": [
@@ -226,7 +237,11 @@ To make the custom fluid behave like water or lava, you must add it to a corresp
 
 ### Making a fluid block
 
-Next we need to create a block which will represent acid in the world. **net.minecraft.block.FluidBlock** is the class we need to use, but for "mojang" reasons its constructor is protected. The solution is well-known - make a subclass of it and change the visibility of the constructor:
+Next we need to create a block which will represent acid in the world.
+**net.minecraft.block.FluidBlock** is the class we need to use, but for
+"mojang" reasons its constructor is protected. The solution is
+well-known - make a subclass of it and change the visibility of the
+constructor:
 
 ```java
 public class BaseFluidBlock extends FluidBlock
@@ -242,21 +257,22 @@ Now make a static block instance:
 
 ```java
     ...
-
+    
     public static FluidBlock acid;
 
     @Override
     public void onInitialize()
     {
-
+    
         ...
-
+        
         acid = new BaseFluidBlock(stillAcid, FabricBlockSettings.of(Material.WATER).dropsNothing().build());
         Registry.register(Registry.BLOCK, new Identifier(MODID, "acid_block"), acid);
-    }
+    }    
 ```
 
-Now when we have these static objects, we go back to **Acid** class and complete the overridden methods:
+Now when we have these static objects, we go back to **Acid** class and
+complete the overridden methods:
 
 ```java
 public abstract class Acid extends BasicFluid
@@ -266,7 +282,7 @@ public abstract class Acid extends BasicFluid
     {
         return Mod.acidBucket;
     }
-
+    
     @Override
     protected BlockState toBlockState(FluidState fluidState)
     {
@@ -291,17 +307,20 @@ public abstract class Acid extends BasicFluid
     {
         return fluid_1==Mod.flowingAcid || fluid_1==Mod.stillAcid;
     }
-
+    
     ...
-
-}
+    
+}    
 ```
 
 Now we can assert that the Acid class is complete.
 
 ## Rendering setup
 
-Time to do client-side things. In your **ClientModInitializer** you need to specify locations of sprites for your fluids and define their rendering. I will reuse water textures and just change the color applied to them.
+Time to do client-side things. In your **ClientModInitializer** you need
+to specify locations of sprites for your fluids and define their
+rendering. I will reuse water textures and just change the color applied
+to them.
 
 ```java
     @Override
@@ -313,7 +332,7 @@ Time to do client-side things. In your **ClientModInitializer** you need to spec
         FabricSprite stillAcidSprite = new FabricSprite(stillSpriteLocation, 16, 16);
         // same, but 32
         FabricSprite dynamicAcidSprite = new FabricSprite(dynamicSpriteLocation, 32, 32);
-
+        
         // adding the sprites to the block texture atlas
         ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEX).register((spriteAtlasTexture, registry) -> {
             registry.register(stillAcidSprite);
@@ -344,14 +363,19 @@ Time to do client-side things. In your **ClientModInitializer** you need to spec
         FluidRenderHandlerRegistry.INSTANCE.register(Mod.flowingAcid, acidRenderHandler);
 ```
 
-Then what's left to do is to create necessary Json files and textures, but you should know how to do that at this point.
+Then what's left to do is to create necessary Json files and textures,
+but you should know how to do that at this point.
 
 ## Generation in a world
 
-To make acid lakes generate in the world, you can use **net.minecraft.world.gen.feature.LakeFeature**, which you create in the ModInitializer:
+To make acid lakes generate in the world, you can use
+**net.minecraft.world.gen.feature.LakeFeature**, which you create in the
+ModInitializer:
 
 ```java
+        
         LakeFeature acidFeature = Registry.register(Registry.FEATURE, new Identifier(MODID,"acid_lake"), new LakeFeature(dynamic -> new LakeFeatureConfig(acid.getDefaultState())));
+
 ```
 
 Then put it into desired biomes to generate:
@@ -362,4 +386,3 @@ Biomes.FOREST.addFeature(GenerationStep.Feature.LOCAL_MODIFICATIONS, Biome.confi
 ```
 
 This is the end of the tutorial.
-

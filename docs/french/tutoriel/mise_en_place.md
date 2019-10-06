@@ -2,14 +2,14 @@
 
 ## Pré-requis
 
-```text
+```
 * Un kit de développement Java (JDK) pour Java 8 ou plus récent [[https://adoptopenjdk.net/]]
 * N'importe quel IDE, par exemple [[https://www.jetbrains.com/idea/download/#section=windows|Intellij IDEA]]
 ```
 
 ## Étapes
 
-```text
+```
 - Copiez les fichiers de départ à partir du [[https://github.com/FabricMC/fabric-example-mod/|fabric-example-mod]] (ou à partir de la [[https://github.com/natanfudge/fabric-example-mod-kotlin|version Kotlin]] si vous souhaitez utiliser Kotlin), à l'exception des fichiers ''LICENSE'' et ''README.md'' - puisque ceux-ci s'appliquent au modèle lui-même, pas nécessairement à votre mod.
 - Modifiez ''gradle.properties'' :
     * Assurez-vous de définir ''archives_base_name'' et ''maven_group'' aux valeurs que vous voulez.
@@ -26,39 +26,32 @@
 
 ## Pour commencer
 
-Essayez d'[ajouter un objet](objets.md) ou [un bloc](blocs.md). Il est également conseillé de lire la page [Appliquer des modifications sans redémarrer Minecraft](appliquer_modifications.md).
+Essayez d'[ajouter un objet](../../French/tutoriel/objets.md) ou [un
+bloc](../../French/tutoriel/blocs.md). Il est également conseillé de lire la page
+[Appliquer des modifications sans redémarrer
+Minecraft](../../French/tutoriel/appliquer_modifications.md).
 
 ## Conseils
 
-* Bien que l'API Fabric ne soit pas strictement nécessaire pour
-
+- Bien que l'API Fabric ne soit pas strictement nécessaire pour
   développer des mods, son objectif principal est de fournir une
-
   inter-compatibilité et des points d'ancrage là où le moteur de jeu
-
-  ne le fait pas. Elle est donc vivement recommandée !
-
-* Étant donné que Fabric est en début de développement,
-
-  occasionnellement, avec le développement de fabric-loom \(notre
-
-  plugin de build Gradle\), des problèmes nécessitant un nettoyage
-
-  \(suppression\) manuel du cache \(qui peut être trouvé dans
-
-  `.gradle/caches/fabric-loom`\) peuvent survenir. Ceux-ci seront
-
+  ne le fait pas. Elle est donc vivement recommandée \!
+- Étant donné que Fabric est en début de développement,
+  occasionnellement, avec le développement de fabric-loom (notre
+  plugin de build Gradle), des problèmes nécessitant un nettoyage
+  (suppression) manuel du cache (qui peut être trouvé dans
+  `.gradle/caches/fabric-loom`) peuvent survenir. Ceux-ci seront
   généralement annoncés à mesure qu'ils seront identifiés.
-
-* N'hésitez pas à poser des questions ! Nous sommes là pour vous
-
+- N'hésitez pas à poser des questions \! Nous sommes là pour vous
   aider et travailler avec vous, afin de faire de votre mod rêvé une
-
   réalité.
 
 ## Problèmes
 
 ### Sons manquants
 
-Parfois, en important le projet Gradle dans un IDE, les _assets_ peuvent ne pas être téléchargés correctement. Dans ce cas, exécutez la tâche `downloadAssets` manuellement - soit en utilisant le menu intégré de l'IDE ou en exécutant simplement `gradlew downloadAssets`.
-
+Parfois, en important le projet Gradle dans un IDE, les *assets* peuvent
+ne pas être téléchargés correctement. Dans ce cas, exécutez la tâche
+`downloadAssets` manuellement - soit en utilisant le menu intégré de
+l'IDE ou en exécutant simplement `gradlew downloadAssets`.
