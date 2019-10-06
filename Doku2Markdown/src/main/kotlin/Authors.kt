@@ -58,7 +58,7 @@ fun writeAllAuthors() {
 
 }
 
-const val CreditsFilePath = "docs/CREDITS.md"
+const val CreditsFilePath = "docs/Credits.md"
 
 fun writeCreditsFile() {
     val introduction = """
@@ -77,7 +77,6 @@ fun writeCreditsFile() {
         authorLinks.load(it)
     }
 
-//    val pages =
 
     val authors = JsonConfig.parse(PageAuthors.serializer().list, File(AuthorsPath).readText()).joinToString("\n\n") { pageAuthors ->
         """

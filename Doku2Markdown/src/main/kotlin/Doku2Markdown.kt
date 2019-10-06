@@ -77,7 +77,7 @@ fun downloadAndWriteImages() {
 
     for (image in images) {
         val relativePath = image.removePrefix("/wiki/_media").split("?")[0].replace(":", "/")
-        val localPath = "$Resources/pages_markdown/images/$relativePath"
+        val localPath = "docs/images/$relativePath"
         File(localPath).parentFile.mkdirs()
         val httpsPath = URL("https://fabricmc.net$image")
         httpsPath.openStream().use {
@@ -85,6 +85,11 @@ fun downloadAndWriteImages() {
         }
     }
 
+}
+
+fun generateDocs(){
+    convertToMarkdown()
+    writeCreditsFile()
 }
 
 
