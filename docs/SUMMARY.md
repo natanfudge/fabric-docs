@@ -108,6 +108,5 @@
     * [Apprendre les conventions et la terminologie](french/tutoriel/termes.md)
     * [Mettre en place un environnement de développement](french/tutoriel/mise_en_place.md)
     * [Publier des modpacks Fabric sur ATLauncher](french/tutoriel/modpacks_atlauncher.md)
-  * [Bienvenue sur le wiki Fabric !](french/accueil.md)
   * [Règles de la communauté](french/regles.md)  
 * [Credits](credits.md)
