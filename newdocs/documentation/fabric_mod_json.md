@@ -28,13 +28,12 @@ The fabric.mod.json file is a mod metadata file used by Fabric Loader to load mo
       - If you're using Java, then just list the classes (or else) full names. For example:
 ```json
 "main": [
-  "net.fabricmc.example.ExampleMod",
-  "net.fabricmc.example.ExampleMod::handle"
+     "net.fabricmc.example.ExampleMod",
+     "net.fabricmc.example.ExampleMod::handle"
 ]
 ```
-<pre>
-      - If you're using any other language, that is compatible with Java and has a Fabric adapter, then you should use following syntax: 
-</pre>
+- If you're using any other language, that is compatible with Java and has a Fabric adapter, then you should use following syntax: 
+
 ```json
 "main": [
     {
@@ -43,8 +42,6 @@ The fabric.mod.json file is a mod metadata file used by Fabric Loader to load mo
     }
 ]
 ```
-
-
 
 - **jars** A list of nested JARs inside your mod's JAR to load. Before using the field, check out [the guidelines on the usage of the nested JARs](../Modding-Tutorials/advanced/loader04x.md#nested_jars). Each entry is an object containing ''file'' key. That should be a path inside your mod's JAR to the nested JAR. For example:
 ```json
@@ -112,7 +109,7 @@ In the case of all versions, \* is a special string declaring that any version i
 * **license** Defines the licensing information. Can either be a single license string or a list of them.
    * This should provide the complete set of preferred licenses conveying the entire mod package. In other words, compliance with all listed licenses should be sufficient for usage, redistribution, etc. of the mod package as a whole.
    * For cases where a part of code is dual-licensed, choose the preferred license. The list is not exhaustive, serves primarily as a kind of hint, and does not prevent you from granting additional rights/licenses on a case-by-case basis.
-   * To aid automated tools, it is recommended to use [[https://spdx.org/licenses/|SPDX License Identifiers]] for open-source licenses.
+   * To aid automated tools, it is recommended to use [SPDX License Identifiers](https://spdx.org/licenses/) for open-source licenses.
 * **icon** Defines the mod's icon. Icons are square PNG files. (Minecraft resource packs use 128×128, but that is not a hard requirement - a power of two is, however, recommended.) Can be provided in one of two forms:
    * A path to a single PNG file.
    * A dictionary of images widths to their files' paths.
