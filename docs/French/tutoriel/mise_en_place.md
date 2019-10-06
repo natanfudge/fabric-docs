@@ -26,10 +26,10 @@
 
 ## Pour commencer
 
-Essayez d'[ajouter un objet](.) ou [un
-bloc](.). Il est également conseillé de lire la page
+Essayez d'[ajouter un objet](../../French/tutoriel/objets.md) ou [un
+bloc](../../French/tutoriel/blocs.md). Il est également conseillé de lire la page
 [Appliquer des modifications sans redémarrer
-Minecraft](.).
+Minecraft](../../French/tutoriel/appliquer_modifications.md).
 
 ## Conseils
 

@@ -70,7 +70,7 @@ public class ExampleMod implements ModInitializer
 }
 ```
 
-![](.)
+![](../../images/tutorial/item_group_append_items.png)
 
 1. Rappelez-vous que les arguments insérés dans le constructeur
    `Identifier` peuvent contenir seulement certains caractères.  

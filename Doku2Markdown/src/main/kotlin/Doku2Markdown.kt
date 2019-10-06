@@ -89,12 +89,12 @@ fun downloadAndWriteImages() {
 
 fun generateDocs(){
     convertToMarkdown()
-    writeCreditsFile()
+//    writeCreditsFile()
 }
 
 
 
 fun main() {
-//    convertToMarkdown()
-    writeCreditsFile()
+    convertToMarkdown()
+//    writeCreditsFile()
 }

@@ -110,8 +110,8 @@ l'autorise seulement sur les outils de la main principale.
 ### Ajouter des traductions et tester
 
 Vous aurez également besoin d'ajouter une traduction pour votre
-enchantement. Ouvrez le [fichier .lang de votre mod](.)
-[(en)](.) et ajoutez une nouvelle entrée :
+enchantement. Ouvrez le [fichier .lang de votre mod](../../French/tutoriel/lang.md)
+[(en)](../../Tutorials/lang.md) et ajoutez une nouvelle entrée :
 
 ```json
 {

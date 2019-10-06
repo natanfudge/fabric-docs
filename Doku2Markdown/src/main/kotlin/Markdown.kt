@@ -20,7 +20,7 @@ import java.util.*
 const val Pandoc = "Doku2Markdown/converter/pandoc.exe"
 
 fun convertToMarkdown() {
-    for (page in Page.getPages()) {
+    for (page in Page.getPages().filter { it.tag?.contains("fr") == true }) {
         val markdown = runCommandForOutput(
                 "$Pandoc --from dokuwiki --to gfm ${page.localDokuWikiPath}".split(" ")
         )
@@ -81,12 +81,13 @@ fun Node.fixLinks(nestingLevel: Int) {
 private fun visit(node: LinkNodeBase, nestingLevel: Int, image: Boolean = false) {
     if (!node.pageRef.startsWith("http")) {
         val linkBase = node.pageRef.toString()
-        node.pageRef = SegmentedSequence.of(
-                migratePath(
-                        if (image) "../".repeat(nestingLevel) + "images" + linkBase
-                        else "../".repeat(nestingLevel) + linkBase.removePrefix("/") + ".md"
-                )
-        )
+
+//        val migrated = migratePath(linkBase.removePrefix("/"))
+        val newRef = if (image) "../".repeat(nestingLevel) + "images" + linkBase
+        else "../".repeat(nestingLevel) +  migratePath(linkBase.removePrefix("/") + ".md")
+
+        node.pageRef = SegmentedSequence.of(newRef)
+
     }
 
 }

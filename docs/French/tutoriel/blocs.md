@@ -202,10 +202,10 @@ Votre bloc personnalisé devrait maintenant être transparent \!
 ### Étapes suivantes
 
 [Ajouter des états simples à un bloc, comme des entiers et des
-booléens](.) [(en)](.).
+booléens](../../French/tutoriel/etats_de_bloc.md) [(en)](../../Tutorials/blockstate.md).
 
 [Donner à des blocs une entité de bloc pour qu'ils puissent avoir des
 états avancés, comme des inventaires et des
-classes](.) [(en)](.).
+classes](../../French/tutoriel/entites_de_bloc.md) [(en)](../../Tutorials/blockentity.md).
 Également nécessaire pour de nombreuses choses, comme des interfaces
 graphiques et du rendu de bloc personnalisé.

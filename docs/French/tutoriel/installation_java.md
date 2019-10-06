@@ -16,17 +16,17 @@ Ouvrez la boîte de dialogue "Exécuter" en utilisant le raccourci clavier
 Windows + R. Entrez "cmd" dans la zone de texte et cliquez sur "OK".
 Cela ouvrira une invite de commandes.
 
-![](.)
+![](../../images/wiki/install_server_06.jpg)
 
 Dans l'invite de commandes, écrivez `java -version` et appuyez sur
 `Entrée`.
 
-![](.)
+![](../../images/wiki/install_server_07.jpg)
 
 Si un numéro de version de Java est déjà installé, vous verrez quelque
 chose comme ceci :
 
-![](.)
+![](../../images/wiki/install_server_08.jpg)
 
 -----
 
@@ -44,12 +44,12 @@ d'exploitation pour désinstaller des programmes.
 Pour télécharger l'installateur Java, allez
 [ici](https://adoptopenjdk.net/releases.html).
 
-![](.)
+![](../../images/wiki/install_server_10.jpg)
 
 Choisissez la version 8 du JRE et le JVM HotSpot, téléchargez
 l'installateur pour votre système d'exploitation et installez Java.
 
-![](.)
+![](../../images/wiki/install_server_10a.jpg)
 
 Retournez à l'étape 1 pour vérifier que Java a été installé correctement
 et qu'il fonctionne comme prévu.

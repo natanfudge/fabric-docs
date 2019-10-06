@@ -52,7 +52,7 @@ public class ExampleMod implements ModInitializer
 Votre nouvel objet a désormais été ajouté à Minecraft. Exécutez la tâche
 Gradle `runClient` pour le voir en jeu.
 
-![](.)
+![](../../images/tutorial/2019-02-17_16.50.44.png)
 
 ### Ajouter une texture d'objet
 
@@ -98,7 +98,7 @@ votre fichier de texture.
 
 Résultat final avec la texture :
 
-![](.)
+![](../../images/tutorial/item_texture.png)
 
 ### Créer une classe d'objet
 
@@ -170,4 +170,4 @@ public class ExampleMod implements ModInitializer
 ### Étapes suivantes
 
 [Ajouter votre objet à son propre groupe
-d'objets](.).
+d'objets](../../French/tutoriel/groupes_objets.md).

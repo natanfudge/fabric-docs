@@ -2,7 +2,7 @@
 
 ## Ajouter une recette de fabrication de base
 
-Assurez-vous d'avoir [ajouté un objet](.) avant de
+Assurez-vous d'avoir [ajouté un objet](../../French/tutoriel/objets.md) avant de
 lire ce tutoriel, nous allons l'utiliser.
 
 Jusqu'à présent, notre objet est obtenable uniquement via le menu
