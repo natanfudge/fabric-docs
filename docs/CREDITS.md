@@ -423,26 +423,6 @@ Authors:
  - [asie](https://github.com/asiekierka)  
 Original Page: https://fabricmc.net/wiki/tutorial:vscode_setup  
 
-Page: [wiki/agenda.md](wiki/agenda.md)  
-Authors:
- - jp79194  
-Original Page: https://fabricmc.net/wiki/wiki:agenda  
-
-Page: [wiki/dokuwiki.md](wiki/dokuwiki.md)  
-Authors:
- - (external edit)  
-Original Page: https://fabricmc.net/wiki/wiki:dokuwiki  
-
-Page: [wiki/syntax.md](wiki/syntax.md)  
-Authors:
- - (external edit)  
-Original Page: https://fabricmc.net/wiki/wiki:syntax  
-
-Page: [wiki/welcome.md](wiki/welcome.md)  
-Authors:
- - (external edit)  
-Original Page: https://fabricmc.net/wiki/wiki:welcome  
-
 Page: [changelog.md](changelog.md)  
 Authors:
  - [asie](https://github.com/asiekierka)  
@@ -486,12 +466,6 @@ Authors:
  - [irtimaled](https://github.com/irtimaled)  
  - [grondag](https://github.com/grondag)  
 Original Page: https://fabricmc.net/wiki/start  
-
-Page: [wiki_meta.md](wiki_meta.md)  
-Authors:
- - [calloatti](https://github.com/calloatti)  
- - jp79194  
-Original Page: https://fabricmc.net/wiki/wiki_meta  
 
 Page: [French/tutoriel/ajouter_mods.md](French/tutoriel/ajouter_mods.md)  
 Authors:
