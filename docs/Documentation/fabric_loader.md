@@ -12,7 +12,7 @@ dependencies, all in a number of different environments.
 
 ### Mods
 
-A mod is a jar with a [fabric.mod.json](.)
+A mod is a jar with a [fabric.mod.json](../Documentation/fabric_mod_json.md)
 mod metadata file in its root declaring how it should be loaded. It
 primarily declares a mod ID and version as well entrypoints and mixin
 configurations. The mod ID identifies the mod so that any mod with the
@@ -66,7 +66,7 @@ issues with loading classes that may not be present when the mod is not
 installed.
 
 Fabric Loader has three built-in entrypoint types for mod initialization
-in relation to physical sides (see [side](.)). These
+in relation to physical sides (see [side](../Tutorials/side.md)). These
 entrypoints are executed about as early as possible during the game's
 initialization, which means not all things are initialized or ready for
 modification. These entrypoints are typically used to bootstrap mods by
@@ -123,7 +123,7 @@ LegacyLauncher/LaunchWrapper.
 ### Deobfuscation
 
 When launched in a non-development environment, Fabric Loader will
-[remap](.) the Minecraft jar and realms client jar to
+[remap](../Tutorials/mappings.md) the Minecraft jar and realms client jar to
 intermediary names. Mods are expected to be mapped to intermediary,
 which will be compatible with this environment. The remapped jars are
 cached and saved in

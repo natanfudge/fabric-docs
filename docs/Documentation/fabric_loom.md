@@ -36,7 +36,7 @@ utilities for Fabric Loader's jar-in-jar system.
   Minecraft jar and the mapped Minecraft jar from the user cache. Also
   clears the root project build cache.
 - `migrateMappings`: Migrates the current source to the specified
-  mappings. See [migratemappings](.).
+  mappings. See [migratemappings](../Tutorials/migratemappings.md).
 - `remapJar`: Produces a jar containing the remapped output of the
   `jar` task. Also appends any included mods for jar-in-jar.
 - `genSources`: Delegates to two tasks.

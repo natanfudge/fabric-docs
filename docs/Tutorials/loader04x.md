@@ -10,7 +10,7 @@ will be supported, but no such promises are made for 0.5.x and beyond.
 
 Useful sources:
 
-- [fabric.mod.json format](.)
+- [fabric.mod.json format](../Documentation/fabric_mod_json.md)
 - [Example mod](https://github.com/FabricMC/fabric-example-mod/),
   which should be updated by now ([update commit](https://github.com/FabricMC/fabric-example-mod/commit/d6e85e22192c7d824572668f54a5bf81eec3bc78))
 
@@ -43,7 +43,7 @@ Nested JARs **are not**:
 
 In doubt, refer to this helpful chart:
 
-![](.)
+![](../images/tutorial/nested_jar_chart.png)
 
 ## Incompatibilities
 

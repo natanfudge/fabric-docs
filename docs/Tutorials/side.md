@@ -164,7 +164,7 @@ logical clients. Packets are sent by a write method in a network thread
 and received by a call to a read method in a network thread.
 
 For more details on how to handle networking, see [this
-article](.).
+article](../Tutorials/networking.md).
 
 ## Common misconceptions about logical servers
 

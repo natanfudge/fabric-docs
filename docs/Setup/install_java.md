@@ -15,16 +15,16 @@ version of the Fabric Installer.
 Open the Run dialog by using the Windows+R hotkey. Enter cmd in the
 textbox and click OK This will open a command window.
 
-![](.)
+![](../images/wiki/install_server_06.jpg)
 
 In the command window type `java -version` and press `Enter`
 
-![](.)
+![](../images/wiki/install_server_07.jpg)
 
 If a Java version number is already installed you will see something
 like this:
 
-![](.)
+![](../images/wiki/install_server_08.jpg)
 
 -----
 
@@ -41,12 +41,12 @@ Operating System normal procedure for uninstalling programs.
 To download the Java installer, go
 [here](https://adoptopenjdk.net/releases.html)
 
-![](.)
+![](../images/wiki/install_server_10.jpg)
 
 Pick Version 8 of the JRE, and the HotSpot JVM, download the installer
 for your operating system and install JAVA.
 
-![](.)
+![](../images/wiki/install_server_10a.jpg)
 
 Go to STEP 1 to verify that Java was installed correctly and it's
 working as intended.

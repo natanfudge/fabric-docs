@@ -16,7 +16,7 @@ MultiMC.
 In the Version tab you will see the Fabric loader Game/Mappings version
 and the Fabric Loader version:
 
-![](.)
+![](../images/wiki/update_fabric_using_multimc_01.jpg)
 
 In this example the versions are:
 
@@ -32,7 +32,7 @@ Go to <https://fabricmc.net/use/> and select the "MultiMC" option. Check
 Check the available versions for the Minecraft version of your MultiMC
 instance:
 
-![](.)
+![](../images/wiki/update_fabric_using_multimc_02.jpg)
 
 In this example there are newer versions available for download:
 
@@ -46,7 +46,7 @@ Still in <https://fabricmc.net/use/>, check "Show expert options" to
 display the "Download MultiMC patch JSON" button. Click on that button
 to download the JSON file:
 
-![](.)
+![](../images/wiki/update_fabric_using_multimc_03.jpg)
 
 Now locate your MultiMC instance folder and save the `net.fabricmc.json`
 file in the "patches" folder located inside the MultiMC intance folder,
@@ -56,7 +56,7 @@ To overwrite the existing file instead of having your browser rename the
 file to `net.fabricmc (1).json` just click on the existing file name in
 the "Save As" dialog and then click on "Save":
 
-![](.)
+![](../images/wiki/update_fabric_using_multimc_04.jpg)
 
 ### STEP 4: Verify that the Fabric loader in the MultiMC instance has been updated
 
@@ -64,7 +64,7 @@ In MultiMc, go back to the instance version tab and check the versions
 displayed for the Fabric Loader. You may have to click the "Reload"
 button on the lower right.
 
-![](.)
+![](../images/wiki/update_fabric_using_multimc_05.jpg)
 
 In this example, the MultiMC instance Fabric loader was upgraded
 successfully:
@@ -80,7 +80,7 @@ Before starting the instance, and to prevent potential problems, delete
 the `.fabric` folder located inside the `.minecraft` folder located
 inside the instance folder.
 
-![](.)
+![](../images/wiki/update_fabric_using_multimc_06.jpg)
 
 ### STEP 6: Verify if the Fabric Api should be updated
 

@@ -13,7 +13,7 @@ Clone the project into a folder and then open the folder in Visual
 Studio Code. The IDE should then start importing the Gradle project (if
 it does not start after about 30 seconds, open the build.gradle file).
 
-![](.)
+![](../images/setup/vscode_import.png)
 
 Once this has completed, code completion for game engine code should be
 present, which should be helpful in mod development.
@@ -27,7 +27,7 @@ Gradle. The easiest way to open a terminal window is to go to \_View\_
 directory. Next, run \`.\\gradlew vscode\` - this will automatically
 generate the necessary launch.json file containing the run configs.
 
-![](.)
+![](../images/setup/vscode_gradle.png)
 
 Finally, to launch the game, select the debug menu item on the left.
 This will then build your mod and launch the game.

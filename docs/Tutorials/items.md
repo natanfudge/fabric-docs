@@ -49,7 +49,7 @@ public class ExampleMod implements ModInitializer
 Your new item has now been added to Minecraft. Run the \`runClient\`
 gradle task to see it in action.
 
-![](.)
+![](../images/tutorial/2019-02-17_16.50.44.png)
 
 ### Adding Item textures
 
@@ -93,7 +93,7 @@ textures/layer0 is the location of your image file.
 
 Final textured result:
 
-![](.)
+![](../images/tutorial/item_texture.png)
 
 ### Creating an Item class
 
@@ -161,4 +161,4 @@ public class ExampleMod implements ModInitializer
 
 ### Next Steps
 
-[Add your item to your own ItemGroup](.).
+[Add your item to your own ItemGroup](../Tutorials/itemgroup.md).

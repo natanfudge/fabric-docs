@@ -3,7 +3,7 @@
 ## Introduction
 
 A BlockEntity is primarily used to store data within blocks. Before
-creating one, you will need a [Block](.). This tutorial
+creating one, you will need a [Block](../Tutorials/blocks.md). This tutorial
 will cover the creation of your BlockEntity class, and it's
 registration.
 

@@ -1,7 +1,7 @@
 # Frequently Asked Questions (from users)
 
 This is the simplified version\! For technical answers, see the ["expert
-mode" supplement](.).
+mode" supplement](../FAQ/expert.md).
 
 ## General
 
@@ -25,7 +25,7 @@ not intended for production gameplay.
 As of 30th June, the following launchers are available for this:
 
 - MultiMC - a guide is available
-  [here](.); newest development builds
+  [here](../Setup/install_with_multimc.md); newest development builds
   also include an "Install Fabric" button.
 - Vanilla - an installer is available on Fabric's download page.
 
@@ -40,9 +40,9 @@ environments.
 
 As of 30th June, the following launchers are available for this:
 
-- MCUpdater - [guide](.)
-- Technic (Solder) - [guide](.)
-- ATLauncher - [guide](.)
+- MCUpdater - [guide](../Modpacks/mcupdater_modpacks.md)
+- Technic (Solder) - [guide](../Modpacks/technic_modpacks.md)
+- ATLauncher - [guide](../Modpacks/atlauncher_modpacks.md)
 - MultiMC/Vanilla - you can always export a modpack or use a ZIP
   file\!
 

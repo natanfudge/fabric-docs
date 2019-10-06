@@ -15,11 +15,11 @@ data folder.
 
 Check `Create Profile` and click `Install`
 
-![](.)
+![](../images/wiki/install_fabric_using_vanilla_launcher_01.jpg)
 
 Once the installer process is done, close the Fabric Installer.
 
-![](.)
+![](../images/wiki/install_fabric_using_vanilla_launcher_02.jpg)
 
 **DO NOT RUN YOUR NEWLY CREATED FABRIC INSTALLATION YET\!**
 
@@ -35,11 +35,11 @@ you just created, for example:
 Open the Minecraft launcher, click on `Minecraft Java Edition`, click on
 `Installations`, click on the `...` button of the Fabric Installation:
 
-![](.)
+![](../images/wiki/install_fabric_using_vanilla_launcher_03.jpg)
 
 Click on `Edit`
 
-![](.)
+![](../images/wiki/install_fabric_using_vanilla_launcher_04.jpg)
 
 Change the `GAME DIRECTORY` to point to the folder you created,
 different from `<Use default directory>`
@@ -49,7 +49,7 @@ the launcher uses.
 
 Click `Save`
 
-![](.)
+![](../images/wiki/install_fabric_using_vanilla_launcher_05.jpg)
 
 You can now launch the Fabric Installation.
 
@@ -105,13 +105,13 @@ Api file would be "\[1.14.2\] Fabric API 0.3.0 build 175" (there may be
 a newer version of the 1.14.2 Fabric Api after this tutorial was
 written).
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_05.jpg)
 
 Download the file to the mods folder of the Game Directory of the
 Installation you created. Remember that you changed the Installation
 Game Directory in **STEP 2**
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_09.jpg)
 
 Run the Minecraft instance to make sure everything is working as
 expected.
@@ -124,12 +124,12 @@ To be able to see the list of mods installed and change mod settings,
 you may want to install the mod **Mod Menu (Fabric)**. Mod Menu adds a
 button to the Minecraft main screen:
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_07.jpg)
 
 Clicking the button opens a list of installed fabric mods. Mod settings
 can be changed by clicking the gear button located on the top right:
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_08.jpg)
 
 To install Mod Menu, go to
 <https://www.curseforge.com/minecraft/mc-mods/modmenu> and click on

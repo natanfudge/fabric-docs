@@ -37,7 +37,7 @@ By changing the mappings in your development environment, you can expect
 that names of classes, methods and fields in Minecraft and any included
 mods have changed, and that your code might have to be updated to
 reference the changed names. [This process can be partially
-automated](.). You will also have to run
+automated](../Tutorials/migratemappings.md). You will also have to run
 `genSources` to access Minecraft sources with the updated mappings.
 
 Loom's `remapJar` task will produce the primary mod artifact, which is a

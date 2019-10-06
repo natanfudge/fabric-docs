@@ -2,7 +2,7 @@
 
 ## Adding a basic crafting recipe
 
-Make sure you [added an item](.) before reading this
+Make sure you [added an item](../Tutorials/items.md) before reading this
 tutorial, we will be using it.
 
 So far, our item is obtainable through the creative menu or commands. To

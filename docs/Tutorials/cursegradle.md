@@ -11,7 +11,7 @@ The additions necessary for usage with Fabric have been highlighted in
 green. If you are using Loom 0.2.5 `remapJar.output` should be just
 `remapJar` instead.
 
-![](.)
+![](../images/tutorial/cursegradle_changes.png)
 
 They are, in order:
 

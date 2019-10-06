@@ -66,4 +66,4 @@ LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, suppl
 });
 ```
 
-![](.)
+![](../images/tutorial/coal_ore_egg.png)

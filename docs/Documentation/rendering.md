@@ -100,7 +100,7 @@ implementation in the links section\!
 
 You'll need to include the Fabric API in your development environment -
 the Rendering API is part of it. See [Setting up a mod development
-environment](.) for step-by-step instructions.
+environment](../Tutorials/setup.md) for step-by-step instructions.
 
 Fabric is distributed with a default `Renderer` implementation providing
 most of the features defined in the API. (It doesn't handle emissive

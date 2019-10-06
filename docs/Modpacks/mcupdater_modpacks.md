@@ -81,7 +81,7 @@ You're done\! You now have an MCUpdater Fabric modpack.
 
 You're done\! You now have an MCUpdater Fabric modpack.
 
-![](.)
+![](../images/modpack/mcupdater_xml_additions.png)
 
 ## Creating a Branded/Customized Launcher
 

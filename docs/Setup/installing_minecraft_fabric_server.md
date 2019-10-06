@@ -7,7 +7,7 @@ good idea to install Fabric in a MultiMc instance, download and test all
 the mods you want in the server in that instance, and once you have
 everything set up and working, only then set up the server. You can do
 that here: [Installing Fabric using the MultiMC
-launcher](.)
+launcher](../Setup/install_with_multimc.md)
 
 -----
 
@@ -18,22 +18,22 @@ java is installed in your computer, open the `Run` dialog by using the
 `Windows+R` hotkey. Enter `cmd` in the textbox and click `OK` This will
 open a command window.
 
-![](.)
+![](../images/wiki/install_server_06.jpg)
 
 In the command window type `java -version` and press `Enter`
 
-![](.)
+![](../images/wiki/install_server_07.jpg)
 
 If a Java version number is reported similar to this:
 
-![](.)
+![](../images/wiki/install_server_08.jpg)
 
 You may skip **STEP 3** if you don't want to update or replace the Java
 version installed.
 
 If Java is not installed, the result will be something like this:
 
-![](.)
+![](../images/wiki/install_server_09.jpg)
 
 -----
 
@@ -47,12 +47,12 @@ If you already have at least `Java 8` installed you can skip this step.
 To download the Java installer, go
 [here](https://adoptopenjdk.net/releases.html)
 
-![](.)
+![](../images/wiki/install_server_10.jpg)
 
 Pick Version 8 of the JRE, and the HotSpot JVM, download the installer
 for your operating system and install JAVA.
 
-![](.)
+![](../images/wiki/install_server_10a.jpg)
 
 -----
 
@@ -70,19 +70,19 @@ will create it.
 
 Click `Install`
 
-![](.)
+![](../images/wiki/install_server_01.jpg)
 
 The installation process may take some time, when the install is done,
 you will see this:
 
-![](.)
+![](../images/wiki/install_server_02.jpg)
 
 Click on `Download server jar` to download the Minecraft server.jar file
 
 Click on `Generate` to generate `start.bat` and `start.sh` You can use
 those batch files to start the server.
 
-![](.)
+![](../images/wiki/install_server_03.jpg)
 
 You may now close the Fabric Installer.
 
@@ -124,11 +124,11 @@ Start the server by typing in the command window:
 If you are using Windows and get a Windows Security Alert, click on
 `Allow access`
 
-![](.)
+![](../images/wiki/install_server_13.jpg)
 
 You should see something like this in the command window:
 
-![](.)
+![](../images/wiki/install_server_14.jpg)
 
 Now that the server is up and running, you can stop it and create/edit a
 batch file that starts the server. Type
@@ -162,7 +162,7 @@ You may want to review the mod list in the MultiMC instance by opening
 the Mod Menu GUI. Any mod labeled as **CLIENT** you can exclude from the
 server mods folder.
 
-![](.)
+![](../images/wiki/install_server_15.jpg)
 
 **If you are using Optifine in the multimc instance, do not copy the
 optifine and optifabric jar files in the server mods folder.**

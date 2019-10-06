@@ -1,6 +1,6 @@
 # Storing items in a block as an Inventory
 
-Make sure you've [made a block entity](.) before
+Make sure you've [made a block entity](../Tutorials/blockentity.md) before
 reading this tutorial.
 
 The standard way to store items in a BlockEntity is to make it an

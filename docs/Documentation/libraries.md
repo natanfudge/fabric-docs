@@ -3,7 +3,7 @@
 This is a list of 3rd party library mods that provide various utilities.
 
 If you have made a library, please add it to the list by [editing the
-page](.) if you have editing privileges
+page](../Documentation/libraries?do=edit.md) if you have editing privileges
 (try to keep it alphabetical), or dropping the necessary information in
 the wiki channel of the [Fabric Discord
 server](https://discord.gg/v6v4pMv) otherwise.

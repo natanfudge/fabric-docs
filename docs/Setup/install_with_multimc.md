@@ -20,30 +20,30 @@ unzip the MultiMC folder.
 Open MultiMC and configure it using the setup steps. Click the `Add
 Instance` button on the MultiMC toolbar:
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_01.jpg)
 
 Enter a name for the instance and select a Minecraft version, then click
 `OK`
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_101.jpg)
 
 Now with the instance selected, click on the `Edit Instance` button on
 the right:
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_102.jpg)
 
 Now click on `Install Fabric`
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_103.jpg)
 
 Select the Fabric Loader version and click `OK`
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_104.jpg)
 
 Check that the Intermediary Mappings for the Minecraft Version of the
 Instance and the Fabric Loader are listed. Click `Close`
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_105.jpg)
 
 Now run the instance you just created so MultiMC will download the
 appropiate Minecraft and library files and create the instance
@@ -51,7 +51,7 @@ subfolders.
 
 Check that Minecraft/Fabric starts and everything is fine:
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_06.jpg)
 
 Close the Minecraft instance for now.
 
@@ -69,22 +69,22 @@ that information later.
 
 Click on "Copy MultiMC instance url":
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_04.jpg)
 
 Now that you have copied the instance url, open MultiMC
 (C:\\MultiMC\\MultiMC.exe). Click the "Add Instance" button on the
 MultiMC toolbar:
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_01.jpg)
 
 Select "Import from zip" on the left, and paste the instance link you
 just copied into the textbox:
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_02.jpg)
 
 Edit the instance name and then click "OK" to create the instance:
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_03.jpg)
 
 Now run the instance you just created so MultiMC will download the
 appropiate Minecraft and library files and create the instance
@@ -92,7 +92,7 @@ subfolders.
 
 Check that Minecraft/Fabric starts and everything is fine:
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_06.jpg)
 
 Close the Minecraft instance for now.
 
@@ -126,7 +126,7 @@ Api file would be "\[1.14.2\] Fabric API 0.3.0 build 175" (there may be
 a newer version of the 1.14.2 Fabric Api after this tutorial was
 written).
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_05.jpg)
 
 Download the jar file to the instance mods folder.
 
@@ -141,7 +141,7 @@ different:
 
 `//path-where-you-unzipped-multimc//\MultiMC\instances\//the-name-of-your-instance//\mods`
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_09.jpg)
 
 Run the Minecraft instance to make sure everything is working as
 expected.
@@ -154,12 +154,12 @@ To be able to see the list of mods installed and change mod settings,
 you may want to install the mod **Mod Menu (Fabric)**. Mod Menu adds a
 button to the Minecraft main screen:
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_07.jpg)
 
 Clicking the button opens a list of installed fabric mods. Mod settings
 can be changed by clicking the gear button located on the top right:
 
-![](.)
+![](../images/wiki/install_fabric_using_multimc_launcher_08.jpg)
 
 To install Mod Menu, go to
 <https://www.curseforge.com/minecraft/mc-mods/modmenu> and click on
