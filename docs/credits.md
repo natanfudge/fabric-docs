@@ -445,7 +445,7 @@ Authors:
  - [asie](https://github.com/asiekierka)  
 Original Page: https://fabricmc.net/wiki/rules  
 
-Page: [start.md](start.md)  
+Page: [README.md](README.md)  
 Authors:
  - [alexiy](https://github.com/AlexiyOrlov)  
  - [heckteck](https://github.com/Hypatech)  
