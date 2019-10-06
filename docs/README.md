@@ -13,5 +13,5 @@ This wiki is also available in the following languages:
 
 |  |
 | :--- |
-| ![](.gitbook/assets/france_flag.png) [Français](french/README.md) |
+| ![](.gitbook/assets/france_flag%20%281%29.png) [Français](french/) |
 
