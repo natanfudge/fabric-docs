@@ -683,42 +683,6 @@
     },
     {
         "page": {
-            "tag": "wiki",
-            "name": "agenda"
-        },
-        "authors": [
-            "jp79194"
-        ]
-    },
-    {
-        "page": {
-            "tag": "wiki",
-            "name": "dokuwiki"
-        },
-        "authors": [
-            "(external edit)"
-        ]
-    },
-    {
-        "page": {
-            "tag": "wiki",
-            "name": "syntax"
-        },
-        "authors": [
-            "(external edit)"
-        ]
-    },
-    {
-        "page": {
-            "tag": "wiki",
-            "name": "welcome"
-        },
-        "authors": [
-            "(external edit)"
-        ]
-    },
-    {
-        "page": {
             "tag": null,
             "name": "changelog"
         },
@@ -775,16 +739,6 @@
             "mcrafterzz",
             "irtimaled",
             "grondag"
-        ]
-    },
-    {
-        "page": {
-            "tag": null,
-            "name": "wiki_meta"
-        },
-        "authors": [
-            "calloatti",
-            "jp79194"
         ]
     },
     {

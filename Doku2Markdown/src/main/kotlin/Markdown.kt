@@ -20,10 +20,7 @@ import java.util.*
 const val Pandoc = "Doku2Markdown/converter/pandoc.exe"
 
 fun convertToMarkdown() {
-    for (page in Json(JsonConfiguration.Stable).parse(
-            Page.serializer().list,
-            File(Pages).readText()
-    )) {
+    for (page in Page.getPages()) {
         val markdown = runCommandForOutput(
                 "$Pandoc --from dokuwiki --to gfm ${page.localDokuWikiPath}".split(" ")
         )

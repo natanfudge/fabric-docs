@@ -77,6 +77,8 @@ fun writeCreditsFile() {
         authorLinks.load(it)
     }
 
+//    val pages =
+
     val authors = JsonConfig.parse(PageAuthors.serializer().list, File(AuthorsPath).readText()).joinToString("\n\n") { pageAuthors ->
         """
 Page: [${pageAuthors.page.relativeMarkdownPath}](${pageAuthors.page.relativeMarkdownPath})  
