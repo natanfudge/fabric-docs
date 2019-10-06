@@ -29,11 +29,11 @@ data class Page(val tag: String?, val name: String) {
 
 
     @Transient
-    private val relativePath = migratePath("$relativeDirectoryPath$name.md")
+    val relativeMarkdownPath = migratePath("$relativeDirectoryPath$name.md")
 
 
     @Transient
-    val localMarkdownPath = "$MarkdownDirectory$relativePath"
+    val localMarkdownPath = "$MarkdownDirectory$relativeMarkdownPath"
 
     companion object {
         fun getPages() = JsonConfig.parse(serializer().list, File(Pages).readText())

@@ -27,7 +27,8 @@ const val LoginCookieValue = "DOKUWIKI_PASSWORD_HASH"
 
 const val ImageListPath = "$Resources/images.json"
 
-const val AuthorsPath = "$Resources/authors.json"
+
+
 
 val JsonConfig = Json(JsonConfiguration.Stable.copy(prettyPrint = true))
 
@@ -91,55 +92,11 @@ fun downloadAndWriteImages() {
 
 }
 
-fun scrapeAuthors(page: Page): Set<String> {
-    val authors = mutableSetOf<String>()
-    var first = 0
-    do {
-        var nextPageExists = false
-        val authorsColumn = skrape {
-            url = page.revisionsUrl(first)
-
-            extract {
-                val lessRecentButton = elements(".no button").filter { it.attr("title") == "less recent >> [N]" }
-                if (lessRecentButton.isNotEmpty()) nextPageExists = true
-                elements("#page__revisions .user").map { it.text() }.toSet() + authors
-            }
-        }
-
-        authors.addAll(authorsColumn)
-        first += 20
-    } while (nextPageExists)
-
-    return authors
-}
-@Serializable
-data class PageAuthors(val page : Page, val authors : Set<String>)
-
-fun scrapeAndWriteAuthors(){
-    val authors = Page.getPages().map { PageAuthors(it,scrapeAuthors(it)) }
-    File(AuthorsPath).writeText(JsonConfig.stringify(PageAuthors.serializer().list,authors))
-}
-
-fun writeAllAuthors(){
-    val authors = JsonConfig.parse(PageAuthors.serializer().list,File(AuthorsPath).readText())
-    val allAuthors = authors.flatMap { it.authors }.toSet()
-    val properties = Properties()
-    for(author in allAuthors){
-        properties[author] = ""
-    }
-
-    FileWriter("$Resources/allAuthors.properties").use {
-        properties.store(it,"allAuthors")
-    }
-
-
-
-}
-
 
 //TODO: credits
 
 fun main() {
-    writeAllAuthors()
+    writeCreditsFile()
+//    writeAllAuthors()
 //    scrapeAndWriteAuthors()
 }
