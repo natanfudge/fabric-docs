@@ -92,6 +92,9 @@ fun generateDocs(){
     writeCreditsFile()
 }
 
+//TODO: automatically merge new docs with old docs
+//TODO: automatically fix formatting problems in old docs to minimize the amount of new docs
+// (right now it will overwrite any new changes)
 
 fun main() {
     generateDocs()

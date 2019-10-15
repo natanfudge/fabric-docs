@@ -32,19 +32,19 @@ There are 2 types of Minecraft jars. The _server_ jar, which is run by the serve
 
 `onBlockedRemoved` gets called by the server, which cannot do the client-only operations that `MinecraftClient` provides
 
-* in this case, playing particles. Since `onBlockRemoved` gets called by the server **only**, 
+* in this case, playing particles. Since `onBlockRemoved` gets called by the server **only**,
 
-  we will need to somehow tell the clients they need to play the particles. 
+  we will need to somehow tell the clients they need to play the particles.
 
   In a single player settings this is easy, the client runs in the same process as the server,
 
-  so we can just access the `MinecraftClient` and be done with it. 
+  so we can just access the `MinecraftClient` and be done with it.
 
-  In multiplayer we will need to communicate between entirely different computers. This is where packets come in.  
+  In multiplayer we will need to communicate between entirely different computers. This is where packets come in.
 
 ## Server To Client \(S2C\) Packets
 
-Server To Client, or S2C packets for short, allow the server to tell the clients to execute predefined code with some data. The clients will first need to know what to execute, so we will tell them just that during \[**client** mod initialization\]\($$$ LINK TO CLIENT INIT DOC
+Server To Client, or S2C packets for short, allow the server to tell the clients to execute predefined code with some data. The clients will first need to know what to execute, so we will tell them just that during [**client** mod initialization](the-client-mod-initializer.md).
 
 \(Note that the identifier we will put in the class of the common initializer so it can be accessed from both sides:\)
 
@@ -174,7 +174,7 @@ passedData.writeString("hello");
 
 Client to server packets follow the same principles. Some things can only be done from the server, such as changing the world in a way that affects other players, but you want them to be triggered by a client-only action, such as holding a keybinding. One key difference is that **you must validate what you receive in the `PacketByteBuf`**.
 
-In this example we will replace a block with diamond when it is right clicked when a keybinding is held, using a C2S packet. If you want to know how to use hotkeys specifically, refer to the \[hotkeys tutorial\]\($$$ LINK TO KEYBINDINGS TUTORIAL
+In this example we will replace a block with diamond when it is right clicked when a keybinding is held, using a C2S packet. If you want to know how to use hotkeys specifically, refer to the [hotkeys tutorial.](../miscellaneous/keybinds.md)
 
 As before we'll define an identifier for our packet:
 
