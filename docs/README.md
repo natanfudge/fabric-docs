@@ -1,6 +1,6 @@
 # Welcome to the Fabric Wiki!
 
-This is a wiki dedicated to documenting the methods, tools and APIs of the Fabric project.
+This is an unofficial mirror of the Fabric wiki, dedicated to documenting the methods, tools and APIs of the Fabric project.
 
 Fabric is a modular modding toolchain targeting Minecraft 1.14 and above, including snapshots.
 
