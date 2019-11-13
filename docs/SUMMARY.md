@@ -94,4 +94,5 @@
     * [Debate: Fluid API](faq/other/fluidapi_debate.md)
     * [Known issues \("growing pains"\)](faq/other/known_issues.md)
 * [Credits](credits.md)
+* [foo](https://google.com)
 
