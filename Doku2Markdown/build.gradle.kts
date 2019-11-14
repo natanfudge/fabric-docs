@@ -18,6 +18,7 @@ dependencies {
     compile("it.skrape:skrapeit-core:0.5.1")
     compile("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.13.0")
     compile("com.vladsch.flexmark:flexmark-all:0.50.40")
+    implementation ("junit:junit:4.13-beta-3")
 }
 
 tasks.withType<KotlinCompile> {

@@ -1,4 +1,0 @@
-# mixin
-
-Start [here](http://github.com/SpongePowered/Mixin/wiki).
-

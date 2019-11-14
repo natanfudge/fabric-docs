@@ -5,25 +5,18 @@ import java.util.*
 
 private const val TagMigrationsPath = "$Resources/tagMigrations.properties"
 private const val FileMigrationsPath = "$Resources/fileMigrations.properties"
-private val tagMigrations = run {
-    val properties = Properties()
+private val tagMigrations = Properties().apply {
     Files.newInputStream(Paths.get(TagMigrationsPath)).use {
-        properties.load(it)
+        load(it)
     }
-    properties
 }
 
-private val fileMigrations = run {
-    val properties = Properties()
+private val fileMigrations = Properties().apply {
     Files.newInputStream(Paths.get(FileMigrationsPath)).use {
-        properties.load(it)
+        load(it)
     }
-    properties
 }
 
-//fun migrateName(name: String): String = migrations.getProperty(name, name)
-//
-//fun migrateTag(dir: String): String = migrations.getProperty(dir, dir)
 
 fun migratePath(path: String): String {
     if (path.startsWith("http")) return path
@@ -42,5 +35,5 @@ fun migratePath(path: String): String {
 }
 
 
-operator fun List<String>.component1() = this[0]
-operator fun List<String>.component2() = this[1]
+private operator fun List<String>.component1() = this[0]
+private operator fun List<String>.component2() = this[1]
