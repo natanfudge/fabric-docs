@@ -8,12 +8,8 @@ import java.io.File
 
 private fun cleanMarkdown(dir: File = File(MarkdownDirectory)) {
     for (file in dir.listFiles()!!) {
-        if (file.isDirectory) {
-            if (file.name != "images") {
-                cleanMarkdown(file)
-            }
-        } else {
-            file.delete()
+        if (file.name != "images") {
+            file.deleteRecursively()
         }
     }
 }

@@ -8,8 +8,10 @@ import util.fixLinks
 import java.io.File
 
 fun produceMarkdownPages() {
+    fixDokuWikiPages()
+    val lineBreakRegex = Regex("(\\[.*)\\r\\n (.*\\])")
     for (page in Page.getPages()) {
-        val markdown = Pandoc.convert(page.localDokuWikiPath)
+        val markdown = Pandoc.convert(page.localFixedDokuWikiPath)
 
         val parsed = Parser.builder().build().parse(markdown)
         parsed.fixLinks(nestingLevel = when (page.tag) {
@@ -17,7 +19,6 @@ fun produceMarkdownPages() {
             else -> page.tag.count { it == ':' } + 1
         })
         val linksFixed = Formatter.builder().build().render(parsed)
-        val lineBreakRegex = Regex("(\\[.*)\\r\\n (.*\\])")
         val lineBreaksFixed = lineBreakRegex.replace(linksFixed, "$1$2")
 
         File(page.localMarkdownPath).apply {
@@ -28,3 +29,14 @@ fun produceMarkdownPages() {
     }
 }
 
+val indentRegex = Regex("(\\n) {3}(\\*)")
+fun fixDokuWikiPages() {
+    for (page in Page.getPages()) {
+        val raw = File(page.localRawDokuWikiPath).readText()
+        val fixed = indentRegex.replace(raw, "$1$2")
+        with(File(page.localFixedDokuWikiPath)) {
+            parentFile.mkdirs()
+            writeText(fixed)
+        }
+    }
+}

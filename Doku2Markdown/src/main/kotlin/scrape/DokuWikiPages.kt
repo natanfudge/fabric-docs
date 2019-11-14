@@ -29,7 +29,7 @@ fun scrapeAndSaveDokuWikiPages() {
         val text = doc.element("#wiki__text").text()
 
 
-        File(page.localDokuWikiDirectory).mkdirs()
-        File(page.localDokuWikiPath).writeText(text)
+        File(page.localRawDokuWikiDirectory).mkdirs()
+        File(page.localRawDokuWikiPath).writeText(text)
     }
 }

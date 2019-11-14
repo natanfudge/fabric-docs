@@ -26,9 +26,15 @@ data class Page(val tag: String?, val name: String) {
     @Transient
     private val relativeDirectoryPath = tag?.split(":")?.joinToString("/")?.plus("/") ?: ""
     @Transient
-    val localDokuWikiDirectory = "$Resources/pages_dokuwiki/$relativeDirectoryPath"
+    val localRawDokuWikiDirectory = "$Resources/pages_dokuwiki/$relativeDirectoryPath"
     @Transient
-    val localDokuWikiPath = "$localDokuWikiDirectory$name.txt"
+    val localRawDokuWikiPath = "$localRawDokuWikiDirectory$name.txt"
+
+    @Transient
+    val localFixedDokuWikiDirectory = "$Resources/pages_dokuwiki_fixed/$relativeDirectoryPath"
+    @Transient
+    val localFixedDokuWikiPath = "$localFixedDokuWikiDirectory$name.txt"
+
 
 
     @Transient

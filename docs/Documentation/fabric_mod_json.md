@@ -6,11 +6,11 @@ exact name placed in the root directory of the mod JAR.
 
 ## Mandatory fields
 
-```
+
 * **schemaVersion** Needed for internal mechanisms. Must always be ''1''. 
 * **id** Defines the mod's identifier - a string of Latin letters, digits, underscores with length from 1 to 63.
 * **version** Defines the mod's version - a string value, optionally matching the [[https://semver.org/|Semantic Versioning 2.0.0]] specification.
-```
+
 
 ## Optional fields
 
