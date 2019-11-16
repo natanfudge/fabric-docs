@@ -1,2 +1,0 @@
-# Using Jigsaws in StructureFeatures
-

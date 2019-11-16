@@ -1,2 +1,0 @@
-# Modpack-related endpoints
-

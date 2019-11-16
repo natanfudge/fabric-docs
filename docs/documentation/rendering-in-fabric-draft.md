@@ -1,2 +1,0 @@
-# Rendering in Fabric \(DRAFT\)
-
