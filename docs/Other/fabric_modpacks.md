@@ -1,5 +1,7 @@
 # Fabric modpacks for Minecraft
 
+This is a list of official modpacks from the FabricMC team.
+
 ## Maintained
 
 ## Unmaintained

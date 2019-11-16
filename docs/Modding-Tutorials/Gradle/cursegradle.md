@@ -27,3 +27,6 @@ They are, in order:
 - `%%forgeGradleIntegration = false%%` - as you're not using
   ForgeGradle, that specific integration has to be disabled.
 
+Note: CurseGradle does not set the mod loader version to fabric and does
+not add java 10 to supported java versions even if you enable newer java
+version support.

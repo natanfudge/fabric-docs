@@ -10,7 +10,7 @@ what `BlockState`s are for. Say we wanted a block to have a hardness of
 would become harder and gain a hardness of `2`.
 
 First we define the boolean property of the block - whether or not it is
-hard:
+hard (careful not to import the wrong BooleanProperty\!):
 
 ```java
 public class MyBlock extends Block {
@@ -45,10 +45,9 @@ public class MyBlock extends Block {
 }
 ```
 
-Now, to set the property we need to call
+(To set multiple properties, chain `with()` calls)
 
-`world.setBlockState(<block-position>,
-<block-instance>.getDefaultState().with(<property-name>, <new-value>)`:
+Now, to set the property we need to call `world.setBlockState()`:
 
 (Replace `MyBlocks.MY_BLOCK_INSTANCE` with your block's instance)
 

@@ -54,12 +54,13 @@ fun notNamespaced(name: String) = Page(null, name)
 fun frenchTutorial(name: String) = Page("fr:tutoriel", name)
 
 const val Pages = "$Resources/pages.json"
-val BannedPages = listOf("dokuwiki", "syntax", "welcome", "agenda", "wiki_meta","sidebar","start","accueil")
+val BannedPages = listOf("dokuwiki", "syntax", "welcome", "agenda", "wiki_meta","sidebar","start","accueil","sidebar_do_edit")
 
 
 fun scrapeAndSavePageList() {
     val tags = skrape {
         url = "https://fabricmc.net/wiki/start?do=index"
+        println("Visiting $url")
 
         extract {
             elements(".idx_dir").map { it.text() }
@@ -76,6 +77,7 @@ fun scrapeAndSavePageList() {
     val pages = tags.flatMap { tag ->
         skrape {
             url = "https://fabricmc.net/wiki/start?idx=$tag"
+            println("Visiting $url")
 
             extract {
                 element("#index__tree .open .idx").children().map { Page(tag = tag, name = it.text()) }

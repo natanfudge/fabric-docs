@@ -1,6 +1,5 @@
 package scrape
 
-import it.skrape.selects.element
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 import kotlinx.serialization.list
@@ -18,6 +17,7 @@ fun scrapeAndSaveDokuWikiPages() {
             File(Pages).readText()
     )) {
         val url = page.editUrl
+        println("Visiting $url")
         val res = Jsoup.connect(url)
                 .data(LoginCookieKey, System.getenv(LoginCookieValue))
                 .method(Connection.Method.POST)
@@ -25,11 +25,14 @@ fun scrapeAndSaveDokuWikiPages() {
 
         val cookies = res.cookies()
         val doc = Jsoup.connect(url).cookies(cookies).get()
-        println(doc)
-        val text = doc.element("#wiki__text").text()
+        val text = doc.selectFirst("#wiki__text")?.text()
+        if (text != null) {
+            File(page.localRawDokuWikiDirectory).mkdirs()
+            File(page.localRawDokuWikiPath).writeText(text)
+        } else {
+            println("Could not find wiki text in page: $doc")
+        }
 
 
-        File(page.localRawDokuWikiDirectory).mkdirs()
-        File(page.localRawDokuWikiPath).writeText(text)
     }
 }

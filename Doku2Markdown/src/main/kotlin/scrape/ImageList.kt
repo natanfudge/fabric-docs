@@ -17,6 +17,7 @@ fun scrapeAndSaveImageList() {
     for (page in Page.getPages()) {
         val pageImages = skrape {
             url = page.url
+            println("Visiting $url")
 
             extract {
                 elements("#dokuwiki__content img").map { it.attr("src") }

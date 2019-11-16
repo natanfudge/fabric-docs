@@ -531,9 +531,163 @@ public class CommandLocateBiome {
     }
 ```
 
-## Custom Arguments (Coming Soon)
+## Custom Arguments
 
-Coming Soon
+Brigadier has support for custom argument types and this section goes
+into showing how to create a simple argument type.
+
+Warning: Custom arguments require client mod installation to be
+registered correctly\! If you are making a server plugin, consider using
+existing argument type and a custom suggestions provider instead.
+
+For this example we will create a UUIDArgumentType.
+
+First create a class which extends `ArgumentType`. Note that
+ArgumentType is a generic, so the generic will define what type the
+ArgumentType will return
+
+```java
+public class UUIDArgumentType implements ArgumentType<UUID> {
+```
+
+ArgumentType requires you to implement the `parse` method, the type it
+returns will match with the Generic type.
+
+```java
+@Override
+public UUID parse(StringReader reader) throws CommandSyntaxException {
+```
+
+This method is where all of your parsing will occur. Either this method
+will return the object based on the arguments provided in the command
+line or throw a CommandSyntaxException and parsing will fail.
+
+Next you will store the current position of the cursor, this is so you
+can substring out only the specific argument. This will always be at the
+beginning of where your argument appears on the command line.
+
+```java
+int argBeginning = reader.getCursor(); // The starting position of the cursor is at the beginning of the argument.
+if (!reader.canRead()) {
+    reader.skip();
+}
+```
+
+Now we grab the entire argument. Depending on your argument type, you
+may have a different criteria or be similar to some arguments where
+detecting a `{` on the command line will require it to be closed. For a
+UUID we will just figure out what cursor position the argument ends at.
+
+```java
+while (reader.canRead() && reader.peek() != ' ') { // peek provides the character at the current cursor position.
+    reader.skip(); // Tells the StringReader to move it's cursor to the next position.
+}
+```
+
+Then we will ask the StringReader what the current position of the
+cursor is an substring our argument out of the command line.
+
+```java
+String uuidString = reader.getString().substring(argBeginning, reader.getCursor());
+```
+
+Now finally we check if our argument is correct and parse the specific
+argument to our liking, and throwing an exception if the parsing fails.
+
+```java
+try {
+    UUID uuid = UUID.fromString(uuidString); // Now our actual logic.
+    return uuid; // And we return our type, in this case the parser will consider this argument to have parsed properly and then move on.
+    } catch (Exception ex) {
+    // UUIDs can throw an exception when made by a string, so we catch the exception and repackage it into a CommandSyntaxException type.
+    // Create with context tells Brigadier to supply some context to tell the user where the command failed at.
+    // Though normal create method could be used.
+    throw new SimpleCommandExceptionType(new LiteralText(ex.getMessage())).createWithContext(reader);
+}
+```
+
+The ArgumentType is done, however your client will refuse the parse the
+argument and throw an error. To fix this we need to register an
+ArgumentSerializer. Within your ModInitializer (Not only client or
+server) you will add this so the client can recognize the argument when
+the command tree is sent. For more complex argument types, you may need
+to create your own ArgumentSerializer.
+
+```java
+ArgumentTypes.register("mymod:uuid", UUIDArgumentType.class, new ConstantArgumentSerializer(UUIDArgumentType::uuid)); 
+// The argument should be what will create the ArgumentType.
+```
+
+And here is the whole ArgumentType:
+
+```java
+
+import com.mojang.brigadier.StringReader;
+import com.mojang.brigadier.arguments.ArgumentType;
+import com.mojang.brigadier.context.CommandContext;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.text.LiteralText;
+import net.minecraft.util.SystemUtil;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.UUID;
+
+/**
+ * Represents an ArgumentType that will return a UUID.
+ */
+public class UUIDArgumentType implements ArgumentType<UUID> { // ArgumentType has a generic, which is the return type of the
+    // This method exists for convince and you could just initialize the class.
+    public static UUIDArgumentType uuid() {
+        return new UUIDArgumentType();
+    }
+
+    // This is also for convince and you could always just grab the argument from the CommandContext.
+    public static <S> UUID getUuid(String name, CommandContext<S> context) {
+        // Note that you should assume the CommandSource wrapped inside of the CommandContext will always be a generic type.
+        // If you access the ServerCommandSource make sure you verify the source is an instanceof ServerCommandSource before dangerous casting.
+        return context.getArgument(name, UUID.class);
+    }
+
+    private static final Collection<String> EXAMPLES = SystemUtil.consume(new ArrayList<>(), list -> {
+        list.add("765e5d33-c991-454f-8775-b6a7a394c097"); // i509VCB: Username The_1_gamers
+        list.add("069a79f4-44e9-4726-a5be-fca90e38aaf5"); // Notch
+        list.add("61699b2e-d327-4a01-9f1e-0ea8c3f06bc6"); // Dinnerbone
+    });
+
+    @Override
+    public UUID parse(StringReader reader) throws CommandSyntaxException {
+        int argBeginning = reader.getCursor(); // The starting position of the cursor is at the beginning of the argument.
+        if (!reader.canRead()) {
+            reader.skip();
+        }
+
+        // Now we check the contents of the argument till either we hit the end of the command line (When canRead becomes false)
+        // Otherwise we go till reach reach a space, which signifies the next argument
+        while (reader.canRead() && reader.peek() != ' ') { // peek provides the character at the current cursor position.
+            reader.skip(); // Tells the StringReader to move it's cursor to the next position.
+        }
+
+        // Now we substring the specific part we want to see using the starting cursor position and the ends where the next argument starts.
+        String uuidString = reader.getString().substring(argBeginning, reader.getCursor());
+        try {
+            UUID uuid = UUID.fromString(uuidString); // Now our actual logic.
+            return uuid; // And we return our type, in this case the parser will consider this argument to have parsed properly and then move on.
+        } catch (Exception ex) {
+            // UUIDs can throw an exception when made by a string, so we catch the exception and repackage it into a CommandSyntaxException type.
+            // Create with context tells Brigadier to supply some context to tell the user where the command failed at.
+            // Though normal create method could be used.
+            throw new SimpleCommandExceptionType(new LiteralText(ex.getMessage())).createWithContext(reader);
+        }
+    }
+
+    @Override
+    public Collection<String> getExamples() { // Brigadier has support to show examples for what the argument should look like, this should contain a Collection of only the argument this type will return.
+        return EXAMPLES;
+    }
+}
+```
 
 ## FAQ
 

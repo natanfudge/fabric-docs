@@ -2,10 +2,9 @@
 
 ## Prerequisites
 
-```
-* A Java Development Kit (JDK) for Java 8 or newer [[https://adoptopenjdk.net/]]
-* Any IDE, for example [[https://www.jetbrains.com/idea/download/#section=windows|Intellij IDEA]]
-```
+- A Java Development Kit (JDK) for Java 8 or newer
+  <https://adoptopenjdk.net/>
+- Any IDE, for example [Intellij IDEA](https://www.jetbrains.com/idea/download/#section=windows)
 
 ## Steps
 
@@ -15,14 +14,16 @@
     * Make sure to set ''archives_base_name'' and ''maven_group'' to your preferred values.
     * Make sure to update the versions of Minecraft, the mappings and the loader - all of which can be queried through [[https://modmuss50.me/fabric.html|this website]] - to match the versions you wish to target.
     * Add any other dependencies you plan to use in ''build.gradle''.
-- Import the project to your IDE. Follow [[tutorial:vscode_setup|these instructions]] to import the project to Visual Studio Code.
-- Run the ''genSources'' Gradle task. If your IDE doesn't have Gradle integration, then run the following command in the terminal: ''./gradlew genSources''.
-- If you would like to have the IDE run configs you can run following commands:
-    * For IntelliJ IDEA: ''./gradlew idea''. 
-    * For Eclipse: ''./gradlew eclipse''. 
-    * If you use VS Code, configurations were generated at the step 3.
+- Import the build.gradle file to your IDE. Follow [[tutorial:vscode_setup|these instructions]] to import the project to Visual Studio Code.
+- For IntelliJ, press ''Add Configuration...'' and then select ''Minecraft Client'' and press ''OK''.      For Eclipse, If you would like to have the IDE run configs you can run ''gradlew eclipse''.
 - Happy modding!
 ```
+
+You can generate the Minecraft sources for reference (since IDEA already
+has a decompiler this is only useful for searching through the code) :
+Run the `genSources` Gradle task. If your IDE doesn't have Gradle
+integration, then run the following command in the terminal: `gradlew
+genSources` (or `.gradlew genSources` on Linux/MacOS).
 
 ## Getting started
 

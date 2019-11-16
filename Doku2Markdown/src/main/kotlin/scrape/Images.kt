@@ -21,6 +21,7 @@ fun downloadAndSaveImages() {
         val localPath = "$ImagesPath$relativePath"
         File(localPath).parentFile.mkdirs()
         val httpsPath = URL("https://fabricmc.net$image")
+        println("Downloading from $httpsPath")
         httpsPath.openStream().use {
             Files.copy(it, Paths.get(localPath), StandardCopyOption.REPLACE_EXISTING)
         }

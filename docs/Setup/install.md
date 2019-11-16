@@ -85,15 +85,23 @@ for a headless install.
 ### Available commands
 
 - **help** Prints out all of the commands available along with the
-  latest mappings and loader versions. Ignores options. Example:`java
-  -jar fabric-installer.jar help
-  `
+  latest mappings and loader versions. Ignores options. Example:
+
+<!-- end list --->
+
+    java -jar fabric-installer.jar help
+
 - **server** Used to create the required files for a Fabric server.
-  Accepts all options, none are required. Example: `java -jar
-  fabric-installer.jar server
-  `
+  Accepts all options, none are required. Example:
+
+<!-- end list --->
+
+    java -jar fabric-installer.jar server
+
 - **client** Used to create the required files for a Fabric client.
-  Accepts all options, **-dir** is required. Example:`java -jar
-  fabric-installer.jar client -dir "~/Games/.minecraft"
-  `
+  Accepts all options, **-dir** is required. Example:
+
+<!-- end list --->
+
+    java -jar fabric-installer.jar client -dir "~/Games/.minecraft"
 

@@ -59,6 +59,26 @@ development environment with the `modCompile` dependency configuration.
   transparently handles this transition for you, but be cautious when
   using reflection.
 
+#### Custom mappings
+
+You can use custom tiny mappings for Fabric Loom for your Gradle project
+setup.
+
+For example, if you have a custom branch of yarn which you want to use
+for mappings, you can build yarn with "./gradlew build" command, take
+out the jar file in "build/libs" directory, and move it to a folder
+"mapping" in your Gradle project. Then, change your mappings dependency
+entry to:
+
+    dependencies {
+        mappings fileTree(dir: "mapping", include: "**.jar")
+    }
+
+You can change the directory where you put mapping to have any custom
+name; just change the name in "dir" argument above. Note that Gradle
+build will fail if you have any other file than the mapping jar in the
+mapping directory\!
+
 ### Remapping
 
 Remapping is the process of applying mappings to code, transforming from

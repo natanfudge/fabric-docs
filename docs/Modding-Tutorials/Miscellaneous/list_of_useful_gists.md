@@ -5,7 +5,7 @@ well documented on the wiki.
 
 ### Networking
 
-- [Communicating between the clients and server](https://gist.github.com/natanfudge/8247d343bff5277e7985b59a07f0aa0e)
+- [Communicating between the clients and server](https://gist.github.com/natanfudge/6be2662ce8395bb14dc5c48157217e9e)
   by Fudge
 
 ### Loot Table
@@ -13,3 +13,4 @@ well documented on the wiki.
 - [How to do Bad Things to loot tables](https://gist.github.com/falkreon/0c5832de1938f885b43da233608ec716)
   by Falkreon
 
+<https://gist.github.com/falkreon/f58bb91e45ba558bc7fd827e81c6cb45>

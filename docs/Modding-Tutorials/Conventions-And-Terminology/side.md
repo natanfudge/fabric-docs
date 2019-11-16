@@ -51,10 +51,13 @@ partially simulates the game world. The server handles the core game
 logic, data packs and maintains the true state of the game world.
 
 The client maintains a partial replica of the server's world, with
-copies of objects such as:`net.minecraft.world.World
-net.minecraft.entity.Entity
-net.minecraft.block.entity.BlockEntity
-` These replicated objects allow clients and servers to perform some
+copies of objects such as:
+
+    net.minecraft.world.World
+    net.minecraft.entity.Entity
+    net.minecraft.block.entity.BlockEntity
+
+These replicated objects allow clients and servers to perform some
 common game logic. The client can interact with these objects while the
 server is responsible for keeping them in sync. Usually, to distinguish
 objects on the logical clients from the ones on the logical server,

@@ -1,354 +1,310 @@
 [
-  {
-    "tag":"documentation",
-    "name":"build_pipelines"
-  },
-  {
-    "tag":"documentation",
-    "name":"fabric_loader"
-  },
-  {
-    "tag":"documentation",
-    "name":"fabric_loom"
-  },
-  {
-    "tag":"documentation",
-    "name":"fabric_mod_json"
-  },
-  {
-    "tag":"documentation",
-    "name":"libraries"
-  },
-  {
-    "tag":"documentation",
-    "name":"modpack_related_endpoints"
-  },
-  {
-    "tag":"documentation",
-    "name":"rendering"
-  },
-  {
-    "tag":"faq",
-    "name":"expert"
-  },
-  {
-    "tag":"faq",
-    "name":"user"
-  },
-  {
-    "tag":"fr",
-    "name":"accueil"
-  },
-  {
-    "tag":"fr",
-    "name":"regles"
-  },
-  {
-    "tag":"other",
-    "name":"fabric_modpacks"
-  },
-  {
-    "tag":"other",
-    "name":"fluidapi_debate"
-  },
-  {
-    "tag":"other",
-    "name":"known_issues"
-  },
-  {
-    "tag":"tools",
-    "name":"matcher"
-  },
-  {
-    "tag":"tutorial",
-    "name":"adding_mods"
-  },
-  {
-    "tag":"tutorial",
-    "name":"adding_to_loot_tables"
-  },
-  {
-    "tag":"tutorial",
-    "name":"applychanges"
-  },
-  {
-    "tag":"tutorial",
-    "name":"armor"
-  },
-  {
-    "tag":"tutorial",
-    "name":"atlauncher_modpacks"
-  },
-  {
-    "tag":"tutorial",
-    "name":"biome"
-  },
-  {
-    "tag":"tutorial",
-    "name":"biomecoloring"
-  },
-  {
-    "tag":"tutorial",
-    "name":"blockappearance"
-  },
-  {
-    "tag":"tutorial",
-    "name":"blockentity"
-  },
-  {
-    "tag":"tutorial",
-    "name":"blockentityrenderers"
-  },
-  {
-    "tag":"tutorial",
-    "name":"blocks"
-  },
-  {
-    "tag":"tutorial",
-    "name":"blockstate"
-  },
-  {
-    "tag":"tutorial",
-    "name":"building_mod_basics"
-  },
-  {
-    "tag":"tutorial",
-    "name":"commands"
-  },
-  {
-    "tag":"tutorial",
-    "name":"cursegradle"
-  },
-  {
-    "tag":"tutorial",
-    "name":"dimensionconcepts"
-  },
-  {
-    "tag":"tutorial",
-    "name":"enchantments"
-  },
-  {
-    "tag":"tutorial",
-    "name":"entity"
-  },
-  {
-    "tag":"tutorial",
-    "name":"events"
-  },
-  {
-    "tag":"tutorial",
-    "name":"feature_procedure"
-  },
-  {
-    "tag":"tutorial",
-    "name":"fluids"
-  },
-  {
-    "tag":"tutorial",
-    "name":"install_java"
-  },
-  {
-    "tag":"tutorial",
-    "name":"install_with_minecraft_launcher"
-  },
-  {
-    "tag":"tutorial",
-    "name":"install_with_multimc"
-  },
-  {
-    "tag":"tutorial",
-    "name":"installing_minecraft_fabric_server"
-  },
-  {
-    "tag":"tutorial",
-    "name":"inventory"
-  },
-  {
-    "tag":"tutorial",
-    "name":"itemgroup"
-  },
-  {
-    "tag":"tutorial",
-    "name":"items"
-  },
-  {
-    "tag":"tutorial",
-    "name":"keybinds"
-  },
-  {
-    "tag":"tutorial",
-    "name":"lang"
-  },
-  {
-    "tag":"tutorial",
-    "name":"list_of_useful_gists"
-  },
-  {
-    "tag":"tutorial",
-    "name":"loader04x"
-  },
-  {
-    "tag":"tutorial",
-    "name":"mappings"
-  },
-  {
-    "tag":"tutorial",
-    "name":"mcupdater_modpacks"
-  },
-  {
-    "tag":"tutorial",
-    "name":"migratemappings"
-  },
-  {
-    "tag":"tutorial",
-    "name":"modding_tips"
-  },
-  {
-    "tag":"tutorial",
-    "name":"ores"
-  },
-  {
-    "tag":"tutorial",
-    "name":"recipes"
-  },
-  {
-    "tag":"tutorial",
-    "name":"resource"
-  },
-  {
-    "tag":"tutorial",
-    "name":"setup"
-  },
-  {
-    "tag":"tutorial",
-    "name":"side"
-  },
-  {
-    "tag":"tutorial",
-    "name":"sidebar"
-  },
-  {
-    "tag":"tutorial",
-    "name":"sounds"
-  },
-  {
-    "tag":"tutorial",
-    "name":"structures"
-  },
-  {
-    "tag":"tutorial",
-    "name":"technic_modpacks"
-  },
-  {
-    "tag":"tutorial",
-    "name":"terms"
-  },
-  {
-    "tag":"tutorial",
-    "name":"tooltip"
-  },
-  {
-    "tag":"tutorial",
-    "name":"updating_fabric_using_multimc_launcher"
-  },
-  {
-    "tag":"tutorial",
-    "name":"updating_yarn"
-  },
-  {
-    "tag":"tutorial",
-    "name":"upload_your_log"
-  },
-  {
-    "tag":"tutorial",
-    "name":"vscode_setup"
-  },
-  {
-    "tag":"wiki",
-    "name":"agenda"
-  },
-  {
-    "tag":"wiki",
-    "name":"dokuwiki"
-  },
-  {
-    "tag":"wiki",
-    "name":"syntax"
-  },
-  {
-    "tag":"wiki",
-    "name":"welcome"
-  },
-  {
-    "tag":null,
-    "name":"changelog"
-  },
-  {
-    "tag":null,
-    "name":"install"
-  },
-  {
-    "tag":null,
-    "name":"rules"
-  },
-  {
-    "tag":null,
-    "name":"start"
-  },
-  {
-    "tag":null,
-    "name":"wiki_meta"
-  },
-  {
-    "tag":"fr:tutoriel",
-    "name":"ajouter_mods"
-  },
-  {
-    "tag":"fr:tutoriel",
-    "name":"appliquer_modifications"
-  },
-  {
-    "tag":"fr:tutoriel",
-    "name":"blocs"
-  },
-  {
-    "tag":"fr:tutoriel",
-    "name":"enchantements"
-  },
-  {
-    "tag":"fr:tutoriel",
-    "name":"groupes_objets"
-  },
-  {
-    "tag":"fr:tutoriel",
-    "name":"infobulles"
-  },
-  {
-    "tag":"fr:tutoriel",
-    "name":"installation_java"
-  },
-  {
-    "tag":"fr:tutoriel",
-    "name":"mise_en_place"
-  },
-  {
-    "tag":"fr:tutoriel",
-    "name":"modpacks_atlauncher"
-  },
-  {
-    "tag":"fr:tutoriel",
-    "name":"modpacks_technic"
-  },
-  {
-    "tag":"fr:tutoriel",
-    "name":"objets"
-  },
-  {
-    "tag":"fr:tutoriel",
-    "name":"recettes"
-  },
-  {
-    "tag":"fr:tutoriel",
-    "name":"termes"
-  }
+    {
+        "tag": "documentation",
+        "name": "build_pipelines"
+    },
+    {
+        "tag": "documentation",
+        "name": "fabric_loader"
+    },
+    {
+        "tag": "documentation",
+        "name": "fabric_loom"
+    },
+    {
+        "tag": "documentation",
+        "name": "fabric_mod_json"
+    },
+    {
+        "tag": "documentation",
+        "name": "libraries"
+    },
+    {
+        "tag": "documentation",
+        "name": "modpack_related_endpoints"
+    },
+    {
+        "tag": "documentation",
+        "name": "rendering"
+    },
+    {
+        "tag": "faq",
+        "name": "expert"
+    },
+    {
+        "tag": "faq",
+        "name": "user"
+    },
+    {
+        "tag": "fr",
+        "name": "regles"
+    },
+    {
+        "tag": "other",
+        "name": "fabric_modpacks"
+    },
+    {
+        "tag": "other",
+        "name": "fluidapi_debate"
+    },
+    {
+        "tag": "other",
+        "name": "known_issues"
+    },
+    {
+        "tag": "tools",
+        "name": "enigma"
+    },
+    {
+        "tag": "tools",
+        "name": "matcher"
+    },
+    {
+        "tag": "tools",
+        "name": "yarn"
+    },
+    {
+        "tag": "tutorial",
+        "name": "datafixer"
+    },
+    {
+        "tag": "tutorial",
+        "name": "adding_mods"
+    },
+    {
+        "tag": "tutorial",
+        "name": "adding_to_loot_tables"
+    },
+    {
+        "tag": "tutorial",
+        "name": "applychanges"
+    },
+    {
+        "tag": "tutorial",
+        "name": "armor"
+    },
+    {
+        "tag": "tutorial",
+        "name": "atlauncher_modpacks"
+    },
+    {
+        "tag": "tutorial",
+        "name": "biome"
+    },
+    {
+        "tag": "tutorial",
+        "name": "biomecoloring"
+    },
+    {
+        "tag": "tutorial",
+        "name": "blockappearance"
+    },
+    {
+        "tag": "tutorial",
+        "name": "blockentity"
+    },
+    {
+        "tag": "tutorial",
+        "name": "blockentityrenderers"
+    },
+    {
+        "tag": "tutorial",
+        "name": "blocks"
+    },
+    {
+        "tag": "tutorial",
+        "name": "blockstate"
+    },
+    {
+        "tag": "tutorial",
+        "name": "building_mod_basics"
+    },
+    {
+        "tag": "tutorial",
+        "name": "colorprovider"
+    },
+    {
+        "tag": "tutorial",
+        "name": "commands"
+    },
+    {
+        "tag": "tutorial",
+        "name": "cursegradle"
+    },
+    {
+        "tag": "tutorial",
+        "name": "datafixer"
+    },
+    {
+        "tag": "tutorial",
+        "name": "dimensionconcepts"
+    },
+    {
+        "tag": "tutorial",
+        "name": "enchantments"
+    },
+    {
+        "tag": "tutorial",
+        "name": "entity"
+    },
+    {
+        "tag": "tutorial",
+        "name": "events"
+    },
+    {
+        "tag": "tutorial",
+        "name": "feature_procedure"
+    },
+    {
+        "tag": "tutorial",
+        "name": "features"
+    },
+    {
+        "tag": "tutorial",
+        "name": "fluids"
+    },
+    {
+        "tag": "tutorial",
+        "name": "install_java"
+    },
+    {
+        "tag": "tutorial",
+        "name": "install_with_minecraft_launcher"
+    },
+    {
+        "tag": "tutorial",
+        "name": "install_with_multimc"
+    },
+    {
+        "tag": "tutorial",
+        "name": "installing_minecraft_fabric_server"
+    },
+    {
+        "tag": "tutorial",
+        "name": "introduction"
+    },
+    {
+        "tag": "tutorial",
+        "name": "inventory"
+    },
+    {
+        "tag": "tutorial",
+        "name": "itemgroup"
+    },
+    {
+        "tag": "tutorial",
+        "name": "items"
+    },
+    {
+        "tag": "tutorial",
+        "name": "jigsaw"
+    },
+    {
+        "tag": "tutorial",
+        "name": "keybinds"
+    },
+    {
+        "tag": "tutorial",
+        "name": "lang"
+    },
+    {
+        "tag": "tutorial",
+        "name": "list_of_useful_gists"
+    },
+    {
+        "tag": "tutorial",
+        "name": "loader04x"
+    },
+    {
+        "tag": "tutorial",
+        "name": "locate"
+    },
+    {
+        "tag": "tutorial",
+        "name": "mappings"
+    },
+    {
+        "tag": "tutorial",
+        "name": "mcupdater_modpacks"
+    },
+    {
+        "tag": "tutorial",
+        "name": "migratemappings"
+    },
+    {
+        "tag": "tutorial",
+        "name": "mixin_hotswaps"
+    },
+    {
+        "tag": "tutorial",
+        "name": "modding_tips"
+    },
+    {
+        "tag": "tutorial",
+        "name": "ores"
+    },
+    {
+        "tag": "tutorial",
+        "name": "recipes"
+    },
+    {
+        "tag": "tutorial",
+        "name": "resource"
+    },
+    {
+        "tag": "tutorial",
+        "name": "setup"
+    },
+    {
+        "tag": "tutorial",
+        "name": "side"
+    },
+    {
+        "tag": "tutorial",
+        "name": "sounds"
+    },
+    {
+        "tag": "tutorial",
+        "name": "structures"
+    },
+    {
+        "tag": "tutorial",
+        "name": "technic_modpacks"
+    },
+    {
+        "tag": "tutorial",
+        "name": "terms"
+    },
+    {
+        "tag": "tutorial",
+        "name": "tooltip"
+    },
+    {
+        "tag": "tutorial",
+        "name": "updating_fabric_using_multimc_launcher"
+    },
+    {
+        "tag": "tutorial",
+        "name": "updating_yarn"
+    },
+    {
+        "tag": "tutorial",
+        "name": "upload_your_log"
+    },
+    {
+        "tag": "tutorial",
+        "name": "vscode_setup"
+    },
+    {
+        "tag": null,
+        "name": "changelog"
+    },
+    {
+        "tag": null,
+        "name": "install"
+    },
+    {
+        "tag": null,
+        "name": "rules"
+    }
 ]

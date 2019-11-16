@@ -21,23 +21,23 @@ automatically update the modpack.
 1. Prepare your modpack directory (config/, mods/, ...)
 2. Download
    [MCU-FastPack-latest.jar](http://files.mcupdater.com/MCU-FastPack-latest.jar)
-3. Run the following command: `java -jar MCU-FastPack-latest.jar --path
-   MODPACK_PATH --baseURL HTTP_WEB_SERVER_URL --mc MC_VERSION --fabric
-   //FABRIC_VERSION// --out XML_FILE`, where:
-   - *MODPACK\_PATH* is the location of the modpack files created in
-     the first step,
-   - *HTTP\_WEB\_SERVER\_URL* is the upload location URL (for
-     instance, <http://example.com/modpack/>),
-   - *MC\_VERSION* is the Minecraft version (for instance, 18w50a),
-   - *FABRIC\_VERSION* is the Fabric Loader version (for instance,
-     0.3.6.107 - check with the site to find the latest\!),
-   - *XML\_FILE* is the output XML filename.
-4. Upload the modpack files created in the first step as to make them
-   visible beneath *HTTP\_WEB\_SERVER\_URL*,
-5. Upload the XML file to your HTTP web server URL - the location and
-   filename does not matter other than for linking users. If you want
-   to update the modpack later, just replace that XML file in the same
-   location\!
+3. Run the following command:
+
+<!-- end list --->
+
+    java -jar MCU-FastPack-latest.jar --path MODPACK_PATH --baseURL HTTP_WEB_SERVER_URL --mc MC_VERSION --fabric //FABRIC_VERSION// --out XML_FILE
+
+, where:
+
+```
+  * //MODPACK_PATH// is the location of the modpack files created in the first step,
+  * //HTTP_WEB_SERVER_URL// is the upload location URL (for instance, http://example.com/modpack/),
+  * //MC_VERSION// is the Minecraft version (for instance, 18w50a),
+  * //FABRIC_VERSION// is the Fabric Loader version (for instance, 0.3.6.107 - check with the site to find the latest!),
+  * //XML_FILE// is the output XML filename.
+- Upload the modpack files created in the first step as to make them visible beneath //HTTP_WEB_SERVER_URL//,
+- Upload the XML file to your HTTP web server URL - the location and filename does not matter other than for linking users. If you want to update the modpack later, just replace that XML file in the same location!
+```
 
 You're done\! You now have an MCUpdater Fabric modpack.
 
@@ -54,30 +54,26 @@ You're done\! You now have an MCUpdater Fabric modpack.
 1. Prepare your modpack directory (config/, mods/, ...)
 2. Download
    [MCU-FastPack-latest.jar](http://files.mcupdater.com/MCU-FastPack-latest.jar)
-3. Run the following command: `java -jar MCU-FastPack-latest.jar --path
-   MODPACK_PATH --baseURL HTTP_WEB_SERVER_URL --mc MC_VERSION --out
-   XML_FILE`, where:
-   - *MODPACK\_PATH* is the location of the modpack files created in
-     the first step,
-   - *HTTP\_WEB\_SERVER\_URL* is the upload location URL (for
-     instance, <http://example.com/modpack/>),
-   - *MC\_VERSION* is the Minecraft version (for instance, 18w50a),
-   - *XML\_FILE* is the output XML filename. You will edit and upload
-     this in later steps.
-4. Visit <https://fabricmc.net/use>, select the desired Fabric loader
-   versions and click "copy MCUpdater \<Import\> Entry".
-5. Open the XML file in your favourite editor of choice and perform two
-   changes (example provided below):
-   1. Add the entry copied from the previous step below \<Server...\>:
-      it will look like \<Import url="..."\>fabric\</Import\>.
-   2. Add the following attribute to the \<Server\> element:
-      mainClass="net.fabricmc.loader.launch.knot.KnotClient".
-6. Upload the modpack files created in the first step as to make them
-   visible beneath *HTTP\_WEB\_SERVER\_URL*,
-7. Upload the XML file to your HTTP web server URL - the location and
-   filename does not matter other than for linking users. If you want
-   to update the modpack later, just replace that XML file in the same
-   location\!
+3. Run the following command:
+
+<!-- end list --->
+
+    java -jar MCU-FastPack-latest.jar --path MODPACK_PATH --baseURL HTTP_WEB_SERVER_URL --mc MC_VERSION --out XML_FILE
+
+, where:
+
+```
+  * //MODPACK_PATH// is the location of the modpack files created in the first step,
+  * //HTTP_WEB_SERVER_URL// is the upload location URL (for instance, http://example.com/modpack/),
+  * //MC_VERSION// is the Minecraft version (for instance, 18w50a),
+  * //XML_FILE// is the output XML filename. You will edit and upload this in later steps.
+- Visit [[https://fabricmc.net/use|https://fabricmc.net/use]], select the desired Fabric loader versions and click "copy MCUpdater <Import> Entry".
+- Open the XML file in your favourite editor of choice and perform two changes (example provided below):
+  - Add the entry copied from the previous step below <Server...>: it will look like <Import url="...">fabric</Import>.
+  - Add the following attribute to the <Server> element: mainClass="net.fabricmc.loader.launch.knot.KnotClient".
+- Upload the modpack files created in the first step as to make them visible beneath //HTTP_WEB_SERVER_URL//,
+- Upload the XML file to your HTTP web server URL - the location and filename does not matter other than for linking users. If you want to update the modpack later, just replace that XML file in the same location!
+```
 
 You're done\! You now have an MCUpdater Fabric modpack.
 

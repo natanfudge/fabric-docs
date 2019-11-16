@@ -120,18 +120,71 @@ The translation key for objects you have registered is in the form
 
     <object-type>.<modid>.<registry-id>
 
-| Object Type  | Format                                                    | Example                                                      |
-| ------------ | --------------------------------------------------------- | ------------------------------------------------------------ |
-| Block        | `block.<modid>.<registry-id>`                             | ` "block.tutorial.example_block": "Example Block"   `        |
-| Item         | \<code\> item.\<modid\>.\<registry-id\> \</code\>         | \<code\> "item.tutorial.my\_item": "My Item"\</code\>        |
-| ItemGroup    | \<code\> itemGroup.\<modid\>.\<registry-id\>\</code\>     | \<code\> "itemGroup.tutorial.my\_group": "My Group"\</code\> |
-| Fluid        | \<code\> fluid.\<modid\>.\<registry-id\> \</code\>        |                                                              |
-| SoundEvent   | \<code\> sound\_event.\<modid\>.\<registry-id\> \</code\> |                                                              |
-| StatusEffect | \<code\> mob\_effect.\<modid\>.\<registry-id\> \</code\>  |                                                              |
-| Enchantment  | \<code\> enchantment.\<modid\>.\<registry-id\> \</code\>  |                                                              |
-| EntityType   | \<code\> entity\_type.\<modid\>.\<registry-id\> \</code\> |                                                              |
-| Potion       | \<code\> potion.\<modid\>.\<registry-id\> \</code\>       |                                                              |
-| Biome        | \<code\> biome.\<modid\>.\<registry-id\> \</code\>        |                                                              |
+| Object Type | Format                        | Example |
+| ----------- | ----------------------------- | ------- |
+| Block       | `block.<modid>.<registry-id>` |         |
+
+```
+"block.tutorial.example_block": "Example Block"  
+```
+
+```
+|
+```
+
+|      |                                                   |
+| ---- | ------------------------------------------------- |
+| Item | \<code\> item.\<modid\>.\<registry-id\> \</code\> |
+
+\<code\> "item.tutorial.my\_item": "My Item"\</code\> |
+
+|           |                                                       |
+| --------- | ----------------------------------------------------- |
+| ItemGroup | \<code\> itemGroup.\<modid\>.\<registry-id\>\</code\> |
+
+\<code\> "itemGroup.tutorial.my\_group": "My Group"\</code\>|
+
+|       |
+| ----- |
+| Fluid |
+
+\<code\> fluid.\<modid\>.\<registry-id\> \</code\> ||
+
+|            |
+| ---------- |
+| SoundEvent |
+
+\<code\> sound\_event.\<modid\>.\<registry-id\> \</code\> ||
+
+|              |
+| ------------ |
+| StatusEffect |
+
+\<code\> mob\_effect.\<modid\>.\<registry-id\> \</code\> ||
+
+|             |
+| ----------- |
+| Enchantment |
+
+\<code\> enchantment.\<modid\>.\<registry-id\> \</code\> ||
+
+|            |
+| ---------- |
+| EntityType |
+
+\<code\> entity\_type.\<modid\>.\<registry-id\> \</code\> ||
+
+|        |
+| ------ |
+| Potion |
+
+\<code\> potion.\<modid\>.\<registry-id\> \</code\> ||
+
+|       |
+| ----- |
+| Biome |
+
+\<code\> biome.\<modid\>.\<registry-id\> \</code\> ||
 
 For types not in this list, see
 `net.minecraft.util.registry.Registry.java`.

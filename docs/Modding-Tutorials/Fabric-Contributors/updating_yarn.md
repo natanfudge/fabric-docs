@@ -108,6 +108,8 @@ Matcher - early.
 
 ### Updating Yarn
 
+Note: after the intermediary update, this step is no longer necessary.
+
 1. Make sure Yarn has no important PRs dangling - it's somewhat
    annoying to deal with them later\!
 2. Open the Enigma mappings from `mappings_official`, with **Type:

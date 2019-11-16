@@ -34,7 +34,7 @@ few pixels, but not the entire texture.
 Remember that the color provider is a client-side mechanic. Make sure to
 put any code related to it inside a client initializer.
 
-### Registering a Block Color Provider
+## Registering a Block Color Provider
 
 To register a block to the block color provider, you'll need to use
 Fabric's `ColorProviderRegistry`. There is an instance of the `BLOCK`
@@ -87,3 +87,25 @@ appear in the \`layer\` parameter (layer 0).
 Here's the final result-- note that the original model used the
 `white_concrete` texture:
 ![https://i.imgur.com/fZLS10g.png](https://i.imgur.com/fZLS10g.png)
+
+## Registering an Item Color Provider
+
+Items are similar; the difference is the context provided. Instead of
+having a state, world, or position, you have access to the `ItemStack`.
+
+```java
+ColorProviderRegistry.ITEM.register((itemStack, layer) -> {
+    return 0x3495eb;
+}, COLORED_ITEM);
+```
+
+This would hue the item in our inventory in the same fashion as the
+block.
+
+#### Limitations
+
+One key issue with using the color provider is the lack of context in
+the item provider. This is why vanilla grass doesn't change colors in
+your inventory depending on where you stand. For implementing things
+such as color variants of blocks (concrete, glass, wool, etc.), you're
+encouraged to simply provide an individual texture for each version.

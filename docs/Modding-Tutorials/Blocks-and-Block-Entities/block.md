@@ -30,7 +30,7 @@ Registering blocks is the same as registering items. Call
 public class ExampleMod implements ModInitializer
 {
     // block creation
-    [â€¦]
+    [...]
     
     @Override
     public void onInitialize()
@@ -41,7 +41,7 @@ public class ExampleMod implements ModInitializer
 ```
 
 Your block will *not* be accessible as an item, but it can be seen
-in-game by using /setblock \~ \~ \~ tutorial:example\_block.
+in-game by using `/setblock tutorial:example_block.`
 
 ### Registering a BlockItem
 

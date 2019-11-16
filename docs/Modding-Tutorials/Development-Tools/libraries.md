@@ -19,7 +19,9 @@ server](https://discord.gg/v6v4pMv) otherwise.
 | [CottonEnergy](https://github.com/CottonMC/CottonEnergy)                               | Energy API                                                                              | Cotton           |
 | [Drawer](https://github.com/natanfudge/Fabric-Drawer/blob/master/README.md)            | Automatic NBT and PacketByteBuf serializer/deserializer (Kotlin only)                   | Fudge            |
 | [Fiber](https://github.com/DaemonicLabs/fiber)                                         | Configuration system                                                                    | Daemonic Labs    |
-| [LibBlockAttributes](https://github.com/AlexIIL/LibBlockAttributes)                    | Attributes, item management, and fluid management                                       | AlexIIL          |
+| [LibBlockAttributes](https://github.com/AlexIIL/LibBlockAttributes)                    | Block and Item attributes, item management, and fluid management                        | AlexIIL          |
+| [LibMultiPart](https://github.com/AlexIIL/LibMultiPart)                                | Adding multiple parts to a single (custom) block                                        | AlexIIL          |
+| [LibNetworkStack](https://github.com/AlexIIL/LibNetworkStack)                          | Object-based networking, auto-net id assignment, buffered packets                       | AlexIIL          |
 | [LibGui](https://github.com/CottonMC/LibGui)                                           | Graphical User Interface (GUI) toolkit                                                  | Cotton           |
 | [Mesh](https://github.com/GlassPane/Mesh)                                              | All-round utility library, automatic registration, recipe generation, multiblocks (WIP) | UpcraftLP        |
 | [NBT Crafting](https://github.com/Siphalor/nbt-crafting)                               | Extends the JSON recipe system to work with NBT data                                    | Siphalor         |
@@ -28,3 +30,4 @@ server](https://discord.gg/v6v4pMv) otherwise.
 | [Tweed](https://github.com/Siphalor/tweed-api)                                         | Configuration API allowing automation and synchronization                               | Siphalor         |
 | [Trinkets](https://github.com/emilyploszaj/trinkets)                                   | Data driven accessory api                                                               | Emi              |
 | [Working Scheduler](https://github.com/natanfudge/Working-Scheduler)                   | A working and comprehensive tick scheduler                                              | Fudge            |
+| [Tesseract](https://github.com/Vatuu/tesseract)                                        | World API with optimization and extra control                                           | Vatuu Komalia    |

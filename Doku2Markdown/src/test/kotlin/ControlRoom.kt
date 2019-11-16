@@ -7,6 +7,7 @@ import scrape.*
 import java.io.File
 
 private fun cleanMarkdown(dir: File = File(MarkdownDirectory)) {
+    if(!dir.exists()) dir.mkdirs()
     for (file in dir.listFiles()!!) {
         if (file.name != "images") {
             file.deleteRecursively()

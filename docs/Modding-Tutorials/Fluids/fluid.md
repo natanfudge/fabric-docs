@@ -159,8 +159,8 @@ public abstract class Acid extends BasicFluid
         }
 
         /**
-         * @return height of the fluid block
-         */
+      * @return height of the fluid block
+      */
         @Override
         public int getLevel(FluidState fluidState)
         {
@@ -179,8 +179,8 @@ public abstract class Acid extends BasicFluid
         }
 
         /**
-         * @return height of the fluid block
-         */
+      * @return height of the fluid block
+      */
         @Override
         public int getLevel(FluidState fluidState)
         {
@@ -326,41 +326,45 @@ to them.
     @Override
     public void onInitializeClient()
     {
-        Identifier stillSpriteLocation = new Identifier("block/water_still");
-        Identifier dynamicSpriteLocation = new Identifier("block/water_flow");
-        // here I tell to use only 16x16 area of the water texture
-        FabricSprite stillAcidSprite = new FabricSprite(stillSpriteLocation, 16, 16);
-        // same, but 32
-        FabricSprite dynamicAcidSprite = new FabricSprite(dynamicSpriteLocation, 32, 32);
         
         // adding the sprites to the block texture atlas
         ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEX).register((spriteAtlasTexture, registry) -> {
+        
+            Identifier stillSpriteLocation = new Identifier("block/water_still");
+            Identifier dynamicSpriteLocation = new Identifier("block/water_flow");
+            // here I tell to use only 16x16 area of the water texture
+            FabricSprite stillAcidSprite = new FabricSprite(stillSpriteLocation, 16, 16);
+            // same, but 32
+            FabricSprite dynamicAcidSprite = new FabricSprite(dynamicSpriteLocation, 32, 32);
+        
             registry.register(stillAcidSprite);
             registry.register(dynamicAcidSprite);
+            
+            
+            // this renderer is responsible for drawing fluids in a world
+            FluidRenderHandler acidRenderHandler = new FluidRenderHandler()
+            {
+                // return the sprites: still sprite goes first into the array, flowing/dynamic goes last
+                @Override
+                public Sprite[] getFluidSprites(ExtendedBlockView extendedBlockView, BlockPos blockPos, FluidState fluidState)
+                {
+                    return new Sprite[] {stillAcidSprite, dynamicAcidSprite};
+                }
+
+                // apply light green color
+                @Override
+                public int getFluidColor(ExtendedBlockView view, BlockPos pos, FluidState state)
+                {
+                    return 0x4cc248;
+                }
+            };
+
+            // registering the same renderer for both fluid variants is intentional
+
+            FluidRenderHandlerRegistry.INSTANCE.register(Mod.stillAcid, acidRenderHandler);
+            FluidRenderHandlerRegistry.INSTANCE.register(Mod.flowingAcid, acidRenderHandler);
         });
 
-        // this renderer is responsible for drawing fluids in a world
-        FluidRenderHandler acidRenderHandler = new FluidRenderHandler()
-        {
-            // return the sprites: still sprite goes first into the array, flowing/dynamic goes last
-            @Override
-            public Sprite[] getFluidSprites(ExtendedBlockView extendedBlockView, BlockPos blockPos, FluidState fluidState)
-            {
-                return new Sprite[] {stillAcidSprite, dynamicAcidSprite};
-            }
-
-            // apply light green color
-            @Override
-            public int getFluidColor(ExtendedBlockView view, BlockPos pos, FluidState state)
-            {
-                return 0x4cc248;
-            }
-        };
-
-        // registering the same renderer for both fluid variants is intentional
-
-        FluidRenderHandlerRegistry.INSTANCE.register(Mod.stillAcid, acidRenderHandler);
-        FluidRenderHandlerRegistry.INSTANCE.register(Mod.flowingAcid, acidRenderHandler);
 ```
 
 Then what's left to do is to create necessary Json files and textures,
