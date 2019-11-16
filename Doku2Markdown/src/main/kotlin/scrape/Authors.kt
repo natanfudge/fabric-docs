@@ -30,6 +30,7 @@ private fun scrapeAuthors(page: Page): Set<String> {
         var nextPageExists = false
         val authorsColumn = skrape {
             url = page.revisionsUrl(firstChangeNumber)
+            println("Visiting $url")
 
             extract {
                 val lessRecentButton = elements(".no button").filter { it.attr("title") == "less recent >> [N]" }
