@@ -12,7 +12,9 @@ import kotlinx.serialization.list
 import migratePath
 import java.io.File
 
- const val MarkdownDirectory = "$Resources/pages_markdown/"
+const val MarkdownDirectory = "$Resources/pages_markdown/"
+const val RootDirectory = "../"
+const val DocsDirectory = RootDirectory + "docs/"
 
 @Serializable
 data class Page(val tag: String?, val name: String) {
@@ -35,6 +37,7 @@ data class Page(val tag: String?, val name: String) {
     @Transient
     val localFixedDokuWikiPath = "$localFixedDokuWikiDirectory$name.txt"
 
+    val isFrench get() = tag?.startsWith("fr:") == true || tag == "fr"
 
 
     @Transient
@@ -43,6 +46,9 @@ data class Page(val tag: String?, val name: String) {
 
     @Transient
     val localMarkdownPath = "$MarkdownDirectory$relativeMarkdownPath"
+
+    @Transient
+    val localExposedPath = "$DocsDirectory$relativeMarkdownPath"
 
     companion object {
         fun getPages() = JsonConfig.parse(serializer().list, File(Pages).readText()).filter { it.name !in BannedPages }
@@ -54,7 +60,7 @@ fun notNamespaced(name: String) = Page(null, name)
 fun frenchTutorial(name: String) = Page("fr:tutoriel", name)
 
 const val Pages = "$Resources/pages.json"
-val BannedPages = listOf("dokuwiki", "syntax", "welcome", "agenda", "wiki_meta","sidebar","start","accueil","sidebar_do_edit")
+val BannedPages = listOf("dokuwiki", "syntax", "welcome", "agenda", "wiki_meta", "sidebar", "start", "accueil", "sidebar_do_edit")
 
 
 fun scrapeAndSavePageList() {

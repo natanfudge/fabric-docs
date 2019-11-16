@@ -1,13 +1,10 @@
 import org.junit.Test
-import produce.produceAuthorsList
-import produce.produceCredits
-import produce.produceEverything
-import produce.produceMarkdownPages
+import produce.*
 import scrape.*
 import java.io.File
 
 private fun cleanMarkdown(dir: File = File(MarkdownDirectory)) {
-    if(!dir.exists()) dir.mkdirs()
+    if (!dir.exists()) dir.mkdirs()
     for (file in dir.listFiles()!!) {
         if (file.name != "images") {
             file.deleteRecursively()
@@ -15,7 +12,30 @@ private fun cleanMarkdown(dir: File = File(MarkdownDirectory)) {
     }
 }
 
+//private fun cleanDocs(dir: File = File(MarkdownDirectory)) {
+//    if(!dir.exists()) dir.mkdirs()
+//    for (file in dir.listFiles()!!) {
+//        if (file.name != "images") {
+//            file.deleteRecursively()
+//        }
+//    }
+//}
+
+
 class ControlRoom {
+
+    @Test
+    fun updateEnglishPages() {
+        updatePages()
+        refreshEnglishDocs()
+    }
+
+    @Test
+    fun updateFrenchPages() {
+        updatePages()
+        refreshFrenchDocs()
+    }
+
     @Test
     fun cleanRun() {
         scrapeAndSaveEverything()
@@ -34,14 +54,15 @@ class ControlRoom {
     }
 
     @Test
-    fun updatePages() {
-        scrapeAndSavePageList()
-        scrapeAndSaveDokuWikiPages()
+    fun refreshEnglishDocs() {
+        File(DocsDirectory).deleteRecursively()
+        exposeDocs(includeFrench = false)
     }
 
     @Test
-    fun redownloadImages() {
-        downloadAndSaveImages()
+    fun refreshFrenchDocs() {
+        File(DocsDirectory).deleteRecursively()
+        exposeDocs(includeFrench = true)
     }
 
     @Test
@@ -56,4 +77,14 @@ class ControlRoom {
         produceAuthorsList()
     }
 
+    @Test
+    fun redownloadImages() {
+        downloadAndSaveImages()
+    }
+
+    private fun updatePages() {
+        scrapeAndSavePageList()
+        scrapeAndSaveDokuWikiPages()
+        reconvertMarkdownPages()
+    }
 }

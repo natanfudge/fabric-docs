@@ -4,6 +4,7 @@ import JsonConfig
 import Resources
 import kotlinx.serialization.list
 import scrape.AuthorsPath
+import scrape.DocsDirectory
 import scrape.PageAuthors
 import java.io.File
 import java.io.FileWriter
@@ -12,7 +13,7 @@ import java.nio.file.Paths
 import java.util.*
 
 private const val AuthorsLinksPath = "$Resources/authorLinks.properties"
-private const val CreditsFilePath = "docs/Credits.md"
+private const val CreditsFilePath = "${DocsDirectory}Credits.md"
 
 fun produceCredits() {
     val introduction = """

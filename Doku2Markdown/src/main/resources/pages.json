@@ -306,5 +306,57 @@
     {
         "tag": null,
         "name": "rules"
+    },
+    {
+        "tag": "fr:tutoriel",
+        "name": "ajouter_mods"
+    },
+    {
+        "tag": "fr:tutoriel",
+        "name": "appliquer_modifications"
+    },
+    {
+        "tag": "fr:tutoriel",
+        "name": "blocs"
+    },
+    {
+        "tag": "fr:tutoriel",
+        "name": "enchantements"
+    },
+    {
+        "tag": "fr:tutoriel",
+        "name": "groupes_objets"
+    },
+    {
+        "tag": "fr:tutoriel",
+        "name": "infobulles"
+    },
+    {
+        "tag": "fr:tutoriel",
+        "name": "installation_java"
+    },
+    {
+        "tag": "fr:tutoriel",
+        "name": "mise_en_place"
+    },
+    {
+        "tag": "fr:tutoriel",
+        "name": "modpacks_atlauncher"
+    },
+    {
+        "tag": "fr:tutoriel",
+        "name": "modpacks_technic"
+    },
+    {
+        "tag": "fr:tutoriel",
+        "name": "objets"
+    },
+    {
+        "tag": "fr:tutoriel",
+        "name": "recettes"
+    },
+    {
+        "tag": "fr:tutoriel",
+        "name": "termes"
     }
 ]

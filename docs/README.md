@@ -13,5 +13,5 @@ This wiki is also available in the following languages:
 
 |  |
 | :--- |
-| [Français](https://fabric-testing.gitbook.io/fabric-wiki/v/french/) |
+| ![](.gitbook/assets/france_flag%20%281%29.png) [Français](https://fabric-testing.gitbook.io/fabric-wiki/v/french/) |
 
