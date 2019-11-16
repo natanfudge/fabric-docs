@@ -113,7 +113,7 @@ The key of each entry of the objects below is a Mod ID of the
 dependency.
 
 The value of each key is a string or array of strings declaring
-supported version ranges. In the case of an array, an â€œORâ€� relationship
+supported version ranges. In the case of an array, an "ORâ€� relationship
 is assumed - that is, only one range has to match for the collective
 range to be satisfied.
 

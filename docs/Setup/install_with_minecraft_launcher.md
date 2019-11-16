@@ -2,7 +2,7 @@
 
 ### STEP 1: Download the Fabric Installer
 
-Go to <https://fabricmc.net/use/> and select the â€œVanillaâ€� option, then
+Go to <https://fabricmc.net/use/> and select the "Vanillaâ€� option, then
 download the Windows exe installer or the Universal JAR installer.
 
 Close the Minecraft Launcher.

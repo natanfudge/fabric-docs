@@ -58,7 +58,7 @@ for your operating system and install JAVA.
 
 ### STEP 4: Install Fabric in the Server Folder
 
-Go to <https://fabricmc.net/use/> and select the â€œServerâ€� option, then
+Go to <https://fabricmc.net/use/> and select the "Serverâ€� option, then
 download the Windows exe installer or the Universal JAR installer.
 
 Run the Fabric Installer jar/exe you downloaded. Select the `Server`

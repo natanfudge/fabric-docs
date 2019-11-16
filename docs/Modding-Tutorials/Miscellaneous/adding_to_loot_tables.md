@@ -6,16 +6,16 @@ Sometimes you want to add items to [loot
 tables](https://minecraft.gamepedia.com/Loot_table), for example adding
 your own drops to a vanilla block or entity. The simplest solution,
 replacing the loot table file, can break other mods â€“ what if they want
-to change them as well? Weâ€™ll take a look at how you can add items to
+to change them as well? We'll take a look at how you can add items to
 loot tables without overriding the table.
 
 Our example will be adding eggs to the coal ore loot table.
 
 ## Listening to loot table loading
 
-Fabric API has an event thatâ€™s fired when loot tables are loaded,
+Fabric API has an event that's fired when loot tables are loaded,
 `%%LootTableLoadingCallback%%`. You can register an event listener for
-it in your initializer. Letâ€™s also check that the current loot table is
+it in your initializer. Let's also check that the current loot table is
 `%%minecraft:blocks/coal_ore%%`.
 
 ```java
@@ -34,7 +34,7 @@ LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, suppl
 ## Adding items to the table
 
 In loot tables, items are stored in *loot entries,* and entries are
-stored in *loot pools*. To add an item, weâ€™ll need to add a pool with an
+stored in *loot pools*. To add an item, we'll need to add a pool with an
 item entry to the loot table.
 
 We can make a pool with `%%FabricLootPoolBuilder%%`, and add it to the
@@ -51,7 +51,7 @@ LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, suppl
 });
 ```
 
-Our pool doesnâ€™t have any items yet, so weâ€™ll make an item entry and add
+Our pool doesn't have any items yet, so we'll make an item entry and add
 it to the pool, and we're done:
 
 ```java

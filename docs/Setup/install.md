@@ -11,16 +11,16 @@ using, follow through to the [regular client](.md#regular_client)
 instructions.
 
 1. Open [the download page](https://fabricmc.net/use/) and choose the
-   game, mapping and loader versions. Click â€œCopy MultiMC instance
+   game, mapping and loader versions. Click "Copy MultiMC instance
    urlâ€�.
    - Generally, choosing the latest mapping version for a given game
      version is advisable, as mods do not depend on the deobfuscated
      names staying the same.
    - The loader should be mostly game version-independent. If this
      situation changes, it will be pointed out, so don't worry\!
-2. Start MultiMC. Click on â€œAdd Instanceâ€� in the top-left, then select
-   â€œImport from ZIPâ€� and paste the URL in the text field. Don't
-   forget to set the name\!
+2. Start MultiMC. Click on "Add Instanceâ€� in the top-left, then select
+   "Import from ZIPâ€� and paste the URL in the text field. Don't forget
+   to set the name\!
 3. Press OK. Your Fabric instance is ready to go - feel free to add
    mods to it\!
 

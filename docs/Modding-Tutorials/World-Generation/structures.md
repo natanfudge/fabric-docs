@@ -7,7 +7,7 @@ All code used in this tutorial is available here:
 
 ### Introduction
 
-Weâ€™re going to look at registering and placing structures in your world.
+We're going to look at registering and placing structures in your world.
 
 To view examples of 1.14 vanilla structures in action, IglooGenerator &
 IglooFeature are a good place to start.
@@ -15,7 +15,7 @@ IglooFeature are a good place to start.
 You are going to need a Feature and Generator for the most basic
 structure. The feature handles the process of registering the structure
 and loading it in when the world is generating-- it answers questions
-such as â€˜should I spawn here?â€™ and â€˜what is my name?â€™ The generator
+such as 'should I spawn here?' and 'what is my name?' The generator
 handles the placement of blocks or loading in a structure file if you
 choose to do so.
 

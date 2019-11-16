@@ -94,7 +94,7 @@ animating bouncing up and down. We calculate this by:
 
 - Getting the current world time, which changes over time.
 - Adding the partial ticks. (The partial ticks is a fractional value
-  representing the amount of time thatâ€™s passed between the last full
+  representing the amount of time that's passed between the last full
   tick and now. We use this because otherwise the animation would be
   jittery because there are fewer ticks per second than frames per
   second.)
@@ -102,7 +102,7 @@ animating bouncing up and down. We calculate this by:
 - Taking the sine of that to produce a value that ranges between -1
   and 1, like a [sine wave](https://www.electronicshub.org/wp-content/uploads/2015/07/11.jpg).
 - Dividing that by 4 to compress the sine wave vertically so the item
-  doesnâ€™t move up and down as much.
+  doesn't move up and down as much.
 
 <!-- end list --->
 

@@ -29,26 +29,34 @@ fun produceMarkdownPages() {
     }
 }
 
-val indentRegex1 = Regex("\\n {3}\\*")
-val indentRegex2 = Regex("\\n {6}\\*")
-val indentRegex3 = Regex("\\n {9}\\*")
+val indentRegex1 = Regex("\\n {3}([*\\-])")
+val indentRegex2 = Regex("\\n {6}([*\\-])")
+val indentRegex3 = Regex("\\n {9}([*\\-])")
+val indentRegex4 = Regex("\\n {7}([*\\-])")
 
 val newLineCodeRegex = Regex("([^\\s].*)(<code.*)")
+
+//val curseQuotesRegex =
 
 fun fixDokuWikiPages() {
     for (page in Page.getPages()) {
         val raw = File(page.localRawDokuWikiPath).readText()
-        // Markdown doesn't like 3-space indented lines, it turns them into code blocks
-        val fixed3spaces = indentRegex1.replace(raw, "\n  *")
-        val fixed6spaces = indentRegex2.replace(fixed3spaces, "\n    *")
-        val fixed9spaces = indentRegex3.replace(fixed6spaces, "\n      *")
+        // Markdown doesn't like non-2-space indented lines, it turns them into code blocks
+        val fixed3spaces = indentRegex1.replace(raw, "\n  \$1")
+        val fixed6spaces = indentRegex2.replace(fixed3spaces, "\n    \$1")
+        val fixed9spaces = indentRegex3.replace(fixed6spaces, "\n      \$1")
+        val fixed7spaces = indentRegex4.replace(fixed9spaces,"\n    \$1")
 
         // Markdown can't start multiline code on the same line
-        val fixedSameLineCode = newLineCodeRegex.replace(fixed9spaces,"\$1\n\$2")
+        val fixedSameLineCode = newLineCodeRegex.replace(fixed7spaces,"\$1\n\$2")
+
+        // Pandoc doesn't like cursed iphone quotes
+        val fixedCursedQuotes = fixedSameLineCode.replace('’','\'')
+                .replace('“','"').replace('‘','\'')
 
         with(File(page.localFixedDokuWikiPath)) {
             parentFile.mkdirs()
-            writeText(fixedSameLineCode)
+            writeText(fixedCursedQuotes)
         }
     }
 }
