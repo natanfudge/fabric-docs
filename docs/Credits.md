@@ -132,7 +132,7 @@ Authors:
  - [valoeghese](https://github.com/valoeghese)  
 Original Page: https://fabricmc.net/wiki/tutorial:biome  
 
-Page: [Modding-Tutorials/Blocks-and-Block-Entities/biomecoloring.md](Modding-Tutorials/Blocks-and-Block-Entities/biomecoloring.md)  
+Page: [Modding-Tutorials/biomecoloring.md](Modding-Tutorials/biomecoloring.md)  
 Authors:
  - [draylar](https://github.com/draylar)  
  - [jamieswhiteshirt](https://github.com/jamieswhiteshirt/)  

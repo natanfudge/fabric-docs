@@ -1,6 +1,34 @@
 # Updating Yarn mappings in a Java codebase
 
-## The Hacky Way
+# Loom 0.2.6 and above
+
+Currently, this process will only affect Java files.
+
+Say you want to migrate from 1.14.4 to 19w46b.
+
+1. Go [here](https://modmuss50.me/fabric.html?&version=19w46b), select
+   `19w46b`, and copy the `yarn_mappings` value, for example
+   `19w46b+build.1`. DO NOT modify your gradle.properties or
+   build.gradle yet.
+2. In the root of your gradle project, run `gradlew migrateMappings
+   --mappings "19w46b+build.1"`
+3. Your migrated source will appear in `remappedSrc`. Verify your code
+   was not nuked and copy it over.
+4. Update your gradle.properties file according to the instructions in
+   [this](https://modmuss50.me/fabric.html?&version=19w46b) site.
+5. You're done.
+
+#### Additional customization
+
+- Specify from where to take your Java files with `--input
+  path/to/source`. Default: `src/main/java`.
+- Specify where to output the remapped source with `--output
+  path/to/output`. Default: 'remappedSrc'.
+- Specify a custom place to retrieve the mappings from with
+  `--mappings some_group:some_artifact:some_version:some_qualifier`.
+  Default: `net.fabricmc:yarn:<version-you-inputted>:v2`.
+
+# Loom 0.2.5 and below
 
 ### Requirements
 
@@ -37,7 +65,3 @@ get file not found issues.*
 This should work across Minecraft versions as well, provided we haven't
 massively broken Intermediaries or done something equally silly (aka:
 most of the time).
-
-## The Non-Hacky Way
-
-Coming soon\! (Hopefully.)

@@ -43,6 +43,13 @@ class ControlRoom {
     }
 
     @Test
+    fun updateAllLocal() {
+        reconvertMarkdownPages()
+        refreshCredits()
+        refreshEnglishDocs()
+    }
+
+    @Test
     fun refreshCredits() {
         produceCredits()
     }

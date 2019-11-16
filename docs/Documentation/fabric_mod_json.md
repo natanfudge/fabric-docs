@@ -48,20 +48,11 @@ exact name placed in the root directory of the mod JAR.
 ]
 ```
 
-```
-* If you're using any other language, that is compatible with Java and has a Fabric adapter, then you should use following syntax: 
-```
+- If you're using any other language, consult the language adapter's
+  documentation. The Kotlin one is located
+  [here](https://github.com/FabricMC/fabric-language-kotlin/blob/master/README.md).
 
-```json
-"main": [
-   {
-      "adapter": "kotlin",
-      "value": "package.ClassName"
-   }
-]
-```
-
-- **jars** A list of nested JARs inside your mod's JAR to load. Before
+<!-- end list --->- **jars** A list of nested JARs inside your mod's JAR to load. Before
   using the field, check out [the guidelines on the usage of the nested JARs](../Modding-Tutorials/Advanced/loader04x.md#nested_jars). Each entry is an
   object containing `file` key. That should be a path inside your
   mod's JAR to the nested JAR. For example:
