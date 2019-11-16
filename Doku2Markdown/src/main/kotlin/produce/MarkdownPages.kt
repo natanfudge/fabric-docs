@@ -51,8 +51,8 @@ fun fixDokuWikiPages() {
         val fixedSameLineCode = newLineCodeRegex.replace(fixed7spaces,"\$1\n\$2")
 
         // Pandoc doesn't like cursed iphone quotes
-        val fixedCursedQuotes = fixedSameLineCode.replace('’','\'')
-                .replace('“','"').replace('‘','\'')
+        val fixedCursedQuotes = fixedSameLineCode.replace('’','\'').replace('‘','\'')
+                .replace('“','"').replace('”','"')
 
         with(File(page.localFixedDokuWikiPath)) {
             parentFile.mkdirs()

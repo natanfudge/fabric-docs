@@ -5,7 +5,7 @@
 Adding a basic item is one of the first steps in modding. You're going
 to need to create an `Item` object, register it, and give it a texture.
 To add additional behavior to the item you will need a custom Item
-class. In this tutorial and all future ones, the "tutorialâ€� namespace is
+class. In this tutorial and all future ones, the "tutorial" namespace is
 used as a placeholder. If you have a separate modid, feel free to use it
 instead.
 
