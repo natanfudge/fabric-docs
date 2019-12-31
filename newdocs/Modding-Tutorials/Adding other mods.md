@@ -40,7 +40,7 @@ For example, you want to use Roughly Enough Items to make grabbing items and see
 
 ### CurseMaven
 
-The easiest (and best way IMO) way to add dev dependencies is [CurseMaven](https://github.com/Wyn-Price/CurseMaven), provided it is hosted on [CurseForge](https://www.curseforge.com/minecraft/mc-mods).   Note that when using CurseMaven, you will need to add any dependencies of the mod that is not included in the mod jar that is published on Curseforge. In most cases, this will only be [Fabric API](https://github.com/FabricMC/fabric), which you already have in your build.gradle (in the example mod), and in some mods, [Fabric Language Kotlin](https://github.com/FabricMC/fabric-language-kotlin), which you can follow the gradle instructions for in the Github README.
+The easiest (and best IMO) way to add dev dependencies is [CurseMaven](https://github.com/Wyn-Price/CurseMaven), provided it is hosted on [CurseForge](https://www.curseforge.com/minecraft/mc-mods).   Note that when using CurseMaven, you will need to add any dependencies of the mod that are not included in the mod jar that is published on Curseforge. In most cases, this will only be [Fabric API](https://github.com/FabricMC/fabric), which you already have in your build.gradle (in the example mod), and in some mods, [Fabric Language Kotlin](https://github.com/FabricMC/fabric-language-kotlin), which you can follow the gradle instructions for in the Github README.
 
 - Add CurseMaven as a Gradle plugin:
 
