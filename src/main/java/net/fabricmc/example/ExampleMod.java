@@ -3,6 +3,7 @@ package net.fabricmc.example;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -28,10 +29,11 @@ public class ExampleMod implements ModInitializer {
             packetContext.getTaskQueue().execute(() -> {
                 // Execute on the main thread
 
+                PlayerEntity player = packetContext.getPlayer();
                 // ALWAYS validate that the information received is valid in a C2S packet!
-                if (packetContext.getPlayer().world.isHeightValidAndBlockLoaded(pos)) {
+                if (player.world.isHeightValidAndBlockLoaded(pos) && player.canPlaceOn()) {
                     // Turn to diamond
-                    packetContext.getPlayer().world.setBlockState(pos, Blocks.DIAMOND_BLOCK.getDefaultState());
+                    player.world.setBlockState(pos, Blocks.DIAMOND_BLOCK.getDefaultState());
                 }
 
             });
