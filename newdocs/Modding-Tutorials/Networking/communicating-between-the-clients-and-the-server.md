@@ -223,7 +223,7 @@ public class ExampleMod implements ModInitializer {
                 // Execute on the main thread
 
                 // ALWAYS validate that the information received is valid in a C2S packet!
-                if(packetContext.getPlayer().world.isHeightValidAndBlockLoaded(pos)){
+                if (packetContext.getPlayer().world.isHeightValidAndBlockLoaded(pos)) {
                     // Turn to diamond
                     packetContext.getPlayer().world.setBlockState(pos, Blocks.DIAMOND_BLOCK.getDefaultState());
                 }
