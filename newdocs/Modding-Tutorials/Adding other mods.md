@@ -10,7 +10,7 @@ repositories {
 }
 ```
 
-** When using a Kotlin buildscript (`build.gradle.kts`), the syntax for a repository is different: **
+**When using a Kotlin buildscript (`build.gradle.kts`), the syntax for a repository is different:**
 
  ```kotlin
 repositories {
