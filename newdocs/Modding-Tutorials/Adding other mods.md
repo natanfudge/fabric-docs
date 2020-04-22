@@ -137,7 +137,7 @@ dependencies {
 }
 ```
 
-Bundling a dependency means no additional work is required from the user. The library jar is copied to your mod jar when you publish it. When other mods `include` the same mod, Fabric Loader will only load the latest version. **This is why you should `include` mod dependencies instead  `shadow`ing them**. 
+Bundling a dependency means no additional work is required from the user. The library jar is copied to your mod jar when you publish it. When other mods `include` the same mod, Fabric Loader will only load the latest version. **This is why you should `include` mod dependencies instead of `shadow`ing them**. 
 
 ### Expected (not-bundled) dependency
 
