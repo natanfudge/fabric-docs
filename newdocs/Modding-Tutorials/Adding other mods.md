@@ -113,7 +113,7 @@ If the mod is hosted on [Github](https://github.com/), you can use JitPack to re
 
 ## Adding hard dependencies 
 
-Hard (always present) dependencies are specified using `modImplementation`. Hard dependencies are usually libraries you mod depends on.  These libraries should have sections explaining how to depend on them. Say, [Cardinal Components API](https://github.com/NerdHubMC/Cardinal-Components-API#adding-the-api-to-your-buildscript-loom-024):
+Hard (always present) dependencies are specified using `modImplementation`. Hard dependencies are usually libraries your mod depends on.  These libraries should have sections explaining how to depend on them. Say, [Cardinal Components API](https://github.com/NerdHubMC/Cardinal-Components-API#adding-the-api-to-your-buildscript-loom-024):
 
 ```groovy
 repositories {
