@@ -1,46 +1,26 @@
 package net.fabricmc.example;
 
+import com.mojang.serialization.JsonOps;
+
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.recipe.RecipeType;
+
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
+import net.fabricmc.example.recipe.ExampleRecipe;
 
 public class ExampleMod implements ModInitializer {
-    public static final Identifier PLAY_PARTICLE_PACKET_ID = new Identifier("example", "particle");
-    private static final MyBlock PACKETS_BLOCK = new MyBlock();
-    public static final Identifier TURN_TO_DIAMOND_PACKET_ID = new Identifier("example", "diamond");
+    public static final RecipeType<ExampleRecipe> RECIPE_TYPE = RecipeType.register("example:recipe_type");
 
     @Override
     public void onInitialize() {
-        System.out.println("Init");
-        Registry.register(Registry.BLOCK, "docs:packets", PACKETS_BLOCK);
-        Registry.register(Registry.ITEM, "docs:packets",
-                new BlockItem(PACKETS_BLOCK, new Item.Settings().group(ItemGroup.MISC)));
-
-        ServerSidePacketRegistry.INSTANCE.register(TURN_TO_DIAMOND_PACKET_ID, (packetContext, attachedData) -> {
-            // Get the BlockPos we put earlier
-            BlockPos pos = attachedData.readBlockPos();
-            packetContext.getTaskQueue().execute(() -> {
-                // Execute on the main thread
-
-                PlayerEntity player = packetContext.getPlayer();
-                // ALWAYS validate that the information received is valid in a C2S packet!
-                if (player.world.isHeightValidAndBlockLoaded(pos) && player.canPlaceOn()) {
-                    // Turn to diamond
-                    player.world.setBlockState(pos, Blocks.DIAMOND_BLOCK.getDefaultState());
-                }
-
-            });
-        });
-
-        Registry.register(Registry.RECIPE_SERIALIZER, ExampleRecipeSerializer.ID,
-                ExampleRecipeSerializer.INSTANCE);
-        Registry.register(Registry.RECIPE_TYPE, new Identifier("example", ExampleRecipe.Type.ID), ExampleRecipe.Type.INSTANCE);
+        CompoundTag tag = new CompoundTag();
+        tag.putInt("Damage", 16);
+        ItemStack output = new ItemStack(Items.GOLDEN_PICKAXE, 1);
+        output.setTag(tag);
+        ExampleRecipe recipe = new ExampleRecipe(Items.DIRT, Items.EGG, output);
+        String json = ExampleRecipe.CODEC.encodeStart(JsonOps.INSTANCE, recipe).getOrThrow(false, System.err::println).toString();
+        System.out.println(json);
     }
 }

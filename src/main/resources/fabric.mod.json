@@ -25,9 +25,6 @@
       "net.fabricmc.example.ExampleClientInit"
     ]
   },
-  "mixins": [
-    "modid.mixins.json"
-  ],
 
   "depends": {
     "fabricloader": ">=0.4.0",

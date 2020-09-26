@@ -29,3 +29,4 @@ Doku2Markdown/src/main/resources/pages_dokuwiki_fixed
 Doku2Markdown/src/main/resources/pages_markdown
 
 docs/.gitbook
+.DS_Store
