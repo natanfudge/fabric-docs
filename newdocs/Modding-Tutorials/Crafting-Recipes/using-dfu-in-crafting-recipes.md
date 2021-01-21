@@ -217,17 +217,12 @@ public enum ExampleRecipeSerializer implements RecipeSerializer<ExampleRecipe> {
     // [...]  
     @Override
     public ExampleRecipe read(Identifier id, PacketByteBuf buf) {
-        Item input1 = Registry.ITEM.get(buf.readIdentifier());
-        Item input2 = Registry.ITEM.get(buf.readIdentifier());
-        ItemStack output = buf.readItemStack();
-        return new ExampleRecipe(input1, input2, output);
+        return buf.decode(ExampleRecipe.CODEC);
     }
     
     @Override
     public void write(PacketByteBuf buf, ExampleRecipe recipe) {
-        buf.writeIdentifier(Registry.ITEM.getId(recipe.getInput1()));
-        buf.writeIdentifier(Registry.ITEM.getId(recipe.getInput2()));
-        buf.writeItemStack(recipe.getOutput());
+        buf.encode(ExampleRecipe.CODEC, recipe);
     }
 }
 ```
