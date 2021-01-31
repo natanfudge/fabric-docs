@@ -1,0 +1,32 @@
+# gradle
+
+.gradle/
+build/
+out/
+classes/
+
+# idea
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# vscode
+
+.settings/
+.vscode/
+bin/
+.classpath
+.project
+
+# fabric
+
+run/
+
+Doku2Markdown/src/main/resources/pages_dokuwiki
+Doku2Markdown/src/main/resources/pages_dokuwiki_fixed
+Doku2Markdown/src/main/resources/pages_markdown
+
+docs/.gitbook
+.DS_Store

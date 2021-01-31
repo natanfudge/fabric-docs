@@ -1,0 +1,11 @@
+{
+  "type": "example:example_recipe",
+  "inputA" : {
+    "item": "minecraft:redstone"
+  },
+  "inputB": {
+    "tag": "minecraft:logs"
+  },
+  "outputItem": "minecraft:cobblestone",
+  "outputAmount": "20"
+}

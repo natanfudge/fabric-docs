@@ -1,0 +1,1735 @@
+[
+    {
+        "page": {
+            "tag": "community_discords",
+            "name": "modpacks"
+        },
+        "authors": [
+            "mounderfod",
+            "2xsaiko",
+            "falseresync"
+        ]
+    },
+    {
+        "page": {
+            "tag": "community_discords",
+            "name": "mods"
+        },
+        "authors": [
+            "deathunter",
+            "mounderfod",
+            "oroarmor",
+            "kb1000",
+            "falseresync",
+            "ytg1234",
+            "amerebagatelle",
+            "glitch",
+            "sakira",
+            "juuz",
+            "potatoboy9999",
+            "calum6541",
+            "chloedawn",
+            "haykam",
+            "hydos",
+            "modmuss50"
+        ]
+    },
+    {
+        "page": {
+            "tag": "community_discords",
+            "name": "other"
+        },
+        "authors": [
+            "modmuss50",
+            "ytg1234",
+            "sakira",
+            "supercoder79",
+            "2xsaiko",
+            "potatoboy9999",
+            "valoeghese",
+            "hydos"
+        ]
+    },
+    {
+        "page": {
+            "tag": "documentation",
+            "name": "build_pipelines"
+        },
+        "authors": [
+            "jamie",
+            "liach",
+            "falseresync",
+            "nzsmartie",
+            "irtimaled"
+        ]
+    },
+    {
+        "page": {
+            "tag": "documentation",
+            "name": "entrypoint"
+        },
+        "authors": [
+            "i509vcb",
+            "jamieswhiteshirt"
+        ]
+    },
+    {
+        "page": {
+            "tag": "documentation",
+            "name": "fabric_loader"
+        },
+        "authors": [
+            "jamieswhiteshirt",
+            "falseresync"
+        ]
+    },
+    {
+        "page": {
+            "tag": "documentation",
+            "name": "fabric_loom"
+        },
+        "authors": [
+            "jamieswhiteshirt"
+        ]
+    },
+    {
+        "page": {
+            "tag": "documentation",
+            "name": "fabric_mod_json"
+        },
+        "authors": [
+            "fudge",
+            "jamieswhiteshirt",
+            "falseresync"
+        ]
+    },
+    {
+        "page": {
+            "tag": "documentation",
+            "name": "fabric_mod_json_spec"
+        },
+        "authors": [
+            "juuz"
+        ]
+    },
+    {
+        "page": {
+            "tag": "documentation",
+            "name": "libraries"
+        },
+        "authors": [
+            "kosmx",
+            "falseresync",
+            "bluevista",
+            "calum6541",
+            "ytg1234",
+            "lortseam",
+            "oroarmor",
+            "cydhra",
+            "boogiemonster1o1",
+            "pyrofab",
+            "globox",
+            "terantai",
+            "adriantodt",
+            "thebrokenrail",
+            "geckothepecko",
+            "user11681",
+            "shedaniel",
+            "moriyashiine",
+            "florens",
+            "fudge",
+            "ffrann",
+            "redstoneparadox",
+            "yanis48",
+            "upcraftlp",
+            "jamieswhiteshirt",
+            "prospector",
+            "alexiil",
+            "draylar",
+            "juuz"
+        ]
+    },
+    {
+        "page": {
+            "tag": "documentation",
+            "name": "modpack_related_endpoints"
+        },
+        "authors": [
+            "asie",
+            "falseresync"
+        ]
+    },
+    {
+        "page": {
+            "tag": "documentation",
+            "name": "rendering"
+        },
+        "authors": [
+            "jamieswhiteshirt",
+            "falseresync",
+            "grondag"
+        ]
+    },
+    {
+        "page": {
+            "tag": "faq",
+            "name": "expert"
+        },
+        "authors": [
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "faq",
+            "name": "user"
+        },
+        "authors": [
+            "solidblock",
+            "mounderfod",
+            "ramidzkh",
+            "comp500",
+            "earthcomputer",
+            "liach",
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "fr",
+            "name": "faq"
+        },
+        "authors": [
+        ]
+    },
+    {
+        "page": {
+            "tag": "fr",
+            "name": "installation"
+        },
+        "authors": [
+            "mysterious_dev",
+            "erwan13430"
+        ]
+    },
+    {
+        "page": {
+            "tag": "fr",
+            "name": "regles"
+        },
+        "authors": [
+            "yanis48"
+        ]
+    },
+    {
+        "page": {
+            "tag": "it",
+            "name": "inizia"
+        },
+        "authors": [
+            "lolzdev"
+        ]
+    },
+    {
+        "page": {
+            "tag": "other",
+            "name": "fabric_modpacks"
+        },
+        "authors": [
+            "liach",
+            "falseresync",
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "other",
+            "name": "fluidapi_debate"
+        },
+        "authors": [
+            "falseresync",
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "other",
+            "name": "known_issues"
+        },
+        "authors": [
+            "falseresync",
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "player",
+            "name": "tutorials"
+        },
+        "authors": [
+        ]
+    },
+    {
+        "page": {
+            "tag": "playground",
+            "name": "callbacks"
+        },
+        "authors": [
+            "nokko"
+        ]
+    },
+    {
+        "page": {
+            "tag": "ru",
+            "name": "documentation"
+        },
+        "authors": [
+        ]
+    },
+    {
+        "page": {
+            "tag": "ru",
+            "name": "faq"
+        },
+        "authors": [
+        ]
+    },
+    {
+        "page": {
+            "tag": "ru",
+            "name": "player"
+        },
+        "authors": [
+        ]
+    },
+    {
+        "page": {
+            "tag": "ru",
+            "name": "tutorial"
+        },
+        "authors": [
+        ]
+    },
+    {
+        "page": {
+            "tag": "ru",
+            "name": "wiki"
+        },
+        "authors": [
+        ]
+    },
+    {
+        "page": {
+            "tag": "ru",
+            "name": "install"
+        },
+        "authors": [
+            "magicsweet"
+        ]
+    },
+    {
+        "page": {
+            "tag": "ru",
+            "name": "rules"
+        },
+        "authors": [
+            "magicsweet"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tools",
+            "name": "enigma"
+        },
+        "authors": [
+            "liach"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tools",
+            "name": "matcher"
+        },
+        "authors": [
+            "liach",
+            "nzsmartie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tools",
+            "name": "yarn"
+        },
+        "authors": [
+            "liach"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "1.14"
+        },
+        "authors": [
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "1.15"
+        },
+        "authors": [
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "datafixer"
+        },
+        "authors": [
+            "i509vcb"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "legacy"
+        },
+        "authors": [
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "accesswideners"
+        },
+        "authors": [
+            "florens",
+            "ytg1234",
+            "siglong",
+            "upcraftlp",
+            "hydos",
+            "liach",
+            "earthcomputer",
+            "wornitskeyitem",
+            "lvanderzande",
+            "glitch",
+            "modmuss50"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "adding_mods"
+        },
+        "authors": [
+            "jp79194",
+            "falseresync"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "adding_to_loot_tables"
+        },
+        "authors": [
+            "liach",
+            "yanis48",
+            "juuz",
+            "fudge"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "applychanges"
+        },
+        "authors": [
+            "jamieswhiteshirt",
+            "mkpoli",
+            "fudge"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "armor"
+        },
+        "authors": [
+            "florens",
+            "haykam",
+            "sakira",
+            "ggtylerr",
+            "terantai",
+            "descuddlebat"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "atlauncher_modpacks"
+        },
+        "authors": [
+            "falseresync"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "biomes"
+        },
+        "authors": [
+            "siglong",
+            "hydos",
+            "valoeghese"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "blockappearance"
+        },
+        "authors": [
+            "earthcomputer",
+            "liach",
+            "juuz",
+            "fudge"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "blockentity"
+        },
+        "authors": [
+            "technici4n",
+            "boogiemonster1o1",
+            "earthcomputer",
+            "yanis48",
+            "draylar",
+            "juuz",
+            "fudge",
+            "modmuss50",
+            "insomniakitten",
+            "falseresync"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "blockentityrenderers"
+        },
+        "authors": [
+            "hydos",
+            "jamieswhiteshirt",
+            "juuz",
+            "fudge"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "blocks"
+        },
+        "authors": [
+            "leocth2",
+            "draylar",
+            "fudge",
+            "darthjake",
+            "liach",
+            "jamieswhiteshirt",
+            "bitman",
+            "upcraftlp",
+            "mcrafterzz"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "blockstate"
+        },
+        "authors": [
+            "juuz",
+            "b0undarybreaker",
+            "fudge",
+            "jamieswhiteshirt"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "building_mod_basics"
+        },
+        "authors": [
+            "falseresync"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "callbacks"
+        },
+        "authors": [
+            "mkpoli"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "colorprovider"
+        },
+        "authors": [
+            "comp500",
+            "juuz",
+            "draylar"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "commands"
+        },
+        "authors": [
+            "juuz",
+            "i509vcb",
+            "liach",
+            "fudge",
+            "pyrofab"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "containers"
+        },
+        "authors": [
+            "leocth2",
+            "earthcomputer",
+            "mkpoli"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "cooking_recipe_type"
+        },
+        "authors": [
+            "ytg1234",
+            "programmingpenguinmc",
+            "legorel"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "cursegradle"
+        },
+        "authors": [
+            "fudge",
+            "liach",
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "custom_model"
+        },
+        "authors": [
+            "i509vcb",
+            "technici4n",
+            "solidblock"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "custom_portals"
+        },
+        "authors": [
+            "calum6541"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "custom_resources"
+        },
+        "authors": [
+            "ytg1234",
+            "azazelthedemonlord"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "datafixer"
+        },
+        "authors": [
+            "i509vcb"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "dependency_overrides"
+        },
+        "authors": [
+            "ytg1234"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "dimensionconcepts"
+        },
+        "authors": [
+            "siglong",
+            "draylar"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "dimensions"
+        },
+        "authors": [
+            "calum6541",
+            "siglong",
+            "gimpansor",
+            "b0undarybreaker",
+            "earthcomputer"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "directionalblock"
+        },
+        "authors": [
+            "bitman"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "dynamic_block_rendering"
+        },
+        "authors": [
+            "technici4n"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "dynamic_model_generation"
+        },
+        "authors": [
+            "deathunter"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "dynamic_recipe_generation"
+        },
+        "authors": [
+            "deathunter"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "enchantments"
+        },
+        "authors": [
+            "draylar",
+            "sirwindfield",
+            "modmuss50"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "entity-old"
+        },
+        "authors": [
+            "draylar",
+            "yanis48",
+            "conorthedev",
+            "earthcomputer",
+            "upcraftlp",
+            "jamieswhiteshirt"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "entity"
+        },
+        "authors": [
+            "oroarmor",
+            "hydos",
+            "boogiemonster1o1",
+            "emmanuelmess",
+            "earthcomputer",
+            "draylar"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "events"
+        },
+        "authors": [
+            "draylar",
+            "jamieswhiteshirt"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "ext_gh_commit"
+        },
+        "authors": [
+            "calum6541"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "ext_lang"
+        },
+        "authors": [
+            "calum6541"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "extendedscreenhandler"
+        },
+        "authors": [
+            "technici4n",
+            "manymoney2"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "fablabs"
+        },
+        "authors": [
+            "b0undarybreaker"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "feature_procedure"
+        },
+        "authors": [
+            "i509vcb",
+            "falseresync",
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "features"
+        },
+        "authors": [
+            "siglong",
+            "dysnomian",
+            "user11681",
+            "2xsaiko",
+            "lightcolour",
+            "draylar"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "fluids"
+        },
+        "authors": [
+            "solidblock",
+            "comp500",
+            "earthcomputer",
+            "upcraftlp",
+            "virtuoel",
+            "alexiy"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "gamerule"
+        },
+        "authors": [
+            "mysterious_dev"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "generator_types"
+        },
+        "authors": [
+            "siglong"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "install_java"
+        },
+        "authors": [
+            "calloatti"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "install_with_minecraft_launcher"
+        },
+        "authors": [
+            "calloatti"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "install_with_multimc"
+        },
+        "authors": [
+            "calloatti",
+            "comp500",
+            "shedaniel",
+            "falseresync"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "installing_minecraft_fabric_server"
+        },
+        "authors": [
+            "calloatti"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "introduction"
+        },
+        "authors": [
+            "elisezerotwo",
+            "layl"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "inventory"
+        },
+        "authors": [
+            "yanis48",
+            "technici4n",
+            "nshak",
+            "zentrale",
+            "user11681",
+            "fudge"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "itemgroup"
+        },
+        "authors": [
+            "draylar",
+            "yanis48",
+            "virtuoel",
+            "mcrafterzz"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "items"
+        },
+        "authors": [
+            "ytg1234",
+            "ramidzkh",
+            "leocth2",
+            "siglong",
+            "draylar",
+            "i509vcb",
+            "fudge",
+            "jamieswhiteshirt",
+            "liach",
+            "mcrafterzz",
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "items_docs"
+        },
+        "authors": [
+            "mysterious_dev",
+            "leocth2",
+            "draylar"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "jigsaw"
+        },
+        "authors": [
+            "hydos",
+            "emmanuelmess"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "keybinds"
+        },
+        "authors": [
+            "majavah",
+            "boogiemonster1o1",
+            "emmanuelmess",
+            "kot",
+            "shedaniel",
+            "draylar",
+            "fudge",
+            "jamieswhiteshirt"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "lang"
+        },
+        "authors": [
+            "fudge",
+            "draylar",
+            "jamieswhiteshirt"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "list_of_useful_gists"
+        },
+        "authors": [
+            "ancurio",
+            "b0undarybreaker",
+            "fudge",
+            "heckteck"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "loader04x"
+        },
+        "authors": [
+            "jamieswhiteshirt",
+            "falseresync",
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "mappings"
+        },
+        "authors": [
+            "earthcomputer",
+            "liach",
+            "jamieswhiteshirt"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "mcupdater_modpacks"
+        },
+        "authors": [
+            "falseresync",
+            "modmuss50",
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "migratemappings"
+        },
+        "authors": [
+            "florens",
+            "jamieswhiteshirt",
+            "jamie",
+            "fudge",
+            "modmuss50",
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "mining_levels"
+        },
+        "authors": [
+            "shedaniel",
+            "yanis48"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "minotaur"
+        },
+        "authors": [
+            "ytg1234",
+            "calum6541"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "mixin_accessors"
+        },
+        "authors": [
+            "siglong",
+            "emmanuelmess"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "mixin_examples"
+        },
+        "authors": [
+            "ytg1234",
+            "siglong"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "mixin_export"
+        },
+        "authors": [
+            "draylar"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "mixin_hotswaps"
+        },
+        "authors": [
+            "draylar"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "mixin_injects"
+        },
+        "authors": [
+            "siglong",
+            "lvanderzande",
+            "pyrofab",
+            "b0undarybreaker",
+            "draylar"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "mixin_introduction"
+        },
+        "authors": [
+            "siglong",
+            "emmanuelmess",
+            "lvanderzande",
+            "draylar"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "mixin_redirectors"
+        },
+        "authors": [
+            "user11681"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "mixin_redirectors_methods"
+        },
+        "authors": [
+            "obw",
+            "user11681"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "mixin_registration"
+        },
+        "authors": [
+            "lvanderzande"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "modding_tips"
+        },
+        "authors": [
+            "manxboy",
+            "siglong",
+            "jamieswhiteshirt",
+            "fudge",
+            "falseresync",
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "networking"
+        },
+        "authors": [
+            "ytg1234",
+            "zulrang",
+            "i509vcb",
+            "nshak",
+            "earthcomputer",
+            "fudge",
+            "modmuss50"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "ores"
+        },
+        "authors": [
+            "siglong",
+            "supercoder79",
+            "jamieswhiteshirt",
+            "modmuss50",
+            "draylar",
+            "calloatti"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "pixel_raycast"
+        },
+        "authors": [
+            "snakefangox",
+            "emmanuelmess"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "projectiles"
+        },
+        "authors": [
+            "spxctreofficial"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "propertydelegates"
+        },
+        "authors": [
+            "technici4n",
+            "manymoney2"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "recipe_types_introduction"
+        },
+        "authors": [
+            "legorel"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "recipes"
+        },
+        "authors": [
+            "fudge"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "registry"
+        },
+        "authors": [
+            "elisezerotwo",
+            "juuz",
+            "draylar"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "registry_types"
+        },
+        "authors": [
+            "194.154.255.198",
+            "71.197.178.205",
+            "juuz",
+            "florens"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "resource"
+        },
+        "authors": [
+            "liach"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "screenhandler"
+        },
+        "authors": [
+            "technici4n",
+            "pyrofab",
+            "manymoney2"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "setup"
+        },
+        "authors": [
+            "siglong",
+            "ytg1234",
+            "telepathicgrunt",
+            "comp500",
+            "2xsaiko",
+            "upcraftlp",
+            "jamieswhiteshirt",
+            "florens",
+            "modmuss50",
+            "mkpoli",
+            "fudge",
+            "draylar",
+            "falseresync",
+            "65.38.92.100",
+            "asie",
+            "mcrafterzz"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "side"
+        },
+        "authors": [
+            "elisezerotwo",
+            "jamieswhiteshirt",
+            "upcraftlp",
+            "liach",
+            "tyra314"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "skcraft_modpacks"
+        },
+        "authors": [
+            "obw"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "sounds"
+        },
+        "authors": [
+            "hydos",
+            "yanis48",
+            "earthcomputer",
+            "jamieswhiteshirt",
+            "fudge"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "status_effects"
+        },
+        "authors": [
+            "yanis48",
+            "siglong"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "structures"
+        },
+        "authors": [
+            "siglong",
+            "ffrann",
+            "yanis48",
+            "earthcomputer",
+            "draylar",
+            "jamieswhiteshirt",
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "tags"
+        },
+        "authors": [
+            "azazelthedemonlord",
+            "deathunter",
+            "shnupbups",
+            "upcraftlp",
+            "user11681",
+            "mounderfod",
+            "gimpansor"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "technic_modpacks"
+        },
+        "authors": [
+            "comp500",
+            "falseresync"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "terms"
+        },
+        "authors": [
+            "elisezerotwo",
+            "157.55.39.98",
+            "mounderfod",
+            "earthcomputer",
+            "mkpoli",
+            "upcraftlp",
+            "shedaniel",
+            "yanis48",
+            "jamieswhiteshirt",
+            "falseresync",
+            "draylar"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "tools"
+        },
+        "authors": [
+            "draylar",
+            "boogiemonster1o1",
+            "shedaniel"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "tooltip"
+        },
+        "authors": [
+            "fudge"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "updating_fabric_using_multimc_launcher"
+        },
+        "authors": [
+            "calloatti"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "updating_yarn"
+        },
+        "authors": [
+            "modmuss50",
+            "hydos",
+            "2xsaiko",
+            "liach",
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "upload_your_log"
+        },
+        "authors": [
+            "calloatti"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorial",
+            "name": "vscode_setup"
+        },
+        "authors": [
+            "siglong",
+            "ezraen",
+            "upcraftlp",
+            "modmuss50",
+            "falseresync",
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "tutorials",
+            "name": "commands"
+        },
+        "authors": [
+        ]
+    },
+    {
+        "page": {
+            "tag": "zh_cn",
+            "name": "documentation"
+        },
+        "authors": [
+        ]
+    },
+    {
+        "page": {
+            "tag": "zh_cn",
+            "name": "faq"
+        },
+        "authors": [
+        ]
+    },
+    {
+        "page": {
+            "tag": "zh_cn",
+            "name": "tutorial"
+        },
+        "authors": [
+        ]
+    },
+    {
+        "page": {
+            "tag": "zh_cn",
+            "name": "wiki"
+        },
+        "authors": [
+        ]
+    },
+    {
+        "page": {
+            "tag": "zh_cn",
+            "name": "install"
+        },
+        "authors": [
+            "solidblock",
+            "lightcolour"
+        ]
+    },
+    {
+        "page": {
+            "tag": "zh_cn",
+            "name": "rules"
+        },
+        "authors": [
+            "solidblock",
+            "lightcolour"
+        ]
+    },
+    {
+        "page": {
+            "tag": null,
+            "name": "changelog"
+        },
+        "authors": [
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": null,
+            "name": "install"
+        },
+        "authors": [
+            "ytg1234",
+            "juuz",
+            "prospector",
+            "calloatti",
+            "2xsaiko",
+            "modmuss50",
+            "jamieswhiteshirt",
+            "falseresync",
+            "liach",
+            "asie",
+            "draylar"
+        ]
+    },
+    {
+        "page": {
+            "tag": null,
+            "name": "rules"
+        },
+        "authors": [
+            "falseresync",
+            "asie"
+        ]
+    },
+    {
+        "page": {
+            "tag": "fr:tutoriel",
+            "name": "ajouter_mods"
+        },
+        "authors": [
+            "yanis48"
+        ]
+    },
+    {
+        "page": {
+            "tag": "fr:tutoriel",
+            "name": "appliquer_modifications"
+        },
+        "authors": [
+            "yanis48"
+        ]
+    },
+    {
+        "page": {
+            "tag": "fr:tutoriel",
+            "name": "blocs"
+        },
+        "authors": [
+            "yanis48"
+        ]
+    },
+    {
+        "page": {
+            "tag": "fr:tutoriel",
+            "name": "enchantements"
+        },
+        "authors": [
+            "yanis48"
+        ]
+    },
+    {
+        "page": {
+            "tag": "fr:tutoriel",
+            "name": "groupes_objets"
+        },
+        "authors": [
+            "yanis48"
+        ]
+    },
+    {
+        "page": {
+            "tag": "fr:tutoriel",
+            "name": "infobulles"
+        },
+        "authors": [
+            "yanis48"
+        ]
+    },
+    {
+        "page": {
+            "tag": "fr:tutoriel",
+            "name": "installation_java"
+        },
+        "authors": [
+            "yanis48"
+        ]
+    },
+    {
+        "page": {
+            "tag": "fr:tutoriel",
+            "name": "mise_en_place"
+        },
+        "authors": [
+            "yanis48"
+        ]
+    },
+    {
+        "page": {
+            "tag": "fr:tutoriel",
+            "name": "modpacks_atlauncher"
+        },
+        "authors": [
+            "yanis48"
+        ]
+    },
+    {
+        "page": {
+            "tag": "fr:tutoriel",
+            "name": "modpacks_technic"
+        },
+        "authors": [
+            "yanis48"
+        ]
+    },
+    {
+        "page": {
+            "tag": "fr:tutoriel",
+            "name": "objets"
+        },
+        "authors": [
+            "yanis48"
+        ]
+    },
+    {
+        "page": {
+            "tag": "fr:tutoriel",
+            "name": "recettes"
+        },
+        "authors": [
+            "yanis48"
+        ]
+    },
+    {
+        "page": {
+            "tag": "fr:tutoriel",
+            "name": "termes"
+        },
+        "authors": [
+            "yanis48"
+        ]
+    }
+]
